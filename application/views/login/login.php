@@ -26,10 +26,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 		<div class="design-w3l">
 			<div class="mail-form-agile">
-				<form action="<?= site_url('login') ?>" method="post">
+				<form action="<?= site_url('login/cekLogin') ?>" method="POST">
 					<input type="text" name="username" placeholder="Username..." required>
 					<input type="password"  name="password" class="padding" placeholder="Password..." required=""/>
-					<input type="submit" value="login" style="background: #105ac9;">
+					<input type="submit" value="Masuk" style="background: #105ac9;">
+					<br/>
+					<h4 style="color: orange;">
+                            <?php
+                                $info = $this->session->flashdata('info');
+                                if(!empty($info)){
+                                            echo $info;
+                                }
+                            ?>
+                    </h4>
 				</form>
 			</div>
 		  <div class="clear"> </div>
