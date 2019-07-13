@@ -16,6 +16,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="<?= base_url('assets/login/css/style.css') ?>" rel="stylesheet" type="text/css" media="all" />
 <link href="//fonts.googleapis.com/css?family=Cormorant+SC:300,400,500,600,700" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<link rel="shortcut icon" type="image/png" href="<?= base_url('assets/if.png') ?>"/>
 </head>
 
 <body>
