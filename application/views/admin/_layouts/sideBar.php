@@ -60,13 +60,13 @@
                     </li>
 
                     <li>
-                        <a href="widgets.html" aria-expanded="false">
+                        <a href="<?= site_url('admin/prestasi') ?>" aria-expanded="false">
                             <i class="icon-trophy menu-icon"></i><span class="nav-text">Daftar Prestasi</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="widgets.html" aria-expanded="false">
+                        <a href="<?= site_url('admin/galeri')?>" aria-expanded="false">
                             <i class="icon-picture menu-icon"></i><span class="nav-text">Galeri</span>
                         </a>
                     </li>

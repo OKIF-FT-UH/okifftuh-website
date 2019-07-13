@@ -30,6 +30,24 @@ class Admin extends CI_Controller {
 
 
     //End Kategori
+
+    //Begin Daftar Prestasi
+    public function prestasi(){
+        $data = array(
+            'isi' => 'admin/dashboard/isi', 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+    //End Prestasi
+
+    //Begin Galeri
+    public function galeri(){
+        $data = array(
+            'isi' => 'admin/dashboard/isi', 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+    //End Prestasi
 	
 
 }
