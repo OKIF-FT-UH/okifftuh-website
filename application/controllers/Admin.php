@@ -18,6 +18,9 @@ class Admin extends CI_Controller {
         $this->load->view('admin/_layouts/wrapper', $data);
 	}
 
+    
+    //Begin Kategori
+    
     public function kategori(){
         $data = array(
             'isi' => 'admin/dashboard/isi', 
@@ -25,6 +28,8 @@ class Admin extends CI_Controller {
         $this->load->view('admin/_layouts/wrapper', $data);
     }
 
+
+    //End Kategori
 	
 
 }
