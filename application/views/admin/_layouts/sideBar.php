@@ -17,8 +17,8 @@
                         </ul>
                     </li> -->
                     
-                     <li href="<?= site_url('admin/') ?>" class="<?= ($modul == '' ? 'active' : '' ) ?>">
-                        <a href="widgets.html" aria-expanded="false">
+                     <li class="<?= ($modul == '' ? 'active' : '' ) ?>">
+                        <a href="<?= site_url('admin/') ?>" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
                     </li>
