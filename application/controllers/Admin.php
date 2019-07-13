@@ -31,6 +31,51 @@ class Admin extends CI_Controller {
 
     //End Kategori
 
+    //Begin Informasi
+
+    public function himpunan(){
+        $data = array(
+            'isi' => 'admin/dashboard/isi', 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+
+    public function kemahasiswaan(){
+        $data = array(
+            'isi' => 'admin/dashboard/isi', 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+
+    public function beasiswa(){
+        $data = array(
+            'isi' => 'admin/dashboard/isi', 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+
+    public function prestasi(){
+        $data = array(
+            'isi' => 'admin/dashboard/isi', 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+
+    public function artikel(){
+        $data = array(
+            'isi' => 'admin/dashboard/isi', 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+
+    public function lomba(){
+        $data = array(
+            'isi' => 'admin/dashboard/isi', 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+    //End Informasi
+
     //Begin Daftar Prestasi
     public function daftarPrestasi(){
         $data = array(
@@ -47,7 +92,7 @@ class Admin extends CI_Controller {
         );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
-    //End Prestasi
+    //End Galeri
 
     //Begin Saran Masuk
     public function saranMasuk(){
