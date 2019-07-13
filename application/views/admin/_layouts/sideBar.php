@@ -1,38 +1,88 @@
+<?php  $modul = $this->uri->segment(2);   ?>
+
   <!--**********************************
             Sidebar start
         ***********************************-->
         <div class="nk-sidebar">           
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
-                    <li class="nav-label">Dashboard</li>
+                    <!-- <li class="nav-label">Dashboard</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="./index.html">Home 1</a></li>
-                            <!-- <li><a href="./index-2.html">Home 2</a></li> -->
+                            <li><a href="./index-2.html">Home 2</a></li>
                         </ul>
+                    </li> -->
+                    
+                     <li class="<?= ($modul == '' ? 'active' : '' ) ?>">
+                        <a href="widgets.html" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                        </a>
                     </li>
-                    <li class="mega-menu mega-menu-sm">
+
+                    <li class="mega-menu mega-menu-sm <?= ($modul == 'kategori' || $modul == 'mahasiswa' || $modul == 'alumni') ? 'active' : '' ?>">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Layouts</span>
+                            <i class="icon-docs menu-icon"></i><span class="nav-text">Master Data</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./layout-blank.html">Blank</a></li>
-                            <li><a href="./layout-one-column.html">One Column</a></li>
-                            <li><a href="./layout-two-column.html">Two column</a></li>
-                            <li><a href="./layout-compact-nav.html">Compact Nav</a></li>
-                            <li><a href="./layout-vertical.html">Vertical</a></li>
-                            <li><a href="./layout-horizontal.html">Horizontal</a></li>
-                            <li><a href="./layout-boxed.html">Boxed</a></li>
-                            <li><a href="./layout-wide.html">Wide</a></li>
-                            
-                            
-                            <li><a href="./layout-fixed-header.html">Fixed Header</a></li>
-                            <li><a href="layout-fixed-sidebar.html">Fixed Sidebar</a></li>
+                            <li><a href="<?= site_url('admin/kategori') ?>" class="<?= ($modul == 'kategori') ? 'active' : '' ?>">Kategori</a></li>
+                            <li><a href="<?= site_url('admin/mahasiswa') ?>" class="<?= ($modul == 'mahasiswa') ? 'active' : '' ?>">Mahasiswa Aktif</a></li>
+                            <li><a href="<?= site_url('admin/alumni') ?>" class="<?= ($modul == 'alumni') ? 'active' : '' ?>">Alumni</a></li>
                         </ul>
                     </li>
+
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-book-open menu-icon"></i><span class="nav-text">Informasi</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./layout-blank.html">Kegiatan Himpunan</a></li>
+                            <li><a href="./layout-one-column.html">Kemahasiswaan</a></li>
+                            <li><a href="./layout-two-column.html">Beasiswa</a></li>
+                            <li><a href="./layout-compact-nav.html">Prestasi</a></li>
+                            <li><a href="./layout-vertical.html">Artikel</a></li>
+                            <li><a href="./layout-horizontal.html">Lomba</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-people menu-icon"></i><span class="nav-text">Pengurus</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./layout-blank.html">DMMIF FT-UH</a></li>
+                            <li><a href="./layout-one-column.html">HMIF FT-UH</a></li>
+                            <li><a href="./layout-one-column.html">Sejarah Pengurus</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="widgets.html" aria-expanded="false">
+                            <i class="icon-trophy menu-icon"></i><span class="nav-text">Daftar Prestasi</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="widgets.html" aria-expanded="false">
+                            <i class="icon-picture menu-icon"></i><span class="nav-text">Galeri</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="widgets.html" aria-expanded="false">
+                            <i class="icon-envelope menu-icon"></i><span class="nav-text">Saran Masuk</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="widgets.html" aria-expanded="false">
+                            <i class="icon-user menu-icon"></i><span class="nav-text">Admin</span>
+                        </a>
+                    </li>
+<!-- 
                     <li class="nav-label">Apps</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -88,13 +138,13 @@
                             <li><a href="./ui-progressbar.html">Progressbar</a></li>
                             <li><a href="./ui-tab.html">Tab</a></li>
                             <li><a href="./ui-typography.html">Typography</a></li>
-                        <!-- </ul>
+                        </ul>
                     </li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-layers menu-icon"></i><span class="nav-text">Components</span>
                         </a>
-                        <ul aria-expanded="false"> -->
+                        <ul aria-expanded="false">
                             <li><a href="./uc-nestedable.html">Nestedable</a></li>
                             <li><a href="./uc-noui-slider.html">Noui Slider</a></li>
                             <li><a href="./uc-sweetalert.html">Sweet Alert</a></li>
@@ -148,7 +198,7 @@
                                 </ul>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>

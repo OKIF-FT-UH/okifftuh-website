@@ -18,7 +18,12 @@ class Admin extends CI_Controller {
         $this->load->view('admin/_layouts/wrapper', $data);
 	}
 
-
+    public function kategori(){
+        $data = array(
+            'isi' => 'admin/dashboard/isi', 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
 
 	
 
