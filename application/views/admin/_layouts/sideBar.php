@@ -34,17 +34,17 @@
                         </ul>
                     </li>
 
-                    <li class="mega-menu mega-menu-sm">
+                    <li class="mega-menu mega-menu-sm <?= ($modul == 'himpunan' || $modul == 'kemahasiswaan' || $modul == 'beasiswa' || $modul == 'prestasi' || $modul == 'artikel' || $modul == 'lomba') ? 'active' : '' ?>">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-book-open menu-icon"></i><span class="nav-text">Informasi</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./layout-blank.html">Kegiatan Himpunan</a></li>
-                            <li><a href="./layout-one-column.html">Kemahasiswaan</a></li>
-                            <li><a href="./layout-two-column.html">Beasiswa</a></li>
-                            <li><a href="./layout-compact-nav.html">Prestasi</a></li>
-                            <li><a href="./layout-vertical.html">Artikel</a></li>
-                            <li><a href="./layout-horizontal.html">Lomba</a></li>
+                            <li><a href="<?= site_url('admin/himpunan') ?>" class="<?= ($modul == 'himpunan') ? 'active' : '' ?>">Kegiatan Himpunan</a></li>
+                            <li><a href="<?= site_url('admin/kemahasiswaan') ?>" class="<?= ($modul == 'kemahasiswaan') ? 'active' : '' ?>">Kemahasiswaan</a></li>
+                            <li><a href="<?= site_url('admin/beasiswa') ?>" class="<?= ($modul == 'beasiswa') ? 'active' : '' ?>">Beasiswa</a></li>
+                            <li><a href="<?= site_url('admin/prestasi') ?>" class="<?= ($modul == 'prestasi') ? 'active' : '' ?>">Prestasi</a></li>
+                            <li><a href="<?= site_url('admin/artikel') ?>" class="<?= ($modul == 'artikel') ? 'active' : '' ?>">Artikel</a></li>
+                            <li><a href="<?= site_url('admin/lomba') ?>" class="<?= ($modul == 'lomba') ? 'active' : '' ?>">Lomba</a></li>
                         </ul>
                     </li>
 
@@ -60,25 +60,25 @@
                     </li>
 
                     <li>
-                        <a href="widgets.html" aria-expanded="false">
+                        <a href="<?= site_url('admin/daftarPrestasi') ?>" aria-expanded="false" class="<?= ($modul == 'daftarPrestasi' ? 'active' : '' ) ?>">
                             <i class="icon-trophy menu-icon"></i><span class="nav-text">Daftar Prestasi</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="widgets.html" aria-expanded="false">
+                        <a href="<?= site_url('admin/galeri')?>" aria-expanded="false" class="<?= ($modul == 'galeri' ? 'active' : '' ) ?>">
                             <i class="icon-picture menu-icon"></i><span class="nav-text">Galeri</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="widgets.html" aria-expanded="false">
+                        <a href="<?= site_url('admin/saranMasuk') ?>" class="<?= ($modul == 'saranMasuk') ? 'active' : '' ?>" aria-expanded="false">
                             <i class="icon-envelope menu-icon"></i><span class="nav-text">Saran Masuk</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="widgets.html" aria-expanded="false">
+                        <a href="<?= site_url('admin/admin') ?>" class="<?= ($modul == 'admin') ? 'active' : '' ?>" aria-expanded="false">
                             <i class="icon-user menu-icon"></i><span class="nav-text">Admin</span>
                         </a>
                     </li>

@@ -30,7 +30,42 @@ class Admin extends CI_Controller {
 
 
     //End Kategori
-	
+
+    //Begin Daftar Prestasi
+    public function daftarPrestasi(){
+        $data = array(
+            'isi' => 'admin/dashboard/isi', 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+    //End Prestasi
+
+    //Begin Galeri
+    public function galeri(){
+        $data = array(
+            'isi' => 'admin/dashboard/isi', 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+    //End Prestasi
+
+    //Begin Saran Masuk
+    public function saranMasuk(){
+        $data = array(
+            'isi' => 'admin/dashboard/isi',
+            );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+    //End Saran Masuk
+
+    //Begin Admin
+	 public function admin(){
+        $data = array(
+            'isi' => 'admin/dashboard/isi',
+            );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+    //End Admin
 
     //===Begin Modul Pengurus===
     //Begin DMMIF FT-UH
