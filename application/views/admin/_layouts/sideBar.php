@@ -72,13 +72,13 @@
                     </li>
 
                     <li>
-                        <a href="widgets.html" aria-expanded="false">
+                        <a href="<?= site_url('admin/saranMasuk') ?>" class="<?= ($modul == 'saranMasuk') ? 'active' : '' ?>" aria-expanded="false">
                             <i class="icon-envelope menu-icon"></i><span class="nav-text">Saran Masuk</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="widgets.html" aria-expanded="false">
+                        <a href="<?= site_url('admin/admin') ?>" class="<?= ($modul == 'admin') ? 'active' : '' ?>" aria-expanded="false">
                             <i class="icon-user menu-icon"></i><span class="nav-text">Admin</span>
                         </a>
                     </li>
