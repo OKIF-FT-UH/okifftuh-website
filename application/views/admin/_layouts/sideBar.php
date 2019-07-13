@@ -60,13 +60,13 @@
                     </li>
 
                     <li>
-                        <a href="<?= site_url('admin/prestasi') ?>" aria-expanded="false">
+                        <a href="<?= site_url('admin/daftarPrestasi') ?>" aria-expanded="false" class="<?= ($modul == 'daftarPrestasi' ? 'active' : '' ) ?>">
                             <i class="icon-trophy menu-icon"></i><span class="nav-text">Daftar Prestasi</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="<?= site_url('admin/galeri')?>" aria-expanded="false">
+                        <a href="<?= site_url('admin/galeri')?>" aria-expanded="false" class="<?= ($modul == 'galeri' ? 'active' : '' ) ?>">
                             <i class="icon-picture menu-icon"></i><span class="nav-text">Galeri</span>
                         </a>
                     </li>

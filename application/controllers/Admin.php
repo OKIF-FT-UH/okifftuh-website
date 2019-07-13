@@ -32,7 +32,7 @@ class Admin extends CI_Controller {
     //End Kategori
 
     //Begin Daftar Prestasi
-    public function prestasi(){
+    public function daftarPrestasi(){
         $data = array(
             'isi' => 'admin/dashboard/isi', 
         );
