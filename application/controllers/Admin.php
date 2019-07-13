@@ -48,7 +48,24 @@ class Admin extends CI_Controller {
         $this->load->view('admin/_layouts/wrapper', $data);
     }
     //End Prestasi
-	
+
+    //Begin Saran Masuk
+    public function saranMasuk(){
+        $data = array(
+            'isi' => 'admin/dashboard/isi',
+            );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+    //End Saran Masuk
+
+    //Begin Admin
+	 public function admin(){
+        $data = array(
+            'isi' => 'admin/dashboard/isi',
+            );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+    //End Admin
 
 }
 ?>
