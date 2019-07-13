@@ -12,7 +12,10 @@ class Admin extends CI_Controller {
     }
 
 	public function index(){
-		echo "Ini Controller Admin";
+		$data = array(
+            'isi' => 'admin/dashboard/isi', 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
 	}
 
 
@@ -20,3 +23,4 @@ class Admin extends CI_Controller {
 	
 
 }
+?>
