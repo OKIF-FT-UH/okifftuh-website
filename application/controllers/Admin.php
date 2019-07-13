@@ -112,5 +112,34 @@ class Admin extends CI_Controller {
     }
     //End Admin
 
+    //===Begin Modul Pengurus===
+    //Begin DMMIF FT-UH
+    public function pengurusDmmif(){
+         $data = array(
+            'isi' => 'admin/dashboard/isi', 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+    //End DMMIF FT-UH
+
+    //Begin HMIF FT-UH
+    public function pengurusHmif(){
+         $data = array(
+            'isi' => 'admin/dashboard/isi', 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+    //End HMIF FT-UH
+
+    //Begin Sejarah Pengurus
+    public function sejarahPengurus(){
+         $data = array(
+            'isi' => 'admin/dashboard/isi', 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+    //End Sejarah Pengurus
+    //===End Modul Pengurus==
+
 }
 ?>

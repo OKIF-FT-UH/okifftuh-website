@@ -17,7 +17,7 @@
                         </ul>
                     </li> -->
                     
-                     <li class="<?= ($modul == '' ? 'active' : '' ) ?>">
+                     <li href="<?= site_url('admin/') ?>" class="<?= ($modul == '' ? 'active' : '' ) ?>">
                         <a href="widgets.html" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
@@ -48,14 +48,14 @@
                         </ul>
                     </li>
 
-                    <li class="mega-menu mega-menu-sm">
+                    <li class="mega-menu mega-menu-sm <?= ($modul == 'pengurusDmmif' || $modul == 'pengurusHmif' || $modul == 'sejarahPengurus') ? 'active' : '' ?>">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-people menu-icon"></i><span class="nav-text">Pengurus</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./layout-blank.html">DMMIF FT-UH</a></li>
-                            <li><a href="./layout-one-column.html">HMIF FT-UH</a></li>
-                            <li><a href="./layout-one-column.html">Sejarah Pengurus</a></li>
+                            <li><a href="<?= site_url('admin/pengurusDmmif') ?>" class="<?= ($modul == 'pengurusDmmif') ? 'active' : '' ?>">DMMIF FT-UH</a></li>
+                            <li><a href="<?= site_url('admin/pengurusHmif') ?>" class="<?= ($modul == 'pengurusHmif') ? 'active' : '' ?>">HMIF FT-UH</a></li>
+                            <li><a href="<?= site_url('admin/sejarahPengurus') ?>" class="<?= ($modul == 'sejarahPengurus') ? 'active' : '' ?>">Sejarah Pengurus</a></li>
                         </ul>
                     </li>
 
