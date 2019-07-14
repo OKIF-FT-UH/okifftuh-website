@@ -11,7 +11,7 @@ class Login extends CI_Controller {
 		$username = $this->input->post('username');
         $cek_pass = $this->input->post('password');
         $password = md5($cek_pass);
-        $this->modelAdmin->login($username, $password);
+        $this->ModelAdmin->login($username, $password);
 	}
 
 	public function logout(){

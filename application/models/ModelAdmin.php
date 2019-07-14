@@ -27,5 +27,25 @@ class ModelAdmin extends CI_Model {
         }
     }
 
+    public function requestInformasi($kode){
+        $this->db->select('*');
+        $this->db->from('informasi');
+        $this->db->where($kode);
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
+    // public function data_customer($where){
+    //     $this->db->select( '*' );
+    //     $this->db->from( 'estimasi' );
+    //     $this->db->join( 'customer', 'customer.id_customer = estimasi.id_customer' , 'left' );
+    //     $this->db->join('color', 'color.id_color = estimasi.id_color', 'left');
+    //     $this->db->join( 'jenis_kendaran', 'jenis_kendaran.id_jenis = estimasi.id_jenis');
+    //     $this->db->where($where);
+    //     $query = $this->db->get();
+    //     return $query->result();
+    // }
+
 
 }
