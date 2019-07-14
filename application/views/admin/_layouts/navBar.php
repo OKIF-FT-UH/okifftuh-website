@@ -25,11 +25,11 @@
         ***********************************-->
         <div class="nav-header">
             <div class="brand-logo">
-                <a href="index.html">
-                    <b class="logo-abbr"><img src="<?=base_url('assets/admin/images/logo.png')?>" alt=""> </b>
-                    <span class="logo-compact"><img src="<?=base_url('assets/admin//images/logo-compact.png')?>" alt=""></span>
+                <a href="<?= site_url('admin') ?>">
+                    <b class="logo-abbr" style="color: white">IF</b>
+                    <span class="logo-compact"><b style="color: white">IF</b></span>
                     <span class="brand-title">
-                        <img src="<?=base_url('assets/admin/images/logo-text.png')?>" alt="">
+                        <b style="color: white;">OKIF FT-UH</b>
                     </span>
                 </a>
             </div>
