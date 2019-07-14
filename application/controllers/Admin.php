@@ -33,12 +33,19 @@ class Admin extends CI_Controller {
 
     //Begin Informasi
 
+
+    //Begin Kegiatan Himpunan
+    
     public function himpunan(){
         $data = array(
             'isi' => 'admin/dashboard/isi', 
         );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
+
+    //END Kegiatan Himpunan
+
+    //Begin Kegiatan Kemahasiswaan
 
     public function kemahasiswaan(){
         $data = array(
@@ -47,12 +54,18 @@ class Admin extends CI_Controller {
         $this->load->view('admin/_layouts/wrapper', $data);
     }
 
+    //END Kegiatan Kemahasiswaan
+
+    //Begin Info Beasiswa
+    
     public function beasiswa(){
         $data = array(
             'isi' => 'admin/dashboard/isi', 
         );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
+
+    //Begin Prestasi
 
     public function prestasi(){
         $data = array(
@@ -61,6 +74,10 @@ class Admin extends CI_Controller {
         $this->load->view('admin/_layouts/wrapper', $data);
     }
 
+    // END Prestasi
+
+    // Begin Artikel
+
     public function artikel(){
         $data = array(
             'isi' => 'admin/dashboard/isi', 
@@ -68,13 +85,19 @@ class Admin extends CI_Controller {
         $this->load->view('admin/_layouts/wrapper', $data);
     }
 
+    // End Artikel
+
+    //Begin Lomba
     public function lomba(){
         $data = array(
             'isi' => 'admin/dashboard/isi', 
         );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
+    //END Lomba
+
     //End Informasi
+    
 
     //Begin Daftar Prestasi
     public function daftarPrestasi(){
