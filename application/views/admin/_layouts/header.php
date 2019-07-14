@@ -10,4 +10,25 @@
     <link href="<?=base_url('assets/admin/plugins/tables/css/datatable/dataTables.bootstrap4.min.css')?>" rel="stylesheet">
     <link href="<?=base_url('assets/admin/css/style.css')?>" rel="stylesheet">
 
+    <?php
+
+    $modul = $this->uri->segment(2);
+    if($modul == 'createInformation'){
+    	echo '
+			<script type="text/javascript" src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+
+			<script type="text/javascript">
+			tinyMCE.init({
+			         // General options
+			         mode : "textareas",
+			        // theme : "advanced",
+			});
+
+			</script>
+
+    	';
+    }
+
+    ?>
+
 </head>

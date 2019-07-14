@@ -13,15 +13,26 @@
                                     <?php 
                                         if($modul == 'himpunan'){
                                             echo "Daftar Kegiatan Himpunan";
+                                            $kode = 1;
                                         }else if($modul == 'kemahasiswaan'){
                                             echo "Daftar Informasi Kemahasiswaan";
+                                            $kode = 2;
                                         }else{
 
                                         }
                                     ?>
                                 </h4>
 
-                                <button type="button" class="btn mb-1 btn-success">Tambah <span class="btn-icon-right"><i class="fa fa-check"></i></span>
+                                <h6 style="color: yellow;">
+                                    <?php
+                                        $info = $this->session->flashdata('info');
+                                        if(!empty($info)){
+                                            echo $info;
+                                        }
+                                    ?>
+                                </h6>
+
+                                <button type="button" onclick="window.location.href='<?= base_url("admin/createInformation/".$kode) ?>'" class="btn mb-1 btn-success">Tambah <span class="btn-icon-right"><i class="fa fa-check"></i></span>
                                 </button>
 
                                 <div class="table-responsive" style="margin-top: -20px;">
