@@ -17,8 +17,12 @@
                                         }else if($modul == 'kemahasiswaan'){
                                             echo "Daftar Informasi Kemahasiswaan";
                                             $kode = 2;
-                                        }else{
-
+                                        }else if($modul == 'beasiswa'){
+                                            echo "Daftar Informasi Beasiswa";
+                                            $kode = 3;
+                                        }else if($modul == 'prestasi'){
+                                            echo "Daftar Informasi Prestasi";
+                                            $kode = 4;
                                         }
                                     ?>
                                 </h4>
