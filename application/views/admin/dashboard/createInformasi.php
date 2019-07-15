@@ -18,10 +18,8 @@
                                      }else if($kode == '2'){
                                         echo "Tambah Informasi Kemahasiswaan";
                                      }else if($kode == '3'){
-                                        echo "Tambah Informasi Kemahasiswaan";
-                                     }else if($kode == '4'){
                                          echo "Tambah Informasi Beasiswa";
-                                     }else if($kode == '5'){
+                                     }else if($kode == '4'){
                                          echo "Tambah Informasi Prestasi";
                                      }
 
