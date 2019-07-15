@@ -17,8 +17,12 @@
                                         }else if($modul == 'kemahasiswaan'){
                                             echo "Daftar Informasi Kemahasiswaan";
                                             $kode = 2;
-                                        }else{
-
+                                        }else if($modul == 'artikel'){
+                                            echo 'Daftar Artikel';
+                                            $kode = 5;
+                                        }
+                                        else{
+                                            
                                         }
                                     ?>
                                 </h4>

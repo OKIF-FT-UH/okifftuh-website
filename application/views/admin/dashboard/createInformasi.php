@@ -15,9 +15,13 @@
                                     $kode = $this->uri->segment(3);
                                     if($kode == '1'){
                                         echo "Tambah Kegiatan Himpunan";
-                                     }else if($kode == '2'){
+                                    }
+                                    else if($kode == '2'){
                                         echo "Tambah Informasi Kemahasiswaan";
-                                     }
+                                    }
+                                    else if($kode == '5'){
+                                        echo 'Tambah Artikel';
+                                    }
 
                                     ?>
                                     

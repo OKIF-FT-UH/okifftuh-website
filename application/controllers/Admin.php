@@ -85,8 +85,11 @@ class Admin extends CI_Controller {
     // Begin Artikel
 
     public function artikel(){
+        $where = array('id_kategori_informasi' => 5);
         $data = array(
-            'isi' => 'admin/dashboard/isi', 
+            'title'     => 'Daftar Artikel', 
+            'isi'       => 'admin/dashboard/Informasi',
+            'data'      => $this->ModelAdmin->requestInformasi($where),
         );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
