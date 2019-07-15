@@ -17,12 +17,20 @@
                                         }else if($modul == 'kemahasiswaan'){
                                             echo "Daftar Informasi Kemahasiswaan";
                                             $kode = 2;
+<<<<<<< HEAD
                                         }else if($modul == 'artikel'){
                                             echo 'Daftar Artikel';
                                             $kode = 5;
                                         }
                                         else{
                                             
+=======
+                                        }else if($modul == 'beasiswa'){
+                                            echo "Daftar Informasi Beasiswa";
+                                            $kode = 3; 
+                                        }else{
+
+>>>>>>> f681f92875e858bbc7ef8abfb3e4e5f1a8dd2102
                                         }
                                     ?>
                                 </h4>
@@ -36,7 +44,7 @@
                                     ?>
                                 </h6>
 
-                                <button type="button" onclick="window.location.href='<?= base_url("admin/createInformation/".$kode) ?>'" class="btn mb-1 btn-success">Tambah <span class="btn-icon-right"><i class="fa fa-check"></i></span>
+                                <button type="button" onclick="window.location.href='<?= base_url("admin/createInformation/".$kode) ?>'" class="btn mb-1 btn-success">Tambah <span class="btn-icon-right"><i class="fa fa-plus-square"></i></span>
                                 </button>
 
                                 <div class="table-responsive" style="margin-top: -20px;">

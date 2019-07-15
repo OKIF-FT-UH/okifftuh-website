@@ -18,10 +18,16 @@
                                     }
                                     else if($kode == '2'){
                                         echo "Tambah Informasi Kemahasiswaan";
+<<<<<<< HEAD
                                     }
                                     else if($kode == '5'){
                                         echo 'Tambah Artikel';
                                     }
+=======
+                                     }else if ($kode == '3'){
+                                        echo "Tambah Informasi Beasiswa";
+                                     }
+>>>>>>> f681f92875e858bbc7ef8abfb3e4e5f1a8dd2102
 
                                     ?>
                                     
