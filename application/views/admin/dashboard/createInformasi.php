@@ -17,6 +17,8 @@
                                         echo "Tambah Kegiatan Himpunan";
                                      }else if($kode == '2'){
                                         echo "Tambah Informasi Kemahasiswaan";
+                                     }else if ($kode == '3'){
+                                        echo "Tambah Informasi Beasiswa";
                                      }
 
                                     ?>

@@ -17,6 +17,9 @@
                                         }else if($modul == 'kemahasiswaan'){
                                             echo "Daftar Informasi Kemahasiswaan";
                                             $kode = 2;
+                                        }else if($modul == 'beasiswa'){
+                                            echo "Daftar Informasi Beasiswa";
+                                            $kode = 3; 
                                         }else{
 
                                         }
@@ -32,7 +35,7 @@
                                     ?>
                                 </h6>
 
-                                <button type="button" onclick="window.location.href='<?= base_url("admin/createInformation/".$kode) ?>'" class="btn mb-1 btn-success">Tambah <span class="btn-icon-right"><i class="fa fa-check"></i></span>
+                                <button type="button" onclick="window.location.href='<?= base_url("admin/createInformation/".$kode) ?>'" class="btn mb-1 btn-success">Tambah <span class="btn-icon-right"><i class="fa fa-plus-square"></i></span>
                                 </button>
 
                                 <div class="table-responsive" style="margin-top: -20px;">
