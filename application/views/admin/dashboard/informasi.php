@@ -17,12 +17,27 @@
                                         }else if($modul == 'kemahasiswaan'){
                                             echo "Daftar Informasi Kemahasiswaan";
                                             $kode = 2;
+<<<<<<< HEAD
+                                        }else if($modul == 'artikel'){
+                                            echo 'Daftar Artikel';
+                                            $kode = 5;
+                                        }
+                                        else{
+                                            
+=======
                                         }else if($modul == 'beasiswa'){
                                             echo "Daftar Informasi Beasiswa";
+<<<<<<< HEAD
                                             $kode = 3;
                                         }else if($modul == 'prestasi'){
                                             echo "Daftar Informasi Prestasi";
                                             $kode = 4;
+=======
+                                            $kode = 3; 
+                                        }else{
+
+>>>>>>> f681f92875e858bbc7ef8abfb3e4e5f1a8dd2102
+>>>>>>> b823a682909f157ddd7d85af7f923fbd8a8be788
                                         }
                                     ?>
                                 </h4>

@@ -15,13 +15,26 @@
                                     $kode = $this->uri->segment(3);
                                     if($kode == '1'){
                                         echo "Tambah Kegiatan Himpunan";
-                                     }else if($kode == '2'){
+                                    }
+                                    else if($kode == '2'){
                                         echo "Tambah Informasi Kemahasiswaan";
+<<<<<<< HEAD
                                      }else if($kode == '3'){
                                          echo "Tambah Informasi Beasiswa";
                                      }else if($kode == '4'){
                                          echo "Tambah Informasi Prestasi";
+=======
+<<<<<<< HEAD
+                                    }
+                                    else if($kode == '5'){
+                                        echo 'Tambah Artikel';
+                                    }
+=======
+                                     }else if ($kode == '3'){
+                                        echo "Tambah Informasi Beasiswa";
+>>>>>>> b823a682909f157ddd7d85af7f923fbd8a8be788
                                      }
+>>>>>>> f681f92875e858bbc7ef8abfb3e4e5f1a8dd2102
 
                                     ?>
                                     
