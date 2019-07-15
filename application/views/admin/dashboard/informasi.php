@@ -17,15 +17,15 @@
                                         }else if($modul == 'kemahasiswaan'){
                                             echo "Daftar Informasi Kemahasiswaan";
                                             $kode = 2;
-                                        }else if($modul == 'artikel'){
-                                            echo 'Daftar Artikel';
-                                            $kode = 5;
                                         }else if($modul == 'beasiswa'){
                                             echo "Daftar Informasi Beasiswa";
                                             $kode = 3;
                                         }else if($modul == 'prestasi'){
                                             echo "Daftar Informasi Prestasi";
                                             $kode = 4;
+                                        }else if($modul == 'artikel'){
+                                            echo 'Daftar Artikel';
+                                            $kode = 5;
                                         }
                                     ?>
                                 </h4>
