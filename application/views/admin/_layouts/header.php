@@ -13,7 +13,7 @@
     <?php
 
     $modul = $this->uri->segment(2);
-    if($modul == 'createInformation'){
+    if($modul == 'createInformation' || $modul == 'editInformation'){
     	echo '
 			<script type="text/javascript" src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 

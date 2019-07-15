@@ -123,6 +123,18 @@ class Admin extends CI_Controller {
 
     //END Create Information
 
+    //Begin Edit Information
+         public function editInformation($kode, $id_informasi){
+            $where = array('id_informasi' => $id_informasi);
+            $data = array(
+                'title'         => 'Edit Informasi',
+                'dataInformasi' => $this->Crud->gw('informasi', $where),
+                'isi'           => 'admin/dashboard/createInformasi', 
+            );
+            $this->load->view('admin/_layouts/wrapper', $data);
+        }
+    //END Edit Information
+
     //Begin Do Create Information
 
     public function doAddInformation($kode){
