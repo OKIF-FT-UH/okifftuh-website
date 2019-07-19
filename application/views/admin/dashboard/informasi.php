@@ -69,7 +69,7 @@
                                                 <td style="vertical-align: middle;text-align: center;">
                                                     <button type="button" class="btn mb-1 btn-primary" onclick="window.location.href='<?= base_url("admin/editInformation/".$kode.'/'.$get->id_informasi) ?>'"><i class="fa fa-pencil"></i>
                                                     </button>
-                                                    <button type="button" class="btn mb-1 btn-danger"><i class="fa fa-trash"></i>
+                                                    <button type="button" class="btn mb-1 btn-danger" onclick="window.location.href='<?= base_url("admin/doDeleteInformation/".$kode.'/'.$get->id_informasi) ?>'"><i class="fa fa-trash"></i>
                                                     </button>
                                                 </td>
                                             </tr>

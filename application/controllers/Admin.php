@@ -307,7 +307,32 @@ class Admin extends CI_Controller {
             }
         }
     }
-    //END DO Update Information
+    //END Do Update Information
+
+    //Begin Do Delete Information
+    public function doDeleteInformation($kode, $id_informasi){
+        $where = array('id_informasi' => $id_informasi);
+        $this->Crud->d('informasi', $where);
+        $this->session->set_flashdata('info', 'Informasi Sukses Dihapus');
+
+        if($kode == '1'){
+            redirect('admin/himpunan');
+        }else if($kode == '2'){
+            redirect('admin/kemahasiswaan');
+        }else if($kode == '3'){
+            redirect('admin/beasiswa');
+        }else if($kode == '4'){
+            redirect('admin/prestasi');
+        }else if($kode == '5'){
+            redirect('admin/artikel');
+        }else if($kode == '6'){
+            redirect('admin/lomba');
+        }else{
+            redirect('admin');
+        }
+
+    }
+    //END Do Delete Information
 
     //End Informasi
 
