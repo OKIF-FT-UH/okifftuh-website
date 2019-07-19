@@ -81,7 +81,7 @@ class Admin extends CI_Controller {
         $data = array(
             'title' => 'Daftar Informasi Prestasi',
             'isi' => 'admin/dashboard/Informasi',
-            'data' => $this -> ModelAdmin -> requestInformasi($where),
+            'data' => $this ->ModelAdmin->requestInformasi($where),
         );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
@@ -228,27 +228,7 @@ class Admin extends CI_Controller {
         $input = $this->input->post(NULL, FALSE);
         $filenya = $_FILES['userfile']['name'];
 
-        
-        if($filenya = ''){
-            $this->session->set_flashdata('info', 'File Tidak Terpilih');
-            
-            if($kode == '1'){
-                redirect('admin/himpunan');
-            }else if($kode == '2'){
-                redirect('admin/kemahasiswaan');
-            }else if($kode == '3'){
-                redirect('admin/beasiswa');
-            }else if($kode == '4'){
-                redirect('admin/prestasi');
-            }else if($kode == '5'){
-                redirect('admin/artikel');
-            }else if($kode == '6'){
-                redirect('admin/lomba');
-            }else{
-                redirect('admin');
-            }
-
-        }else{
+        if($filenya != ''){
             if($kode == '1'){
                 $config['upload_path'] = './assets/admin/img/himpunan';
             }else if($kode == '2'){
@@ -275,6 +255,9 @@ class Admin extends CI_Controller {
             }else{
                 $filenya =  $this->upload->data('file_name');
             }
+        }else{
+            $filenya =  $this->input->post('foto_lama');
+        }
 
             $today = date('Y-m-d H:i:s');
 
@@ -306,7 +289,6 @@ class Admin extends CI_Controller {
                 redirect('admin');
             }
         }
-    }
     //END Do Update Information
 
     //Begin Do Delete Information

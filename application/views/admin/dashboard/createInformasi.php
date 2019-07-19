@@ -89,13 +89,16 @@ if($modul == 'editInformation'){
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Cover</label>
-                                                <input type="file" name="userfile" maxlength="40" class="form-control" required>
+                                                <input type="file" name="userfile" maxlength="40" class="form-control" <?php if($modul=='createInformation'){echo 'required';} ?> >
                                                 <div style="font-size: 10px">File hanya JPG dan PNG dengan ukuran Maks. 2048 Kb</div>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                         <input type="submit" class="btn mb-1 btn-success col-md-12" value="<?php echo $tombol ?>">
                                         </div>
+                                        
+                                        <input type="hidden"  id="foto_lama"  name="foto_lama"  value="<?php echo $foto ?>">
+                                        
                                     </form>
                                  </div>   
                                 
