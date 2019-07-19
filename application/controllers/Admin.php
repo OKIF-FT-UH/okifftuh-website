@@ -138,7 +138,7 @@ class Admin extends CI_Controller {
     //Begin Do Create Information
 
     public function doAddInformation($kode){
-        $input = $this->input->post(NULL, TRUE);
+        $input = $this->input->post(NULL, FALSE);
         $filenya = $_FILES['userfile']['name'];
 
         if($filenya = ''){
