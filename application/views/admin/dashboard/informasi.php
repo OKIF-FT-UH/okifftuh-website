@@ -33,7 +33,7 @@
                                     ?>
                                 </h4>
 
-                                <h6 style="color: yellow;">
+                                <h6 style="color: red;">
                                     <?php
                                         $info = $this->session->flashdata('info');
                                         if(!empty($info)){
