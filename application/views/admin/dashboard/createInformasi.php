@@ -12,6 +12,7 @@ $penulis = '';
 $konten = '';
 $foto = '';
 $tombol = 'Simpan';
+$folder = '';
 
 
 if($modul == 'editInformation'){
@@ -23,10 +24,24 @@ if($modul == 'editInformation'){
         $konten = $get->isi_informasi;
         $foto = $get->foto_informasi;
         $tombol = 'Update';
-
     }
+    if($kode == '1'){
+        $folder = 'himpunan';
+    }else if($kode == '2'){
+        $folder = 'kemahasiswaan';
+    }else if($kode == '3'){
+        $folder = 'beasiswa';
+    }else if($kode = '4'){
+        $folder = 'prestasi';
+    }else if($kode == '5'){
+        $folder = 'artikel';
+    }else if($kode == '6'){
+        $folder = 'lomba';
+    }
+
 }else if($modul == 'createInformation'){
     $aksi = site_url('admin/doAddInformation/'.$kode);
+    $tombol = 'Simpan';
 }
 
 ?>
@@ -91,13 +106,21 @@ if($modul == 'editInformation'){
                                                 <label>Cover</label>
                                                 <input type="file" name="userfile" maxlength="40" class="form-control" <?php if($modul=='createInformation'){echo 'required';} ?> >
                                                 <div style="font-size: 10px">File hanya JPG dan PNG dengan ukuran Maks. 2048 Kb</div>
+                                                <?php if($modul == 'editInformation'){ ?>
+                                                    <img src="<?= base_url('assets/admin/img/'.$folder.'/'.$foto) ?>" class="img-responsive" style="max-height: 240px;" > 
+                                                <?php } ?>    
                                             </div>
+
+                                            <div class="form-group col-md-4">
+                                                <?php if($modul == 'editInformation'){ ?>
+                                                    <input type="hidden" readonly name="foto_lama" value="<?= $foto ?>">
+                                                <?php } ?>
+                                            </div>
+
                                         </div>
                                         <div class="form-row">
-                                        <input type="submit" class="btn mb-1 btn-success col-md-12" value="<?php echo $tombol ?>">
+                                            <input type="submit" class="btn mb-1 btn-success col-md-12" value="<?php echo $tombol ?>">
                                         </div>
-                                        
-                                        <input type="hidden"  id="foto_lama"  name="foto_lama"  value="<?php echo $foto ?>">
                                         
                                     </form>
                                  </div>   
