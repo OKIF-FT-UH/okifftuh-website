@@ -12,7 +12,6 @@ $penulis = '';
 $konten = '';
 $foto = '';
 $tombol = 'Simpan';
-$folder = '';
 
 
 if($modul == 'editInformation'){
@@ -31,7 +30,7 @@ if($modul == 'editInformation'){
         $folder = 'kemahasiswaan';
     }else if($kode == '3'){
         $folder = 'beasiswa';
-    }else if($kode = '4'){
+    }else if($kode == '4'){
         $folder = 'prestasi';
     }else if($kode == '5'){
         $folder = 'artikel';
@@ -66,19 +65,23 @@ if($modul == 'editInformation'){
                                                  echo "Tambah Informasi Prestasi";
                                             }else if($kode == '5'){
                                                 echo 'Tambah Artikel';
+                                            }else if($kode == '6'){
+                                                echo "Tambah Informasi Lomba";
                                             }
                                     }else if($modul == 'editInformation'){
-                                        if($kode == '1'){
-                                                echo "Edit Kegiatan Himpunan";
-                                            }else if($kode == '2'){
-                                                echo "Edit Informasi Kemahasiswaan";
-                                            }else if($kode == '3'){
-                                                 echo "Edit Informasi Beasiswa";
-                                            }else if($kode == '4'){
-                                                 echo "Edit Informasi Prestasi";
-                                            }else if($kode == '5'){
-                                                echo 'Edit Artikel';
-                                            }
+                                       if($kode === '1'){
+                                            echo "Edit Kegiatan Himpunan";
+                                       }else if($kode == '2'){
+                                            echo "Edit Informasi Kemahasiswaan";
+                                       }else if($kode == '3'){
+                                            echo "Edit Informasi Beasiswa";
+                                       }else if($kode == '4'){
+                                            echo "Edit Informasi Prestasi";
+                                       }else if($kode == '5'){
+                                            echo "Edit Artikel";
+                                       }else if($kode == '6'){
+                                            echo "Edit Informasi Lomba";
+                                       }
                                     }
                                     
                                     ?>

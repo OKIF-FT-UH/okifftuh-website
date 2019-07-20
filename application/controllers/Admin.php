@@ -81,7 +81,7 @@ class Admin extends CI_Controller {
         $data = array(
             'title' => 'Daftar Informasi Prestasi',
             'isi' => 'admin/dashboard/Informasi',
-            'data' => $this ->ModelAdmin->requestInformasi($where),
+            'data' => $this->ModelAdmin->requestInformasi($where),
         );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
@@ -95,7 +95,7 @@ class Admin extends CI_Controller {
         $data = array(
             'title'     => 'Daftar Artikel', 
             'isi'       => 'admin/dashboard/Informasi',
-            'data'      => $this->ModelAdmin->requestInformasi($where),
+            'data'      => $this->ModelAdmin->requestInformasi($where), 
         );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
@@ -319,7 +319,28 @@ class Admin extends CI_Controller {
 
     //Begin Do Delete Information
     public function doDeleteInformation($kode, $id_informasi){
+        $input = $this->input->post(NULL, TRUE);
         $where = array('id_informasi' => $id_informasi);
+
+                
+        //Hapus Foro dan Deteksi Path
+                if($kode == '1'){
+                    $alamat = './assets/admin/img/himpunan';
+                }else if($kode == '2'){
+                    $alamat = './assets/admin/img/kemahasiswaan';
+                }else if($kode == '3'){
+                    $alamat = './assets/admin/img/beasiswa';
+                }else if($kode == '4'){
+                    $alamat = './assets/admin/img/prestasi';
+                }else if($kode == '5'){
+                    $alamat = './assets/admin/img/artikel';
+                }else if($kode == '6'){
+                    $alamat= './assets/admin/img/lomba';
+                }
+        unlink($alamat.'/'.$input['foto_informasi']);
+
+
+        //Hapus di Tabel Database
         $this->Crud->d('informasi', $where);
         $this->session->set_flashdata('info', 'Informasi Sukses Dihapus');
 
@@ -409,6 +430,12 @@ class Admin extends CI_Controller {
     }
     //End Sejarah Pengurus
     //===End Modul Pengurus==
+
+
+    // public function tes($kode, $id_informasi){
+    //     $input = $this->input->post(NULL, TRUE);
+    //     echo $kode.' '.$id_informasi.' '.$input['foto_informasi'];
+    // }
 
 }
 ?>

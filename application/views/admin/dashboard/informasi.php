@@ -1,4 +1,4 @@
-<!--**********************************
+<!-- **********************************
             Content body start
         ***********************************-->
         <div class="content-body">
@@ -24,8 +24,11 @@
                                             echo "Daftar Informasi Prestasi";
                                             $kode = 4;
                                         }else if($modul == 'artikel'){
-                                            echo 'Daftar Artikel';
+                                            echo 'Daftar Informasi Artikel';
                                             $kode = 5;
+                                        }else if($modul == 'lomba'){
+                                            echo "Daftar Informasi Lomba";
+                                            $kode = 6;
                                         }
                                     ?>
                                 </h4>
@@ -69,7 +72,7 @@
                                                 <td style="vertical-align: middle;text-align: center;">
                                                     <button type="button" class="btn mb-1 btn-primary" onclick="window.location.href='<?= base_url("admin/editInformation/".$kode.'/'.$get->id_informasi) ?>'"><i class="fa fa-pencil"></i>
                                                     </button>
-                                                    <button type="button" class="btn mb-1 btn-danger" onclick="window.location.href='<?= base_url("admin/doDeleteInformation/".$kode.'/'.$get->id_informasi) ?>'"><i class="fa fa-trash"></i>
+                                                    <button type="button" class="btn mb-1 btn-danger" data-toggle="modal" data-target="#modal_hapus<?= $get->id_informasi ?>" ><i class="fa fa-trash"></i>
                                                     </button>
                                                 </td>
                                             </tr>
@@ -83,8 +86,48 @@
                 </div>
             </div>
             <!-- #/ container -->
+        </div> 
+
+
+       <!-- Modal Hapus-->
+
+<?php
+   foreach($data as $get){
+    $id = $get->id_informasi;
+?>
+
+<div class="modal fade" id="modal_hapus<?= $id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel">Hapus Data</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="<?= base_url('admin/doDeleteInformation/'.$kode.'/'.$id) ?>">
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" id="recipient-name" name="foto_informasi" value="<?= $get->foto_informasi ?>">
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                    </div> -->
+                
+                <h5>
+                    Apakah Anda Yakin Menghapus Data Ini ?
+                </h5>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-danger">Hapus</button>
+            </div>
+
+        </form>
+
         </div>
-        <!--**********************************
-            Content body end
-        ***********************************-->
-       
+    </div>                                     
+</div>
+
+<?php } ?>
+
+<!-- End Modal Hapus
