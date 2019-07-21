@@ -372,11 +372,60 @@ class Admin extends CI_Controller {
     //Begin Daftar Prestasi
     public function daftarPrestasi(){
         $data = array(
-            'isi' => 'admin/dashboard/isi', 
+            'title' => 'Daftar Prestasi Mahasiswa',
+            'isi' => 'admin/dashboard/daftarPrestasi',
+            'data' => $this->Crud->ga('prestasi'),
         );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
     //End Prestasi
+
+    //Begin add Daftar Prestasi
+
+    public function addDaftarPrestasi(){
+        $input = $this->input->post( NULL, TRUE);
+        $data =  array(
+            'nama_prestasi' => $input['nama'],
+            'prestasi' => $input['prestasi'],
+            'kegiatan_prestasi' => $input['kegiatan'],
+            'tahun_prestasi' => $input['tahun'],
+            );
+        $this->db->insert('prestasi', $data);
+        $this->session->set_flashdata('info','Data sukses ditambahkan');
+        redirect('admin/daftarPrestasi');
+    }
+
+    //End add Daftar Prestasi
+
+    //Begin update Daftar Prestasi
+
+    public function updateDaftarPrestasi($id){
+        $where = array('id_prestasi' => $id);
+        $load = $this->input->post(NULL, TRUE);
+        $data = array(
+            'nama_prestasi' => $load['nama'],
+            'prestasi' => $load['prestasi'],
+            'kegiatan_prestasi' => $load['kegiatan'],
+            'tahun_prestasi' => $load['tahun'],
+            );
+        $this->Crud->u('prestasi', $data, $where);
+        $this->session->set_flashdata('info','Data Telah di Update');
+        redirect('admin/daftarPrestasi');
+    }
+
+    //End update Daftar Prestasi
+
+    //Begin delete Daftar Prestasi
+
+    public function deleteDaftarPrestasi($id){
+        $where = array(
+            'id_prestasi' => $id,
+        );
+        $this->Crud->d('prestasi', $where);
+        $this->session->set_flashdata('info','Data telah dihapus');
+        redirect('admin/daftarPrestasi');
+    }
+    //End delete Prestasi
 
     //Begin Galeri
     public function galeri(){
