@@ -323,7 +323,7 @@ class Admin extends CI_Controller {
     //Begin Do Delete Information
     public function doDeleteInformation($kode, $id_informasi){
         $where = array('id_informasi' => $id_informasi);
-        $this->Crud->fga('informasi', $where);
+        $this->Crud->d('informasi', $where);
         $this->session->set_flashdata('info', 'Informasi Sukses Dihapus');
 
         if($kode == '1'){
