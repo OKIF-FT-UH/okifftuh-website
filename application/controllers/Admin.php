@@ -395,6 +395,7 @@ public function deleteDaftarPrestasi($id){
     redirect('admin/daftarPrestasi');
 }
 //end prestasi
+
    //Begin Galeri
    public function galeri(){
     $data = array(
@@ -553,7 +554,7 @@ public function deleteDaftarPrestasi($id){
         }else{
             if($tipe_pengurus == '1'){
                 $config['upload_path'] = './assets/admin/img/pengurus/dmmif';
-            }else if($kode == '2'){
+            }else if($tipe_pengurus == '2'){
                 $config['upload_path'] = './assets/admin/img/pengurus/hmif';
             }
         }
@@ -592,7 +593,7 @@ public function deleteDaftarPrestasi($id){
 
         if($tipe_pengurus == '1'){
             redirect('admin/pengurusDmmif');
-        }else if($kode == '2'){
+        }else if($tipe_pengurus == '2'){
             redirect('admin/pengurusHmif');
         }else{
             redirect('admin');
@@ -689,7 +690,7 @@ public function deleteDaftarPrestasi($id){
                 if(!$this->upload->do_upload('userfile')){
                     //die();
                     $this->session->set_flashdata('info', 'Upload File Gagal, Periksa Ukuran dan Ekstensi');
-                    redirect($alamat);
+                    redirect('admin/sejarahPengurus');
                 }else{
                     $filenya =  $this->upload->data('file_name');
                 }
