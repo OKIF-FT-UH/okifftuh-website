@@ -64,7 +64,7 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Input Foto ke Galeri</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Tambah Foto</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
@@ -80,7 +80,7 @@
                                                     <textarea class="form-control" id="message-text" name="caption_galeri" required></textarea>
                                                 </div>
                                                 <div class="modal-footer">
-                                                <button type="submit" class="btn btn-primary">Add Photo</button>
+                                                <button type="submit" class="btn btn-primary">Tambah Foto</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -129,7 +129,7 @@ $id = $get->id_galeri;
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Input Foto ke Galeri</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel"> Edit Foto</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>

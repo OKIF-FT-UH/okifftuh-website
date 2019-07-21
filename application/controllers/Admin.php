@@ -348,72 +348,53 @@ class Admin extends CI_Controller {
     //End Informasi
 
 
-    //Begin Daftar Prestasi
-    public function daftarPrestasi(){
-        $data = array(
-            'title' => 'Daftar Prestasi Mahasiswa',
-            'isi' => 'admin/dashboard/daftarPrestasi',
-            'data' => $this->Crud->ga('prestasi'),
+    //start prestasi
+public function daftarPrestasi(){
+    $data = array(
+        'title' => 'Daftar Prestasi Mahasiswa',
+        'isi' => 'admin/dashboard/daftarPrestasi',
+        'data' => $this->Crud->ga('prestasi'),
+    );
+    $this->load->view('admin/_layouts/wrapper', $data);
+}
+
+
+public function addDaftarPrestasi(){
+    $input = $this->input->post( NULL, TRUE);
+    $data =  array(
+        'nama_prestasi' => $input['nama'],
+        'prestasi' => $input['prestasi'],
+        'kegiatan_prestasi' => $input['kegiatan'],
+        'tahun_prestasi' => $input['tahun'],
         );
-        $this->load->view('admin/_layouts/wrapper', $data);
-    }
-    //End Prestasi
+    $this->db->insert('prestasi', $data);
+    $this->session->set_flashdata('info','Data sukses ditambahkan');
+    redirect('admin/daftarPrestasi');
+}
 
-<<<<<<< HEAD
-    //Begin add Daftar Prestasi
-
-    public function addDaftarPrestasi(){
-        $input = $this->input->post( NULL, TRUE);
-        $data =  array(
-            'nama_prestasi' => $input['nama'],
-            'prestasi' => $input['prestasi'],
-            'kegiatan_prestasi' => $input['kegiatan'],
-            'tahun_prestasi' => $input['tahun'],
-            );
-        $this->db->insert('prestasi', $data);
-        $this->session->set_flashdata('info','Data sukses ditambahkan');
-        redirect('admin/daftarPrestasi');
-    }
-
-    //End add Daftar Prestasi
-
-    //Begin update Daftar Prestasi
-
-    public function updateDaftarPrestasi($id){
-        $where = array('id_prestasi' => $id);
-        $load = $this->input->post(NULL, TRUE);
-        $data = array(
-            'nama_prestasi' => $load['nama'],
-            'prestasi' => $load['prestasi'],
-            'kegiatan_prestasi' => $load['kegiatan'],
-            'tahun_prestasi' => $load['tahun'],
-            );
-        $this->Crud->u('prestasi', $data, $where);
-        $this->session->set_flashdata('info','Data Telah di Update');
-        redirect('admin/daftarPrestasi');
-    }
-
-    //End update Daftar Prestasi
-
-    //Begin delete Daftar Prestasi
-
-    public function deleteDaftarPrestasi($id){
-        $where = array(
-            'id_prestasi' => $id,
+public function updateDaftarPrestasi($id){
+    $where = array('id_prestasi' => $id);
+    $load = $this->input->post(NULL, TRUE);
+    $data = array(
+        'nama_prestasi' => $load['nama'],
+        'prestasi' => $load['prestasi'],
+        'kegiatan_prestasi' => $load['kegiatan'],
+        'tahun_prestasi' => $load['tahun'],
         );
-        $this->Crud->d('prestasi', $where);
-        $this->session->set_flashdata('info','Data telah dihapus');
-        redirect('admin/daftarPrestasi');
-    }
-    //End delete Prestasi
+    $this->Crud->u('prestasi', $data, $where);
+    $this->session->set_flashdata('info','Data Telah di Update');
+    redirect('admin/daftarPrestasi');
+}
 
-    //Begin Galeri
-    public function galeri(){
-        $data = array(
-            'isi' => 'admin/dashboard/isi', 
-        );
-        $this->load->view('admin/_layouts/wrapper', $data);
-=======
+public function deleteDaftarPrestasi($id){
+    $where = array(
+        'id_prestasi' => $id,
+    );
+    $this->Crud->d('prestasi', $where);
+    $this->session->set_flashdata('info','Data telah dihapus');
+    redirect('admin/daftarPrestasi');
+}
+//end prestasi
    //Begin Galeri
    public function galeri(){
     $data = array(
@@ -527,7 +508,6 @@ class Admin extends CI_Controller {
             redirect('admin/galeri');
         }
 
->>>>>>> dc1d67e73d3591cf91854cbe87f9c9c19163d352
     }
     //End Galeri
 

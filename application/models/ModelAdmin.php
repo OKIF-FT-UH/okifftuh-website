@@ -36,8 +36,6 @@ class ModelAdmin extends CI_Model {
         return $query->result();
     }
 
-<<<<<<< HEAD
-=======
     public function requestGallery(){
         $this->db->select('*');
         $this->db->from('galeri');
@@ -45,7 +43,6 @@ class ModelAdmin extends CI_Model {
 
         return $query->result();
     }
->>>>>>> dc1d67e73d3591cf91854cbe87f9c9c19163d352
 
     // public function data_customer($where){
     //     $this->db->select( '*' );
