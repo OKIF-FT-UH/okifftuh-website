@@ -106,9 +106,9 @@ class Admin extends CI_Controller {
     public function lomba(){
         $where = array('id_kategori_informasi' => 6);
         $data = array(
-            'title'     => 'Daftar Lomba', 
-            'isi'       => 'admin/dashboard/Informasi',
-            'data'      => $this->ModelAdmin->requestInformasi($where),
+            'title' => 'Daftar Informasi Lomba',
+            'isi' => 'admin/dashboard/Informasi',
+            'data' => $this->ModelAdmin->requestInformasi($where), 
         );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
@@ -250,8 +250,8 @@ class Admin extends CI_Controller {
             $filenya = $_FILES['userfile']['name'];
 
             if($filenya = ''){
-                $this->session->set_flashdata('info', 'Gagal Menambahkan Produk');
-                redirect('admin/produk');
+                $this->session->set_flashdata('info', 'Gagal Menambahkan Informasi');
+                redirect($alamat);
             }else{
 
                
@@ -298,7 +298,7 @@ class Admin extends CI_Controller {
 
                 //$this->Crud->u('barang', $items, $where);
                 $this->db->update('informasi', $items, $where);
-                $this->session->set_flashdata('info', 'Produk Sukses Diupdate');
+                $this->session->set_flashdata('info', 'Informasi Sukses Diupdate');
                 redirect($alamat);
 
             }
