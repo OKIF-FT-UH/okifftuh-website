@@ -427,10 +427,131 @@ class Admin extends CI_Controller {
     //Begin Sejarah Pengurus
     public function sejarahPengurus(){
          $data = array(
-            'isi' => 'admin/dashboard/isi', 
+            'title'     => 'Daftar Sejarah Pengurus',
+            'isi'       => 'admin/dashboard/sejarahPengurus',
+            'data'      => $this->Crud->ga('sejarah_pengurus'), 
         );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
+
+    //Begin Do Create Sejarah
+     public function doCreateSejarah(){
+        $input = $this->input->post(NULL, FALSE);
+        $filenya = $_FILES['userfile']['name'];
+
+        if($filenya = ''){
+            $this->session->set_flashdata('info', 'File Tidak Terpilih');
+            redirect('admin/sejarahPengurus');
+
+        }else{
+            $config['upload_path'] = './assets/admin/img/sejarahPengurus';
+            $config['allowed_types'] = 'jpg|png|jpeg';
+            $config['max_size'] = '0';
+
+            $this->load->library('upload', $config);
+
+            if(!$this->upload->do_upload('userfile')){
+                // die();
+                $this->session->set_flashdata('info', 'Upload File Gagal, Periksa Ukuran dan Ekstensi');
+                redirect('admin/sejarahPengurus/');
+            }else{
+                $filenya =  $this->upload->data('file_name');
+            }
+
+            $data = array(
+                'nama_pengurus'         => $input['nama_pengurus'],
+                'jabatan_pengurus'      => $input['jabatan_pengurus'],
+                'periode_pengurus'      => $input['periode_pengurus'],
+                'daftar_pengurus'       => $input['daftar_pengurus'],
+                'foto_pengurus'        => $filenya,
+            );
+
+            $this->db->insert('sejarah_pengurus', $data);
+            $this->session->set_flashdata('info', 'Data Sukses Ditambahkan');
+
+            redirect('admin/sejarahPengurus');
+        }
+    }
+    //END Do create Sejarah
+
+    //Begin Do Edit Sejarah
+    public function doEditSejarah($id_pengurus){
+    $where = array('id_pengurus' => $id_pengurus);
+    $input = $this->input->post(NULL, FALSE);
+
+    if(!empty($_FILES['userfile']['tmp_name'])){
+            
+            $filenya = $_FILES['userfile']['name'];
+
+            if($filenya = ''){
+                $this->session->set_flashdata('info', 'Gagal Menambahkan Informasi');
+                redirect('admin/sejarahPengurus');
+            }else{
+
+                $config['upload_path'] = './assets/admin/img/sejarahPengurus';
+                $config['allowed_types'] = 'jpg|png|jpeg';
+                $config['max_size'] = '';
+                
+                $this->load->library('upload', $config);
+                if($config['max_size'] >= 2048){
+                    $this->session->set_flashdata('info', 'File Melewati Batas Ukuran');
+                    redirect('admin/sejarahPengurus');
+                }
+                //unlink(base_url('assets/img/produk/'.$input['judul_foto']));
+                unlink($config['upload_path'].'/'.$input['foto_lama']);
+
+                if(!$this->upload->do_upload('userfile')){
+                    //die();
+                    $this->session->set_flashdata('info', 'Upload File Gagal, Periksa Ukuran dan Ekstensi');
+                    redirect($alamat);
+                }else{
+                    $filenya =  $this->upload->data('file_name');
+                }
+
+                $items = array(
+                    'nama_pengurus'             => $input['nama_pengurus'],
+                    'jabatan_pengurus'          => $input['jabatan_pengurus'],
+                    'periode_pengurus'          => $input['periode_pengurus'],
+                    'daftar_pengurus'           => $input['daftar_pengurus'],
+                    'foto_pengurus'            => $filenya,
+                );
+
+                //$this->Crud->u('barang', $items, $where);
+                $this->db->update('sejarah_pengurus', $items, $where);
+                $this->session->set_flashdata('info', 'Data Sukses Diupdate');
+                redirect('admin/sejarahPengurus');
+
+            }
+        }else{
+            $items = array(
+                'nama_pengurus'             => $input['nama_pengurus'],
+                'jabatan_pengurus'          => $input['jabatan_pengurus'],
+                'periode_pengurus'          => $input['periode_pengurus'],
+                'daftar_pengurus'           => $input['daftar_pengurus'],
+            );
+            $this->Crud->u('sejarah_pengurus', $items, $where);
+            $this->session->set_flashdata('info', 'Data Sukses Diupdate');
+            redirect('admin/sejarahPengurus');
+            }
+
+        }
+    //END Do Edit Sejarah
+        
+    //Begin Do Delete Sejarah
+    public function doDeleteSejarah($id){
+        $input = $this->input->post(NULL, TRUE);
+        $where = array('id_pengurus' => $id);
+
+        unlink('./assets/admin/img/sejarahPengurus/'.$input['foto_pengurus']);
+
+
+        //Hapus di Tabel Database
+        $this->Crud->d('sejarah_pengurus', $where);
+        $this->session->set_flashdata('info', 'Data Sukses Dihapus');
+
+        redirect('admin/sejarahPengurus');
+    }
+    //End Do Delete Sejarah
     //End Sejarah Pengurus
     //===End Modul Pengurus==
 
