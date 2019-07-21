@@ -162,7 +162,7 @@
                     </div>
                      <div class="form-group">
                         <label class="col-form-label">Foto Pengurus:</label>
-                        <input type="file" name="userfile" maxlength="40" class="form-control" required>
+                        <input type="file" name="userfile" maxlength="40" class="form-control">
                         <div style="font-size: 10px">File hanya JPG dan PNG dengan ukuran Maks. 2048 Kb</div>
                         <img src="<?= base_url('assets/admin/img/sejarahPengurus/'.$get->foto_pengurus) ?>" class="img-responsive" style="max-height: 240px; width:300px;" > 
                     </div>
