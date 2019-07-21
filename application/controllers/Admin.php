@@ -494,17 +494,79 @@ class Admin extends CI_Controller {
     //===Begin Modul Pengurus===
     //Begin DMMIF FT-UH
     public function pengurusDmmif(){
-         $data = array(
-            'isi' => 'admin/dashboard/isi', 
+        $data = array(
+            'title'     => 'Pengurus DMMIF FT-UH', 
+            'isi'       => 'admin/dashboard/pengurus',
         );
         $this->load->view('admin/_layouts/wrapper', $data);
+    }
+
+    public function doAddPengurus($tipe_pengurus){
+        $input = $this->input->post(NULL, FALSE);
+        $filenya = $_FILES['foto_pengurus']['name'];
+
+        if($filenya = ''){
+            $this->session->set_flashdata('info', 'File Tidak Terpilih');
+                if($tipe_pengurus == '1'){
+                    redirect('admin/pengurusDmmif');  
+                }else if($tipe_pengurus == '2'){
+                    redirect('admin/pengurusHmif');
+                }
+        }else{
+            if($tipe_pengurus == '1'){
+                $config['upload_path'] = './assets/admin/img/pengurus/dmmif';
+            }else if($kode == '2'){
+                $config['upload_path'] = './assets/admin/img/pengurus/hmif';
+            }
+        }
+
+        $config['allowed_types'] = 'jpg|png|jpeg';
+        $config['max_size'] = '0';
+
+        $this->load->library('upload', $config);
+
+        if(!$this->upload->do_upload('foto_pengurus')){
+            // die();
+            $this->session->set_flashdata('info', 'Upload File Gagal, Periksa Ukuran dan Ekstensi');
+            if($tipe_pengurus == '1'){
+                    redirect('admin/pengurusDmmif');  
+                }else if($tipe_pengurus == '2'){
+                    redirect('admin/pengurusHmif');
+                }
+        }else{
+            $filenya =  $this->upload->data('file_name');
+        }
+
+
+        $data = array(
+            'nama_pengurus'         => $input['nama_pengurus'],
+            'jabatan_pengurus'      => $input['jabatan'],
+            'periode_pengurus'      => $input['periode'],
+            'facebook'              => $input['facebook'],
+            'twitter'               => $input['twitter'],
+            'instagram'             => $input['instagram'],
+            'foto_pengurus'         => $filenya,
+            'tipe_pengurus'         => $tipe_pengurus,
+        );
+
+        $this->db->insert('pengurus', $data);
+        $this->session->set_flashdata('info', 'Informasi Sukses Ditambahkan');
+
+        if($tipe_pengurus == '1'){
+            redirect('admin/pengurusDmmif');
+        }else if($kode == '2'){
+            redirect('admin/pengurusHmif');
+        }else{
+            redirect('admin');
+        }
     }
     //End DMMIF FT-UH
 
     //Begin HMIF FT-UH
     public function pengurusHmif(){
          $data = array(
-            'isi' => 'admin/dashboard/isi', 
+            'title'     => 'Pengurus HMIF FT-UH',
+            'isi'       => 'admin/dashboard/pengurus', 
         );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
