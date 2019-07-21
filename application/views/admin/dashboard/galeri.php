@@ -9,7 +9,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Gallery Table</h4>
+                                <h4 class="card-title">Daftar Galeri</h4>
                                 <?= $this->session->flashdata('info'); ?> </br>
                                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addModal" >Tambah <span class="btn-icon-right"><i class="fa fa-plus-square"></i></span>
                                 </button>
@@ -38,7 +38,7 @@
                                                 <td style="text-align: center;vertical-align: center;"><?= $get->caption_galeri ?></td>
                                                 <td style="text-align: center;vertical-align: left;"><?= $waktu ?></td>
                                                 <td style="text-align: center;vertical-align: center;">
-                                                    <button type="button" class="btn mb-1 btn-success" data-toggle="modal" data-target="#editModal<?= $get->id_galeri ?>"><i class="fa fa-pencil"></i>
+                                                    <button type="button" class="btn mb-1 btn-primary" data-toggle="modal" data-target="#editModal<?= $get->id_galeri ?>"><i class="fa fa-pencil"></i>
                                                     </button>
                                                     <button type="button" class="btn mb-1 btn-danger" data-toggle="modal" data-target="#basicModal<?= $get->id_galeri ?>"><i class="fa fa-trash"></i>
                                                     </button>
@@ -151,7 +151,7 @@ $id = $get->id_galeri;
                                                     <input class="form-control" id="message-text" name="caption_galeri" value="<?= $get->caption_galeri ?>"></input>
                                                 </div>
                                                 <div class="modal-footer">
-                                                <button type="submit" class="btn btn-primary">Add Photo</button>
+                                                <button type="submit" class="btn btn-primary">Edit</button>
                                                 </div>
                                             </form>
                                         </div>
