@@ -36,6 +36,14 @@ class ModelAdmin extends CI_Model {
         return $query->result();
     }
 
+    public function requestGallery(){
+        $this->db->select('*');
+        $this->db->from('galeri');
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
     // public function data_customer($where){
     //     $this->db->select( '*' );
     //     $this->db->from( 'estimasi' );
