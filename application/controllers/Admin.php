@@ -533,16 +533,32 @@ public function deleteDaftarPrestasi($id){
     //===Begin Modul Pengurus===
     //Begin DMMIF FT-UH
     public function pengurusDmmif(){
+        $where = array('tipe_pengurus' => 1);
         $data = array(
             'title'     => 'Pengurus DMMIF FT-UH', 
             'isi'       => 'admin/dashboard/pengurus',
+            'data'      => $this->ModelAdmin->requestPengurus($where),
         );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
+    //End DMMIF FT-UH
 
+    //Begin HMIF FT-UH
+    public function pengurusHmif(){
+        $where = array('tipe_pengurus' => 2);
+        $data = array(
+            'title'     => 'Pengurus HMIF FT-UH',
+            'isi'       => 'admin/dashboard/pengurus',
+            'data'      => $this->ModelAdmin->requestPengurus($where), 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+    //End HMIF FT-UH
+
+    //Begin Do Add Pengurus
     public function doAddPengurus($tipe_pengurus){
         $input = $this->input->post(NULL, FALSE);
-        $filenya = $_FILES['foto_pengurus']['name'];
+        $filenya = $_FILES['fotoPengurus']['name'];
 
         if($filenya = ''){
             $this->session->set_flashdata('info', 'File Tidak Terpilih');
@@ -564,7 +580,7 @@ public function deleteDaftarPrestasi($id){
 
         $this->load->library('upload', $config);
 
-        if(!$this->upload->do_upload('foto_pengurus')){
+        if(!$this->upload->do_upload('fotoPengurus')){
             // die();
             $this->session->set_flashdata('info', 'Upload File Gagal, Periksa Ukuran dan Ekstensi');
             if($tipe_pengurus == '1'){
@@ -599,17 +615,34 @@ public function deleteDaftarPrestasi($id){
             redirect('admin');
         }
     }
-    //End DMMIF FT-UH
+    //End Do Add Pengurus
 
-    //Begin HMIF FT-UH
-    public function pengurusHmif(){
-         $data = array(
-            'title'     => 'Pengurus HMIF FT-UH',
-            'isi'       => 'admin/dashboard/pengurus', 
-        );
-        $this->load->view('admin/_layouts/wrapper', $data);
+    //Begin Do Delete Pengurus
+    public function doDeletePengurus($tipe_pengurus ,$id){
+        $input = $this->input->post(NULL, TRUE);
+        $where = array('id_pengurus' => $id);
+
+        if($tipe_pengurus == '1'){
+            $folder = 'dmmif';
+        }else if($tipe_pengurus == '2'){
+            $folder = 'hmif';
+        }
+        unlink('./assets/admin/img/pengurus/'.$folder.'/'.$input['foto_pengurus']);
+
+        $this->Crud->d('pengurus', $where);
+        $this->session->set_flashdata('info', 'Data Sukses Dihapus');
+
+        if($tipe_pengurus == '1'){
+            redirect('admin/pengurusDmmif');  
+        }else if($tipe_pengurus == '2'){
+            redirect('admin/pengurusHmif');
+        }
     }
-    //End HMIF FT-UH
+    //End Do Delete Pengurus
+
+    //Begin Do Update Pengurus
+    
+    //End Do Update Pengurus
 
     //Begin Sejarah Pengurus
     public function sejarahPengurus(){

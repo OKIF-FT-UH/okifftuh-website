@@ -44,6 +44,15 @@ class ModelAdmin extends CI_Model {
         return $query->result();
     }
 
+    public function requestPengurus($tipe_pengurus){
+        $this->db->select('*');
+        $this->db->from('pengurus');
+        $this->db->where($tipe_pengurus);
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
     // public function data_customer($where){
     //     $this->db->select( '*' );
     //     $this->db->from( 'estimasi' );
