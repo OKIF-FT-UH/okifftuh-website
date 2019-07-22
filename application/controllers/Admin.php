@@ -530,7 +530,7 @@ public function deleteDaftarPrestasi($id){
     }
     //End Admin
 
-    //===Begin Modul Pengurus===
+    //================Begin Modul Pengurus================
     //Begin DMMIF FT-UH
     public function pengurusDmmif(){
         $where = array('tipe_pengurus' => 1);
@@ -641,7 +641,83 @@ public function deleteDaftarPrestasi($id){
     //End Do Delete Pengurus
 
     //Begin Do Update Pengurus
-    
+    public function doUpdatePengurus($tipe_pengurus ,$id){
+        $where = array('id_pengurus' => $id);
+        $input = $this->input->post(NULL, FALSE);
+
+
+        if($tipe_pengurus == '1'){
+            $alamat = 'admin/pengurusDmmif';
+        }else if($tipe_pengurus == '2'){
+            $alamat = 'admin/pengurusHmif';
+        }
+        
+        if(!empty($_FILES['fotoPengurus']['tmp_name'])){
+            
+            $filenya = $_FILES['fotoPengurus']['name'];
+
+            if($filenya = ''){
+                $this->session->set_flashdata('info', 'Gagal Menambahkan Informasi');
+                redirect($alamat);
+            }else{
+                if($tipe_pengurus == '1'){
+                    $config['upload_path'] = './assets/admin/img/pengurus/dmmif';
+                }else if($tipe_pengurus == '2'){
+                    $config['upload_path'] = './assets/admin/img/pengurus/hmif';
+                }
+
+
+                $config['allowed_types'] = 'jpg|png|jpeg';
+                $config['max_size'] = '';
+                
+                $this->load->library('upload', $config);
+                if($config['max_size'] >= 2048){
+                    $this->session->set_flashdata('info', 'File Melewati Batas Ukuran');
+                    redirect($alamat);
+                }
+                //unlink(base_url('assets/img/produk/'.$input['judul_foto']));
+                unlink($config['upload_path'].'/'.$input['foto_lama']);
+
+                if(!$this->upload->do_upload('fotoPengurus')){
+                    //die();
+                    $this->session->set_flashdata('info', 'Upload File Gagal, Periksa Ukuran dan Ekstensi');
+                    redirect($alamat);
+                }else{
+                    $filenya =  $this->upload->data('file_name');
+                }
+
+                $items = array(
+                    'nama_pengurus'         => $input['nama_pengurus'],
+                    'jabatan_pengurus'      => $input['jabatan'],
+                    'periode_pengurus'      => $input['periode'],
+                    'facebook'              => $input['facebook'],
+                    'twitter'               => $input['twitter'],
+                    'instagram'             => $input['instagram'],
+                    'foto_pengurus'         => $filenya,
+                    'tipe_pengurus'         => $tipe_pengurus,
+                );
+
+                //$this->Crud->u('barang', $items, $where);
+                $this->db->update('pengurus', $items, $where);
+                $this->session->set_flashdata('info', 'Informasi Sukses Diupdate');
+                redirect($alamat);
+
+            }
+        }else{
+            $items = array(
+                'nama_pengurus'         => $input['nama_pengurus'],
+                'jabatan_pengurus'      => $input['jabatan'],
+                'periode_pengurus'      => $input['periode'],
+                'facebook'              => $input['facebook'],
+                'twitter'               => $input['twitter'],
+                'instagram'             => $input['instagram'],
+                'tipe_pengurus'         => $tipe_pengurus,
+            );
+            $this->Crud->u('pengurus', $items, $where);
+            $this->session->set_flashdata('info', 'Infomasi Sukses Diupdate');
+            redirect($alamat);
+        }
+    }
     //End Do Update Pengurus
 
     //Begin Sejarah Pengurus
