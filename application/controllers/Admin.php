@@ -500,7 +500,6 @@ public function deleteDaftarPrestasi($id){
         }else{
             $today = date('Y-m-d H:i:s');
             $items = array(
-                'foto_galeri'        => $filenya,
                 'caption_galeri'     => $input['caption_galeri'],
                 'tanggal_galeri'     => $today,
             );

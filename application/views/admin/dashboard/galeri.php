@@ -80,7 +80,7 @@
                                                     <textarea class="form-control" id="message-text" name="caption_galeri" required></textarea>
                                                 </div>
                                                 <div class="modal-footer">
-                                                <button type="submit" class="btn btn-primary">Tambah Foto</button>
+                                                <button type="submit" class="btn btn-success">Tambah Foto</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -103,7 +103,6 @@ $id = $get->id_galeri;
                 </button>
             </div>
             <form method="post" action="<?= base_url('admin/deleteGaleri/'.$id) ?>">
-            <?= $get->tipe_pengurus ?>
             <div>
                 <input type="hidden" class="form-control" name="foto_galeri" value="<?= $get->foto_galeri ?>">
             </div>
@@ -138,7 +137,7 @@ $id = $get->id_galeri;
                                             <form method="post" action="<?= site_url('admin/editGaleri/'.$id)?>" enctype="multipart/form-data">
                                                 <div class="form-group">
                                                     <label for="message-text" class="col-form-label">Foto</label>
-                                                    <input type="file" name="userfile" maxlength="40" class="form-control" required>
+                                                    <input type="file" name="userfile" maxlength="40" class="form-control">
                                                     <div style="font-size: 10px">File hanya JPG dan PNG dengan ukuran Maks. 2048 Kb</div>
                                                     <img src="<?= base_url('assets/admin/img/galeri/'.$get->foto_galeri)?>" class="img-responsive" style="max-height: 240px; max-width: 200px;">
                                                 </div>

@@ -32,7 +32,7 @@
                         <h4 class="card-title">
                          <?php echo $judul; ?>
                         </h4>
-                        <h6 style="color: yellow;">
+                        <h6 style="color: red;">
                            <?php
                                 $info = $this->session->flashdata('info');
                                 if(!empty($info)){
@@ -66,9 +66,9 @@
                                 <tbody>
                                     <tr>
                                         <td style="vertical-align: middle;text-align: center;"><?php echo $no++ ?></td>
-                                        <td style="vertical-align: middle;text-align: left;"><img src="<?= base_url('assets/admin/img/pengurus/'.$folder.'/'.$get->foto_pengurus)?>" class="img-responsive" style="max-height: 240px; max-width: 200px;"></td>
+                                        <td style="vertical-align: middle;text-align: center;"><img src="<?= base_url('assets/admin/img/pengurus/'.$folder.'/'.$get->foto_pengurus)?>" class="img-responsive" style="max-height: 240px; max-width: 200px;"></td>
                                         <td style="vertical-align: middle;text-align: center;"><?php echo $get->nama_pengurus ?></td>
-                                        <td style="vertical-align: middle;text-align: left;"><?php echo $get->jabatan_pengurus ?></td>
+                                        <td style="vertical-align: middle;text-align: center;"><?php echo $get->jabatan_pengurus ?></td>
                                         <td style="vertical-align: middle;text-align: center;">
                                             <button type="button" class="btn mb-1 btn-primary" data-toggle="modal" data-target="#update_modal<?= $id ?>"><i class="fa fa-pencil"></i>
                                             </button>
