@@ -14,7 +14,7 @@
                                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addModal" >Tambah <span class="btn-icon-right"><i class="fa fa-plus-square"></i></span>
                                 </button>
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-bordered zero-configuration" method="post" action="<?= site_url('admin/galeri')?>">
+                                    <table class="table table-striped table-bordered zero-configuration">
                                         <thead>
                                             <tr>
                                                 <th style="text-align: center;vertical-align: middle;">No.</th>
@@ -72,7 +72,7 @@
                                             <form method="post" action="<?= site_url('admin/addGaleri')?>" enctype="multipart/form-data">
                                                 <div class="form-group">
                                                     <label for="message-text" class="col-form-label">Foto</label>
-                                                    <input type="file" name="userfile" maxlength="40" class="form-control" required>
+                                                    <input type="file" name="userfile" maxlength="40" class="form-control">
                                                     <div style="font-size: 10px">File hanya JPG dan PNG dengan ukuran Maks. 2048 Kb</div> 
                                                 </div>
                                                 <div class="form-group">
@@ -103,6 +103,7 @@ $id = $get->id_galeri;
                 </button>
             </div>
             <form method="post" action="<?= base_url('admin/deleteGaleri/'.$id) ?>">
+            <?= $get->tipe_pengurus ?>
             <div>
                 <input type="hidden" class="form-control" name="foto_galeri" value="<?= $get->foto_galeri ?>">
             </div>
