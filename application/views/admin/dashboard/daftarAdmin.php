@@ -4,7 +4,6 @@
 <div class="content-body">
     <!-- row -->
     <?php 
-        $folder = 'fotoAdmin';
         $modul = $this->uri->segment(2);
     ?>
     
@@ -33,9 +32,9 @@
                                 <thead>
                                     <tr>
                                         <th style="text-align: center;vertical-align: middle;">No</th>
-                                        <th style="text-align: center;vertical-align: middle;">Nama Administrator</th>
-                                        <th style="text-align: center;vertical-align: middle;">status</th>
-                                        <th style="text-align: center;vertical-align: middle;">terakhir kali log-in</th>
+                                        <th style="text-align: center;vertical-align: middle;">Nama administrator</th>
+                                        <th style="text-align: center;vertical-align: middle;">Status</th>
+                                        <th style="text-align: center;vertical-align: middle;">Terakhir kali log-in</th>
                                         <th style="text-align: center;vertical-align: middle;">Action</th>
                                     </tr>
                                 </thead>
@@ -77,7 +76,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Informasi Pengurus <!-- <?php echo $pengurus?> --></h5>
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Administrator</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -162,45 +161,53 @@
 <!-- Begin Update Modal -->
 <?php
     foreach($data as $get){
-    $id = $get->id_pengurus;
+    $id = $get->id_admin;
+    $selected = $get->status_admin;
 ?>
 
 <!-- Begin Update Modal -->
-<div class="modal fade" id="create_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="update_modal<?= $id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Informasi Pengurus <!-- <?php echo $pengurus?> --></h5>
+                <h5 class="modal-title" id="exampleModalLabel">Edit Administrator</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form method="post" action="<?php echo site_url('admin/doAddPengurus/'.$tipe_pengurus) ?>" enctype="multipart/form-data">
+                <form method="post" action="<?php echo site_url('admin/doUpdateAdmin/'.$id) ?>" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="nama-lengkap" class="col-form-label">Nama Lengkap:</label>
-                        <input type="text" class="form-control" name="nama_lengkap_admin" required>
+                        <input type="text" class="form-control" name="nama_lengkap_admin" value="<?= $get->nama_lengkap_admin ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="username" class="col-form-label">Username:</label>
-                        <input type="text" class="form-control" name="username_admin" required>
+                        <input type="text" class="form-control" name="username_admin" value="<?= $get->username_admin ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="password" class="col-form-label">Password:</label>
-                        <input type="text" class="form-control" name="password_admin" required>
+                        <input type="text" class="form-control" name="password_admin" placeholder="kosongkan jika tidak ingin diubah" value="">
                     </div>
                     <div class="form-group">
                         <label for="level" class="col-form-label">Level Admin:</label>
-                        <select class="form-control custom-select mr-sm-2" id="inlineFormCustomSelect" required>
-                            <option selected="selected" value="">Pilih Level Administrator</option>
-                            <option value="super_admin">Super Administrator</option>
-                            <option value="admin">Administrator</option>
+                        <select class="form-control custom-select mr-sm-2" id="inlineFormCustomSelect" required name="status_admin">
+                            <option value="">Pilih Level Administrator</option>
+                            <option value="super_admin" <?= ($selected == 'super_admin') ? 'selected' : '' ?> >Super Administrator</option>
+                            <option value="admin" <?= ($selected == 'admin') ? 'selected' : '' ?> >Administrator</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="file" class="form-control-file" name="foto_admin" accept=".png, .jpg, .jpeg" required>
+                        <input type="file" class="form-control-file" name="foto_admin" accept=".png, .jpg, .jpeg">
                         <div style="font-size: 10px">
                             File hanya JPG dan PNG dengan ukuran Maks. 2048 Kb
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <img src="<?= base_url('assets/admin/img/fotoAdmin/'.$get->foto_admin) ?>" class="img-responsive" style="max-height: 240px; width:300px; margin-top: 20px;">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" readonly name="foto_lama" value="<?= $get->foto_admin ?>">
+                        <input type="hidden" readonly name="password_lama" value="<?= $get->password_admin ?>">
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-success">Simpan</button>
