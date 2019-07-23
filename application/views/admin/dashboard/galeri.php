@@ -10,7 +10,14 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Daftar Galeri</h4>
-                                <?= $this->session->flashdata('info'); ?> </br>
+                                <h6 style="color: red;">
+                                    <?php
+                                        $info = $this->session->flashdata('info');
+                                        if(!empty($info)){
+                                        echo $info;
+                                        }
+                                    ?>
+                                </h6>
                                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addModal" >Tambah <span class="btn-icon-right"><i class="fa fa-plus-square"></i></span>
                                 </button>
                                 <div class="table-responsive">
@@ -27,7 +34,7 @@
 
                                      <?php
                                      $no=1;
-                                     foreach($data as $get){ 
+                                        foreach($data as $get){ 
                                         $waktu = date('d-M-Y', strtotime($get->tanggal_galeri));
         
                                      ?>
@@ -77,7 +84,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="message-text" class="col-form-label">Caption</label>
-                                                    <textarea class="form-control" id="message-text" name="caption_galeri" required></textarea>
+                                                    <textarea class="form-control" id="message-text" name="caption_galeri"></textarea>
                                                 </div>
                                                 <div class="modal-footer">
                                                 <button type="submit" class="btn btn-success">Tambah Foto</button>
@@ -148,7 +155,7 @@ $id = $get->id_galeri;
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="message-text" class="col-form-label">Caption</label>
-                                                    <input class="form-control" id="message-text" name="caption_galeri" value="<?= $get->caption_galeri ?>"></input>
+                                                    <textarea class="form-control" id="message-text" name="caption_galeri"><?= $get->caption_galeri ?></textarea>
                                                 </div>
                                                 <div class="modal-footer">
                                                 <button type="submit" class="btn btn-primary">Edit</button>

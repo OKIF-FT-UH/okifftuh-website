@@ -512,12 +512,57 @@ public function deleteDaftarPrestasi($id){
     //End Galeri
 
     //Begin Saran Masuk
+
     public function saranMasuk(){
+        $where = array('kode_saran' => 0);
         $data = array(
-            'isi' => 'admin/dashboard/isi',
-            );
+            'title'     => 'Saran Masuk', 
+            'isi'       => 'admin/dashboard/saran',
+            'data'      => $this->ModelAdmin->requestSaran($where),
+        );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
+
+    public function saranApprove(){
+        $where = array('kode_saran' != 0);
+        $data = array(
+            'title'     => 'Saran Masuk', 
+            'isi'       => 'admin/dashboard/saran',
+            'data'      => $this->ModelAdmin->requestSaran($where),
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+
+    public function deleteSaran($id){
+        $where = array(
+            'id_saran' => $id,
+        );
+        $this->Crud->d('saran', $where);
+        $this->session->set_flashdata('info','Saran telah dihapus');
+        redirect('admin/saranMasuk');
+      
+    }
+
+    public function saranProses($id){
+        $where = array('id_saran' => $id);
+        $data = array(
+            'kode_saran' => '1',
+            );
+        $this->Crud->u('saran', $data, $where);
+        $this->session->set_flashdata('info','Saran Telah diproses');
+        redirect('admin/saranMasuk');
+    }
+
+    public function saranDone($id){
+        $where = array('id_saran' => $id);
+        $data = array(
+            'kode_saran' => '2',
+            );
+        $this->Crud->u('saran', $data, $where);
+        $this->session->set_flashdata('info','Saran Telah diselesaikan');
+        redirect('admin/saranApprove');
+    }
+
     //End Saran Masuk
 
     //Begin Admin
