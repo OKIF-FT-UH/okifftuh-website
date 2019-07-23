@@ -231,6 +231,7 @@
                         <div style="font-size: 10px">
                             File hanya JPG dan PNG dengan ukuran Maks. 2048 Kb
                         </div>
+                        <img src="<?= base_url('assets/admin/img/pengurus/'.$folder.'/'.$get->foto_pengurus) ?>" class="img-responsive" style="max-height: 240px; width:300px; margin-top: 20px;" >
                     </div>
                     <input type="hidden" readonly name="tipe_pengurus" value="<?php echo $tipe_pengurus ?>">
                     <input type="hidden" readonly name="foto_lama" value="<?= $get->foto_pengurus ?>">
