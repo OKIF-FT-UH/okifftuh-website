@@ -245,7 +245,7 @@ class Admin extends CI_Controller {
             $alamat = 'admin/lomba';
         }
         
-    if(!empty($_FILES['userfile']['tmp_name'])){
+        if(!empty($_FILES['userfile']['tmp_name'])){
             
             $filenya = $_FILES['userfile']['name'];
 
@@ -312,8 +312,7 @@ class Admin extends CI_Controller {
             $this->session->set_flashdata('info', 'Infomasi Sukses Diupdate');
             redirect($alamat);
         }
-
-}
+    }
         
 
 
@@ -341,7 +340,6 @@ class Admin extends CI_Controller {
         }else{
             redirect('admin');
         }
-
     }
     //END Do Delete Information
 
@@ -523,9 +521,63 @@ public function deleteDaftarPrestasi($id){
     //Begin Admin
 	 public function admin(){
         $data = array(
-            'isi' => 'admin/dashboard/isi',
+            'title' => 'Daftar Administrator',
+            'isi'   => 'admin/dashboard/daftarAdmin',
+            'data'  => $this->Crud->ga('admin')
             );
         $this->load->view('admin/_layouts/wrapper', $data);
+    }
+
+    public function doAddAdmin(){
+        $input = $this->input->post(NULL, TRUE);
+        $filenya = $_FILES['foto_admin']['name'];
+
+        if($filenya = ''){
+            $this->session->set_flashdata('info', 'File Tidak Terpilih');
+                redirect('admin/admin');  
+              
+        }else{
+                $config['upload_path'] = './assets/admin/img/fotoAdmin';
+        }
+
+        $config['allowed_types'] = 'jpg|png|jpeg';
+        $config['max_size'] = '0';
+
+        $this->load->library('upload', $config);
+
+        if(!$this->upload->do_upload('foto_admin')){
+            // die();
+            $this->session->set_flashdata('info', 'Upload File Gagal, Periksa Ukuran dan Ekstensi');
+            redirect('admin/admin');  
+                
+        }else{
+            $filenya =  $this->upload->data('file_name');
+        }
+
+        $data = array(
+            'nama_lengkap_admin'  => $input['nama_lengkap_admin'],
+            'username_admin'      => $input['username_admin'],
+            'password_admin'      => md5($input['password_admin']),
+            'status_admin'        => $input['status_admin'],
+            'foto_admin'          => $filenya,
+        );
+
+        $this->db->insert('admin', $data);
+        $this->session->set_flashdata('info', 'Informasi Sukses Ditambahkan');
+        redirect('admin/admin');
+    }
+
+    public function doDeleteAdmin($id){
+        $input = $this->input->post(NULL, TRUE);
+        $where = array('id_admin' => $id);
+
+        unlink('./assets/admin/img/fotoAdmin/'.$input['foto_admin']);
+
+        //Hapus di Tabel Database
+        $this->Crud->d('admin', $where);
+        $this->session->set_flashdata('info', 'Data Sukses Dihapus');
+
+        redirect('admin/admin');
     }
     //End Admin
 
