@@ -559,7 +559,7 @@ public function deleteDaftarPrestasi($id){
             'kode_saran' => '2',
             );
         $this->Crud->u('saran', $data, $where);
-        $this->session->set_flashdata('info','Saran Telah diselesaikan');
+        $this->session->set_flashdata('info','Saran Telah dilaksanakan');
         redirect('admin/saranApprove');
     }
 
