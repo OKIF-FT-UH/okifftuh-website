@@ -8,6 +8,8 @@ class Admin extends CI_Controller {
         date_default_timezone_set('Asia/Makassar');
         if($this->session->userdata('status') != "login"){
             redirect('login');
+        }else if($this->uri->segment(2) == 'admin' and ($this->session->userdata('status_admin') != 'super_admin')){
+            redirect('admin');
         }
     }
 

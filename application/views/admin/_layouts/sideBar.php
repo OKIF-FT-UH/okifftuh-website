@@ -76,12 +76,14 @@
                             <i class="icon-envelope menu-icon"></i><span class="nav-text">Saran Masuk</span>
                         </a>
                     </li>
-
-                    <li>
-                        <a href="<?= site_url('admin/admin') ?>" class="<?= ($modul == 'admin') ? 'active' : '' ?>" aria-expanded="false">
-                            <i class="icon-user menu-icon"></i><span class="nav-text">Admin</span>
-                        </a>
-                    </li>
+                    
+                    <?php if($this->session->userdata('status_admin') == 'super_admin') : ?>
+                        <li>
+                            <a href="<?= site_url('admin/admin') ?>" class="<?= ($modul == 'admin') ? 'active' : '' ?>" aria-expanded="false">
+                                <i class="icon-user menu-icon"></i><span class="nav-text">Admin</span>
+                            </a>
+                        </li>
+                    <?php endif; ?>
 <!-- 
                     <li class="nav-label">Apps</li>
                     <li>
