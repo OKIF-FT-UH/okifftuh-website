@@ -13,12 +13,12 @@
         
         if($modul == 'pengurusDmmif'){
             $tipe_pengurus = 1;
-            $judul = 'Pengurus Dewan Musyawarah Mahasiswa Informatika Fakultas Teknik Universitas Hasanuddin';
+            $judul = 'Pengurus DMMIF FT-UH';
             $pengurus = 'DMMIF FT-UH';
             $folder = 'dmmif';
         }else if($modul == 'pengurusHmif'){
             $tipe_pengurus = 2;
-            $judul = 'Pengurus Himpunan Mahasiswa Informatika Fakultas Teknik Universitas Hasanuddin';
+            $judul = 'Pengurus HMIF FT-UH';
             $pengurus = 'HMIF FT-UH';
             $folder = 'hmif';
         }

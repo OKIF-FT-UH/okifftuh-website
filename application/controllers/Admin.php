@@ -786,7 +786,7 @@ public function deleteDaftarPrestasi($id){
         );
 
         $this->db->insert('pengurus', $data);
-        $this->session->set_flashdata('info', 'Informasi Sukses Ditambahkan');
+        $this->session->set_flashdata('info', 'Informasi Pengurus Sukses Ditambahkan');
 
         if($tipe_pengurus == '1'){
             redirect('admin/pengurusDmmif');
@@ -838,7 +838,7 @@ public function deleteDaftarPrestasi($id){
             $filenya = $_FILES['fotoPengurus']['name'];
 
             if($filenya = ''){
-                $this->session->set_flashdata('info', 'Gagal Menambahkan Informasi');
+                $this->session->set_flashdata('info', 'Gagal Menambahkan Informasi Pengurus');
                 redirect($alamat);
             }else{
                 if($tipe_pengurus == '1'){
@@ -880,7 +880,7 @@ public function deleteDaftarPrestasi($id){
 
                 //$this->Crud->u('barang', $items, $where);
                 $this->db->update('pengurus', $items, $where);
-                $this->session->set_flashdata('info', 'Informasi Sukses Diupdate');
+                $this->session->set_flashdata('info', 'Informasi Pengurus Sukses Diupdate');
                 redirect($alamat);
 
             }
@@ -895,7 +895,7 @@ public function deleteDaftarPrestasi($id){
                 'tipe_pengurus'         => $tipe_pengurus,
             );
             $this->Crud->u('pengurus', $items, $where);
-            $this->session->set_flashdata('info', 'Infomasi Sukses Diupdate');
+            $this->session->set_flashdata('info', 'Infomasi Pengurus Sukses Diupdate');
             redirect($alamat);
         }
     }
