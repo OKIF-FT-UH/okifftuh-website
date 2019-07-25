@@ -77,7 +77,7 @@
                         </a>
                         <ul aria-expanded="false">
                         <li><a href="<?= site_url('admin/saranMasuk') ?>" class="<?= ($modul == 'saranMasuk') ? 'active' : '' ?>">Saran Masuk</a></li>
-                        <li><a href="<?= site_url('admin/saranApprove') ?>" class="<?= ($modul == 'saranApprove') ? 'active' : '' ?>">Saran yang Telah ditangapi</a></li>
+                        <li><a href="<?= site_url('admin/saranApprove') ?>" class="<?= ($modul == 'saranApprove') ? 'active' : '' ?>">Saran yang Telah disetujui</a></li>
                         </ul>
                     </li>
                     
