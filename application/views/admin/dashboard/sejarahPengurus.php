@@ -86,8 +86,8 @@
                                     <label class="col-form-label">Jabatan Pengurus:</label>
                                     <select class="form-control" name="jabatan_pengurus">
                                     <option value="Ketua OKIF FT-UH">Ketua OKIF FT-UH</option>
-                                    <option value="Ketua Umum HMIF FT-UH">Ketua Umum HMIF</option>
-                                    <option value="Ketua DMMIF FT-UH">Ketua DMMIF</option>
+                                    <option value="Ketua Umum HMIF FT-UH">Ketua Umum HMIF FT-UH</option>
+                                    <option value="Ketua DMMIF FT-UH">Ketua DMMIF FT-UH</option>
                                     </select>
                                </div>
                                 <div class="col">
@@ -146,8 +146,8 @@
                                     <label class="col-form-label">Jabatan Pengurus:</label>
                                     <select class="form-control" name="jabatan_pengurus">
                                     <option value="Ketua OKIF FT-UH" <?php if($select == 'Ketua OKIF FT-UH'){echo "selected";} ?>>Ketua OKIF FT-UH</option>
-                                    <option value="Ketua Umum HMIF FT-UH" <?php if($select == 'Ketua Umum HMIF FT-UH'){echo "selected";} ?>>Ketua Umum HMIF</option>
-                                    <option value="Ketua DMMIF FT-UH" <?php if($select == 'Ketua DMMIF FT-UH'){echo "selected";} ?>>Ketua DMMIF</option>
+                                    <option value="Ketua Umum HMIF FT-UH" <?php if($select == 'Ketua Umum HMIF FT-UH'){echo "selected";} ?>>Ketua Umum HMIF FT-UH</option>
+                                    <option value="Ketua DMMIF FT-UH" <?php if($select == 'Ketua DMMIF FT-UH'){echo "selected";} ?>>Ketua DMMIF FT-UH</option>
                                     </select>
                                </div>
                                 <div class="col">

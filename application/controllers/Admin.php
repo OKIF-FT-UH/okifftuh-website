@@ -18,18 +18,188 @@ class Admin extends CI_Controller {
         $this->load->view('admin/_layouts/wrapper', $data);
 	}
 
-    
+    //==Begin Modul Master Data==
     //Begin Kategori
-    
     public function kategori(){
         $data = array(
-            'isi' => 'admin/dashboard/isi', 
+            'title'     => 'Daftar kategori',
+            'isi'       => 'admin/dashboard/kategori',
+            'data'      => $this->Crud->ga('kategori'),
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+    //Begin Do Add Kategori
+    public function doAddKategori(){
+        $input = $this->input->post(NULL, TRUE);
+        $data = array('nama_kategori' => $input['nama_kategori'],);
+
+        $this->db->insert('kategori', $data);
+        $this->session->set_flashdata('info', 'Kategori Sukses Ditambahkan');
+        redirect('admin/kategori');
+
+    }
+    //End Do Add Kategori
+    //Begin Do Edit Kategori
+    public function doEditKategori($id){
+        $where = array('id_kategori' => $id);
+        $input = $this->input->post(NULL, TRUE);
+        $data =array('nama_kategori' => $input['nama_kategori'],);
+
+        $this->Crud->u('kategori', $data, $where);
+        $this->session->set_flashdata('info', 'Kategori Berhasil Diupdate');
+        redirect('admin/kategori');
+    }
+    //End Do Edit Kategori
+    //Begin Do Delete Kategori
+    public function doDeletekategori($id){
+        $where = array('id_kategori' => $id,);
+
+        $this->Crud->d('kategori', $where);
+        $this->session->set_flashdata('info', 'Kategori Telah Dihapus');
+        redirect('admin/kategori');
+    }
+    //End Do Delete Kategori
+    //End Kategori
+
+    //Begin Mahasiswa
+    public function mahasiswa(){
+        $where = array('kode_mahasiswa' => 1);
+        $data = array(
+            'title'     => 'Database Mahasiswa',
+            'isi'       => 'admin/dashboard/mahasiswa',
+            'data'      => $this->Crud->gw('mahasiswa', $where), 
         );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
 
+    //Begin Do Add Mahasiswa
+    public function doAddMahasiswa(){
+        $input = $this->input->post(NULL, TRUE);
+        $data = array(
+            'nama_mahasiswa'            => $input['nama_mahasiswa'],
+            'nim_mahasiswa'             => $input['nim_mahasiswa'],
+            'angkatan_mahasiswa'        => $input['angkatan_mahasiswa'],
+            'gender_mahasiswa'          => $input['gender_mahasiswa'],
+            'agama_mahasiswa'           => $input['agama_mahasiswa'],
+            'tempat_lahir_mahasiswa'    => $input['tempat_lahir_mahasiswa'],
+            'tanggal_lahir_mahasiswa'   => $input['tanggal_lahir_mahasiswa'],
+            'alamat_mahasiswa'          => $input['alamat_mahasiswa'],
+            'no_hp_mahasiswa'           => $input['no_hp_mahasiswa'],
+            'email_mahasiswa'           => $input['email_mahasiswa'],
+            'sks_mahasiswa'             => $input['sks_mahasiswa'],
+            'ipk_mahasiswa'             => $input['ipk_mahasiswa'],
+            'kode_mahasiswa'            => 1,
+        );
+        $this->db->insert('mahasiswa', $data);
+        $this->session->set_flashdata('info', 'Data Mahasiswa Sukses Ditambahkan');
+        redirect('admin/mahasiswa');
+    }
+    //ENd Do Add Mahasiswa
 
-    //End Kategori
+    //Begin Do Edit Mahasiswa
+    public function doEditMahasiswa($id){
+        $where = array('id_mahasiswa' => $id);
+        $input = $this->input->post(NULL, TRUE);
+        $data =array(
+            'nama_mahasiswa'            => $input['nama_mahasiswa'],
+            'nim_mahasiswa'             => $input['nim_mahasiswa'],
+            'angkatan_mahasiswa'        => $input['angkatan_mahasiswa'],
+            'gender_mahasiswa'          => $input['gender_mahasiswa'],
+            'agama_mahasiswa'           => $input['agama_mahasiswa'],
+            'tempat_lahir_mahasiswa'    => $input['tempat_lahir_mahasiswa'],
+            'tanggal_lahir_mahasiswa'   => $input['tanggal_lahir_mahasiswa'],
+            'alamat_mahasiswa'          => $input['alamat_mahasiswa'],
+            'no_hp_mahasiswa'           => $input['no_hp_mahasiswa'],
+            'email_mahasiswa'           => $input['email_mahasiswa'],
+            'sks_mahasiswa'             => $input['sks_mahasiswa'],
+            'ipk_mahasiswa'             => $input['ipk_mahasiswa'],
+            'kode_mahasiswa'            => 1,
+        );
+        $this->Crud->u('mahasiswa', $data, $where);
+        $this->session->set_flashdata('info', 'Data Mahasiswa Berhasil Diupdate');
+        redirect('admin/mahasiswa');
+    }
+    //End Do Edit Mahasiswa
+
+    //Begin Do Delete Mahasiswa
+    public function doDeleteMahasiswa($id){
+        $where = array('id_mahasiswa' => $id,);
+
+        $this->Crud->d('mahasiswa', $where);
+        $this->session->set_flashdata('info', 'Data Mahasiswa Telah Dihapus');
+        redirect('admin/mahasiswa');
+    }
+    //End Do Delete Mahasiswa
+    //End Mahasiswa
+
+    //Begin Alumni
+    public function alumni(){
+        $where = array('kode_mahasiswa' => 2);
+        $data = array(
+            'title'     => 'Database Alumni',
+            'isi'       => 'admin/dashboard/alumni',
+            'data'      => $this->Crud->gw('mahasiswa', $where), 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+
+    //Begin Do Add Alumni
+    public function doAddAlumni(){
+        $input = $this->input->post(NULL, TRUE);
+        $data = array(
+            'nama_mahasiswa'            => $input['nama_mahasiswa'],
+            'angkatan_mahasiswa'        => $input['angkatan_mahasiswa'],
+            'gender_mahasiswa'          => $input['gender_mahasiswa'],
+            'agama_mahasiswa'           => $input['agama_mahasiswa'],
+            'tempat_lahir_mahasiswa'    => $input['tempat_lahir_mahasiswa'],
+            'tanggal_lahir_mahasiswa'   => $input['tanggal_lahir_mahasiswa'],
+            'alamat_mahasiswa'          => $input['alamat_mahasiswa'],
+            'no_hp_mahasiswa'           => $input['no_hp_mahasiswa'],
+            'email_mahasiswa'           => $input['email_mahasiswa'],
+            'instansi_mahasiswa'        => $input['instansi_mahasiswa'],
+            'kode_mahasiswa'            => 2,
+        );
+        $this->db->insert('mahasiswa', $data);
+        $this->session->set_flashdata('info', 'Data Alumni Sukses Ditambahkan');
+        redirect('admin/alumni');
+    }
+    //End Do Add Alumni
+
+    //Begin Do Edit Alumni
+    public function doEditAlumni($id){
+        $where = array('id_mahasiswa' => $id);
+        $input = $this->input->post(NULL, TRUE);
+        $data =array(
+            'nama_mahasiswa'            => $input['nama_mahasiswa'],
+            'angkatan_mahasiswa'        => $input['angkatan_mahasiswa'],
+            'gender_mahasiswa'          => $input['gender_mahasiswa'],
+            'agama_mahasiswa'           => $input['agama_mahasiswa'],
+            'tempat_lahir_mahasiswa'    => $input['tempat_lahir_mahasiswa'],
+            'tanggal_lahir_mahasiswa'   => $input['tanggal_lahir_mahasiswa'],
+            'alamat_mahasiswa'          => $input['alamat_mahasiswa'],
+            'no_hp_mahasiswa'           => $input['no_hp_mahasiswa'],
+            'email_mahasiswa'           => $input['email_mahasiswa'],
+            'instansi_mahasiswa'        => $input['instansi_mahasiswa'],
+            'kode_mahasiswa'            => 2,
+        );
+        $this->Crud->u('mahasiswa', $data, $where);
+        $this->session->set_flashdata('info', 'Data Alumni Berhasil Diupdate');
+        redirect('admin/alumni');
+    }
+    //End Do Edit Alumni
+
+    //Begin Do Delete Alumni
+    public function doDeleteAlumni($id){
+        $where = array('id_mahasiswa' => $id,);
+
+        $this->Crud->d('mahasiswa', $where);
+        $this->session->set_flashdata('info', 'Data Alumni Telah Dihapus');
+        redirect('admin/alumni');
+    }
+    //End Do Delete Alumni
+    //End Alumni
+
+    //==End Modul Master Data==
 
     //Begin Informasi
 
