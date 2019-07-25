@@ -8,6 +8,8 @@ class Admin extends CI_Controller {
         date_default_timezone_set('Asia/Makassar');
         if($this->session->userdata('status') != "login"){
             redirect('login');
+        }else if($this->uri->segment(2) == 'admin' and ($this->session->userdata('status_admin') != 'super_admin')){
+            redirect('admin');
         }
     }
 
@@ -415,7 +417,7 @@ class Admin extends CI_Controller {
             $alamat = 'admin/lomba';
         }
         
-    if(!empty($_FILES['userfile']['tmp_name'])){
+        if(!empty($_FILES['userfile']['tmp_name'])){
             
             $filenya = $_FILES['userfile']['name'];
 
@@ -482,8 +484,7 @@ class Admin extends CI_Controller {
             $this->session->set_flashdata('info', 'Infomasi Sukses Diupdate');
             redirect($alamat);
         }
-
-}
+    }
         
 
 
@@ -511,7 +512,6 @@ class Admin extends CI_Controller {
         }else{
             redirect('admin');
         }
-
     }
     //END Do Delete Information
 
@@ -565,6 +565,7 @@ public function deleteDaftarPrestasi($id){
     redirect('admin/daftarPrestasi');
 }
 //end prestasi
+
    //Begin Galeri
    public function galeri(){
     $data = array(
@@ -669,7 +670,6 @@ public function deleteDaftarPrestasi($id){
         }else{
             $today = date('Y-m-d H:i:s');
             $items = array(
-                'foto_galeri'        => $filenya,
                 'caption_galeri'     => $input['caption_galeri'],
                 'tanggal_galeri'     => $today,
             );
@@ -682,36 +682,234 @@ public function deleteDaftarPrestasi($id){
     //End Galeri
 
     //Begin Saran Masuk
+
     public function saranMasuk(){
+        $where = array('kode_saran' => 0);
         $data = array(
-            'isi' => 'admin/dashboard/isi',
-            );
+            'title'     => 'Saran Masuk', 
+            'isi'       => 'admin/dashboard/saran',
+            'data'      => $this->ModelAdmin->requestSaran($where),
+        );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
+
+    public function saranApprove(){
+        $where = array('kode_saran' != 0);
+        $data = array(
+            'title'     => 'Saran Masuk', 
+            'isi'       => 'admin/dashboard/saran',
+            'data'      => $this->ModelAdmin->requestSaran($where),
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+
+    public function deleteSaran($id){
+        $where = array(
+            'id_saran' => $id,
+        );
+        $this->Crud->d('saran', $where);
+        $this->session->set_flashdata('info','Saran telah dihapus');
+        redirect('admin/saranMasuk');
+      
+    }
+
+    public function saranProses($id){
+        $where = array('id_saran' => $id);
+        $data = array(
+            'kode_saran' => '1',
+            );
+        $this->Crud->u('saran', $data, $where);
+        $this->session->set_flashdata('info','Saran Telah diproses');
+        redirect('admin/saranMasuk');
+    }
+
+    public function saranDone($id){
+        $where = array('id_saran' => $id);
+        $data = array(
+            'kode_saran' => '2',
+            );
+        $this->Crud->u('saran', $data, $where);
+        $this->session->set_flashdata('info','Saran Telah dilaksanakan');
+        redirect('admin/saranApprove');
+    }
+
     //End Saran Masuk
 
     //Begin Admin
 	 public function admin(){
         $data = array(
-            'isi' => 'admin/dashboard/isi',
+            'title' => 'Daftar Administrator',
+            'isi'   => 'admin/dashboard/daftarAdmin',
+            'data'  => $this->Crud->ga('admin')
             );
         $this->load->view('admin/_layouts/wrapper', $data);
+    }
+
+    public function doAddAdmin(){
+        $input = $this->input->post(NULL, TRUE);
+        $filenya = $_FILES['foto_admin']['name'];
+
+        if($filenya = ''){
+            $this->session->set_flashdata('info', 'File Tidak Terpilih');
+                redirect('admin/admin');  
+              
+        }else{
+                $config['upload_path'] = './assets/admin/img/fotoAdmin';
+        }
+
+        $config['allowed_types'] = 'jpg|png|jpeg';
+        $config['max_size'] = '0';
+
+        $this->load->library('upload', $config);
+
+        if(!$this->upload->do_upload('foto_admin')){
+            // die();
+            $this->session->set_flashdata('info', 'Upload File Gagal, Periksa Ukuran dan Ekstensi');
+            redirect('admin/admin');  
+                
+        }else{
+            $filenya =  $this->upload->data('file_name');
+        }
+
+        $data = array(
+            'nama_lengkap_admin'  => $input['nama_lengkap_admin'],
+            'username_admin'      => $input['username_admin'],
+            'password_admin'      => md5($input['password_admin']),
+            'status_admin'        => $input['status_admin'],
+            'foto_admin'          => $filenya,
+        );
+
+        $this->db->insert('admin', $data);
+        $this->session->set_flashdata('info', 'Administrator Sukses Ditambahkan');
+        redirect('admin/admin');
+    }
+
+    public function doDeleteAdmin($id){
+        $input = $this->input->post(NULL, TRUE);
+        $where = array('id_admin' => $id);
+
+        unlink('./assets/admin/img/fotoAdmin/'.$input['foto_admin']);
+
+        //Hapus di Tabel Database
+        $this->Crud->d('admin', $where);
+        $this->session->set_flashdata('info', 'Data Sukses Dihapus');
+
+        redirect('admin/admin');
+    }
+
+    public function doUpdateAdmin($id){
+        $where = array('id_admin' => $id);
+        $input = $this->input->post(NULL, FALSE);
+
+        if(!empty($_FILES['foto_admin']['tmp_name'])){
+                
+                $filenya = $_FILES['foto_admin']['name'];
+
+                if($filenya = ''){
+                    $this->session->set_flashdata('info', 'Gagal Menambahkan Informasi');
+                    redirect('admin/admin');
+                }else{
+                    $config['upload_path'] = './assets/admin/img/fotoAdmin';
+                    $config['allowed_types'] = 'jpg|png|jpeg';
+                    $config['max_size'] = '';
+                    
+                    $this->load->library('upload', $config);
+                    if($config['max_size'] >= 2048){
+                        $this->session->set_flashdata('info', 'File Melewati Batas Ukuran');
+                        redirect('admin/admin');
+                    }
+                    //unlink(base_url('assets/img/produk/'.$input['judul_foto']));
+                    unlink($config['upload_path'].'/'.$input['foto_lama']);
+
+                    if(!$this->upload->do_upload('foto_admin')){
+                        //die();
+                        $this->session->set_flashdata('info', 'Upload File Gagal, Periksa Ukuran dan Ekstensi');
+                        redirect('admin/admin');
+                    }else{
+                        $filenya =  $this->upload->data('file_name');
+                    }
+
+                    if ($this->input->post('password_admin') != '' ){
+                        //ada md5
+                        $items = array(
+                        'nama_lengkap_admin'  => $input['nama_lengkap_admin'],
+                        'username_admin'      => $input['username_admin'],
+                        'password_admin'      => md5($input['password_admin']),
+                        'status_admin'        => $input['status_admin'],
+                        'foto_admin'          => $filenya,
+                        );
+                    }else{
+                        //kirim pass lama
+                        $items = array(
+                        'nama_lengkap_admin'  => $input['nama_lengkap_admin'],
+                        'username_admin'      => $input['username_admin'],
+                        'password_admin'      => $input['password_lama'],
+                        'status_admin'        => $input['status_admin'],
+                        'foto_admin'          => $filenya,
+                        );
+                    }
+
+                    //$this->Crud->u('barang', $items, $where);
+                    $this->db->update('admin', $items, $where);
+                    $this->session->set_flashdata('info', 'Data Sukses Diupdate');
+                    redirect('admin/admin');
+
+                }
+        }else{
+            if ($this->input->post('password_admin') != '' ){
+                //ada md5
+                $items = array(
+                'nama_lengkap_admin'  => $input['nama_lengkap_admin'],
+                'username_admin'      => $input['username_admin'],
+                'password_admin'      => md5($input['password_admin']),
+                'status_admin'        => $input['status_admin'],
+                );
+            }else{
+                //kirim pass lama
+                $items = array(
+                'nama_lengkap_admin'  => $input['nama_lengkap_admin'],
+                'username_admin'      => $input['username_admin'],
+                'password_admin'      => $input['password_lama'],
+                'status_admin'        => $input['status_admin'],
+                );
+            }
+
+            $this->Crud->u('admin', $items, $where);
+            $this->session->set_flashdata('info', 'Data Sukses Diupdate');
+            redirect('admin/admin');
+        }
     }
     //End Admin
 
     //===Begin Modul Pengurus===
-    //Begin DMMIF FT-UH
+     //Begin DMMIF FT-UH
     public function pengurusDmmif(){
+        $where = array('tipe_pengurus' => 1);
         $data = array(
             'title'     => 'Pengurus DMMIF FT-UH', 
             'isi'       => 'admin/dashboard/pengurus',
+            'data'      => $this->ModelAdmin->requestPengurus($where),
         );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
+    //End DMMIF FT-UH
 
+    //Begin HMIF FT-UH
+    public function pengurusHmif(){
+        $where = array('tipe_pengurus' => 2);
+        $data = array(
+            'title'     => 'Pengurus HMIF FT-UH',
+            'isi'       => 'admin/dashboard/pengurus',
+            'data'      => $this->ModelAdmin->requestPengurus($where), 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
+    //End HMIF FT-UH
+
+    //Begin Do Add Pengurus
     public function doAddPengurus($tipe_pengurus){
         $input = $this->input->post(NULL, FALSE);
-        $filenya = $_FILES['foto_pengurus']['name'];
+        $filenya = $_FILES['fotoPengurus']['name'];
 
         if($filenya = ''){
             $this->session->set_flashdata('info', 'File Tidak Terpilih');
@@ -723,7 +921,7 @@ public function deleteDaftarPrestasi($id){
         }else{
             if($tipe_pengurus == '1'){
                 $config['upload_path'] = './assets/admin/img/pengurus/dmmif';
-            }else if($kode == '2'){
+            }else if($tipe_pengurus == '2'){
                 $config['upload_path'] = './assets/admin/img/pengurus/hmif';
             }
         }
@@ -733,7 +931,7 @@ public function deleteDaftarPrestasi($id){
 
         $this->load->library('upload', $config);
 
-        if(!$this->upload->do_upload('foto_pengurus')){
+        if(!$this->upload->do_upload('fotoPengurus')){
             // die();
             $this->session->set_flashdata('info', 'Upload File Gagal, Periksa Ukuran dan Ekstensi');
             if($tipe_pengurus == '1'){
@@ -758,27 +956,120 @@ public function deleteDaftarPrestasi($id){
         );
 
         $this->db->insert('pengurus', $data);
-        $this->session->set_flashdata('info', 'Informasi Sukses Ditambahkan');
+        $this->session->set_flashdata('info', 'Informasi Pengurus Sukses Ditambahkan');
 
         if($tipe_pengurus == '1'){
             redirect('admin/pengurusDmmif');
-        }else if($kode == '2'){
+        }else if($tipe_pengurus == '2'){
             redirect('admin/pengurusHmif');
         }else{
             redirect('admin');
         }
     }
-    //End DMMIF FT-UH
+    //End Do Add Pengurus
 
-    //Begin HMIF FT-UH
-    public function pengurusHmif(){
-         $data = array(
-            'title'     => 'Pengurus HMIF FT-UH',
-            'isi'       => 'admin/dashboard/pengurus', 
-        );
-        $this->load->view('admin/_layouts/wrapper', $data);
+    //Begin Do Delete Pengurus
+    public function doDeletePengurus($tipe_pengurus ,$id){
+        $input = $this->input->post(NULL, TRUE);
+        $where = array('id_pengurus' => $id);
+
+        if($tipe_pengurus == '1'){
+            $folder = 'dmmif';
+        }else if($tipe_pengurus == '2'){
+            $folder = 'hmif';
+        }
+        unlink('./assets/admin/img/pengurus/'.$folder.'/'.$input['foto_pengurus']);
+
+        $this->Crud->d('pengurus', $where);
+        $this->session->set_flashdata('info', 'Data Sukses Dihapus');
+
+        if($tipe_pengurus == '1'){
+            redirect('admin/pengurusDmmif');  
+        }else if($tipe_pengurus == '2'){
+            redirect('admin/pengurusHmif');
+        }
     }
-    //End HMIF FT-UH
+    //End Do Delete Pengurus
+
+    //Begin Do Update Pengurus
+    public function doUpdatePengurus($tipe_pengurus ,$id){
+        $where = array('id_pengurus' => $id);
+        $input = $this->input->post(NULL, FALSE);
+
+
+        if($tipe_pengurus == '1'){
+            $alamat = 'admin/pengurusDmmif';
+        }else if($tipe_pengurus == '2'){
+            $alamat = 'admin/pengurusHmif';
+        }
+        
+        if(!empty($_FILES['fotoPengurus']['tmp_name'])){
+            
+            $filenya = $_FILES['fotoPengurus']['name'];
+
+            if($filenya = ''){
+                $this->session->set_flashdata('info', 'Gagal Menambahkan Informasi Pengurus');
+                redirect($alamat);
+            }else{
+                if($tipe_pengurus == '1'){
+                    $config['upload_path'] = './assets/admin/img/pengurus/dmmif';
+                }else if($tipe_pengurus == '2'){
+                    $config['upload_path'] = './assets/admin/img/pengurus/hmif';
+                }
+
+
+                $config['allowed_types'] = 'jpg|png|jpeg';
+                $config['max_size'] = '';
+                
+                $this->load->library('upload', $config);
+                if($config['max_size'] >= 2048){
+                    $this->session->set_flashdata('info', 'File Melewati Batas Ukuran');
+                    redirect($alamat);
+                }
+                //unlink(base_url('assets/img/produk/'.$input['judul_foto']));
+                unlink($config['upload_path'].'/'.$input['foto_lama']);
+
+                if(!$this->upload->do_upload('fotoPengurus')){
+                    //die();
+                    $this->session->set_flashdata('info', 'Upload File Gagal, Periksa Ukuran dan Ekstensi');
+                    redirect($alamat);
+                }else{
+                    $filenya =  $this->upload->data('file_name');
+                }
+
+                $items = array(
+                    'nama_pengurus'         => $input['nama_pengurus'],
+                    'jabatan_pengurus'      => $input['jabatan'],
+                    'periode_pengurus'      => $input['periode'],
+                    'facebook'              => $input['facebook'],
+                    'twitter'               => $input['twitter'],
+                    'instagram'             => $input['instagram'],
+                    'foto_pengurus'         => $filenya,
+                    'tipe_pengurus'         => $tipe_pengurus,
+                );
+
+                //$this->Crud->u('barang', $items, $where);
+                $this->db->update('pengurus', $items, $where);
+                $this->session->set_flashdata('info', 'Informasi Pengurus Sukses Diupdate');
+                redirect($alamat);
+
+            }
+        }else{
+            $items = array(
+                'nama_pengurus'         => $input['nama_pengurus'],
+                'jabatan_pengurus'      => $input['jabatan'],
+                'periode_pengurus'      => $input['periode'],
+                'facebook'              => $input['facebook'],
+                'twitter'               => $input['twitter'],
+                'instagram'             => $input['instagram'],
+                'tipe_pengurus'         => $tipe_pengurus,
+            );
+            $this->Crud->u('pengurus', $items, $where);
+            $this->session->set_flashdata('info', 'Infomasi Pengurus Sukses Diupdate');
+            redirect($alamat);
+        }
+    }
+    //End Do Update Pengurus
 
     //Begin Sejarah Pengurus
     public function sejarahPengurus(){
@@ -859,7 +1150,7 @@ public function deleteDaftarPrestasi($id){
                 if(!$this->upload->do_upload('userfile')){
                     //die();
                     $this->session->set_flashdata('info', 'Upload File Gagal, Periksa Ukuran dan Ekstensi');
-                    redirect($alamat);
+                    redirect('admin/sejarahPengurus');
                 }else{
                     $filenya =  $this->upload->data('file_name');
                 }

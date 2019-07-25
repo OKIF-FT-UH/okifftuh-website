@@ -72,16 +72,22 @@
                     </li>
 
                     <li>
-                        <a href="<?= site_url('admin/saranMasuk') ?>" class="<?= ($modul == 'saranMasuk') ? 'active' : '' ?>" aria-expanded="false">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-envelope menu-icon"></i><span class="nav-text">Saran Masuk</span>
                         </a>
+                        <ul aria-expanded="false">
+                        <li><a href="<?= site_url('admin/saranMasuk') ?>" class="<?= ($modul == 'saranMasuk') ? 'active' : '' ?>">Saran Masuk</a></li>
+                        <li><a href="<?= site_url('admin/saranApprove') ?>" class="<?= ($modul == 'saranApprove') ? 'active' : '' ?>">Saran yang Telah disetujui</a></li>
+                        </ul>
                     </li>
-
-                    <li>
-                        <a href="<?= site_url('admin/admin') ?>" class="<?= ($modul == 'admin') ? 'active' : '' ?>" aria-expanded="false">
-                            <i class="icon-user menu-icon"></i><span class="nav-text">Admin</span>
-                        </a>
-                    </li>
+                    
+                    <?php if($this->session->userdata('status_admin') == 'super_admin') : ?>
+                        <li>
+                            <a href="<?= site_url('admin/admin') ?>" class="<?= ($modul == 'admin') ? 'active' : '' ?>" aria-expanded="false">
+                                <i class="icon-user menu-icon"></i><span class="nav-text">Admin</span>
+                            </a>
+                        </li>
+                    <?php endif; ?>
 <!-- 
                     <li class="nav-label">Apps</li>
                     <li>
