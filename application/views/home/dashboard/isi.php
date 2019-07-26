@@ -43,8 +43,8 @@
                 <h3 style="font-size: 3.7vw;"><br>ORGANISASI KEMAHASISWAAN INFORMATIKA
                 FAKULTAS TEKNIK UNIVERSITAS HASANUDDIN</h3>
                 <div class="top-buttons mx-auto text-center mt-md-4 mt-3">
-                    <a href="single.html" class="btn more mr-2" >About Us</a>
-                    <a href="contact.html" class="btn">Contact Us</a>
+                    <a href="single.html" class="btn more about" >About Us</a>
+                    <a href="contact.html" class="btn more contact">Contact Us</a>
                 </div>
                 <!-- <div class="d-flex hny-stats-inf">
                     <div class="col-md-4 stats_w3pvt_counter_grid mt-3">
@@ -99,12 +99,11 @@
                 </div>
                 <div class="col-md-6 banner_bottom_left mt-lg-0 mt-4">
                     <h4><a class="link-hny" href="services.html">
-                            We’re Changing the Way You Work with Agencies</a></h4>
+                            OKIF FT-UH</a></h4>
                     <p>Pellentesque convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget
                         pulvinar neque pharetra ac.</p>
                     <p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget
                         pulvinar neque pharetra ac.</p>
-                    <a class="btn more black mt-3" href="services.html" role="button">Services Info</a>
 
                 </div>
             </div>

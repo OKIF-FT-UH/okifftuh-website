@@ -527,7 +527,7 @@ li>a:only-child:after {
 #slide1:checked~div .fake-radio .radio-btn:nth-child(1),
 #slide2:checked~div .fake-radio .radio-btn:nth-child(2),
 #slide3:checked~div .fake-radio .radio-btn:nth-child(3) {
-    background: #0e5290;
+    background: #4a91c5;
 }
 
 .radio-btn {
@@ -565,7 +565,7 @@ li>a:only-child:after {
 
     0%,
     33.32333333333334% {
-        background: #0e5290;
+        background: #4a91c5;
     }
 
     33.333333333333336%,
@@ -675,8 +675,8 @@ li>a:only-child:after {
 }
 
 .btn:hover {
-    background: #0e5290;
-    border: 2px solid #0e5290;
+    background: #4a91c5;
+    border: 2px solid #4a91c5;
     color: #111;
     transition: .5s ease-in;
     -webkit-transition: .5s ease-in;
@@ -686,14 +686,44 @@ li>a:only-child:after {
 }
 
 .btn.more {
-    background: #0e5290;
-    border: 2px solid #0e5290;
+    background: #4a91c5;
+    border: 2px solid #4a91c5;
     color: #111;
 }
 
+.btn.more.about{
+    background: #0e5290;
+    border: 2px solid #0e5290;
+    color: #111; 
+}
+
+.btn.more.contact{
+
+    border: 2px solid #fff !important;
+    padding: 11px 30px !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    letter-spacing: 1px !important;
+    text-transform: capitalize !important;
+    display: inline-block !important;
+    background: none;
+}
+
+.btn.more.contact:hover{
+    background: #0e5290;
+    border: 2px solid #0e5290 !important;
+    color: #111 !important;
+    transition: .5s ease-in;
+    -webkit-transition: .5s ease-in;
+    -moz-transition: .5s ease-in;
+    -o-transition: .5s ease-in;
+    -ms-transition: .5s ease-in;
+
+}
+
 .btn.more.black:hover {
-    background: #212529;
-    border: 2px solid #212529;
+    background: #4a91c5;
+    border: 2px solid #4a91c5;
     color: #0470bc;
 }
 
@@ -1105,7 +1135,7 @@ span.decription {
 
 h6.date {
     font-size: 0.8em;
-    color: #0e5290;
+    color: #4a91c5;
 }
 
 /*-- //blogs--*/
@@ -1169,8 +1199,8 @@ h6.date {
 }
 
 .con-gd button.btn {
-    background: #0e5290;
-    border: 2px solid #0e5290;
+    background: #4a91c5;
+    border: 2px solid #4a91c5;
     color: #222;
     cursor: pointer;
     padding: 13px 0;
@@ -1180,7 +1210,7 @@ h6.date {
 .con-gd button.btn:hover {
     background: #212529;
     border: 2px solid #212529;
-    color: #0e5290;
+    color: #4a91c5;
 }
 
 p.news-para {
@@ -1307,7 +1337,7 @@ ol.breadcrumb li {
 }
 
 ol.breadcrumb li a {
-    color: #0e5290;
+    color: #4a91c5;
 }
 
 .breadcrumb-item.active {
@@ -1401,7 +1431,7 @@ h4.title-hny {
 }
 
 .social-icons-footer ul li a:hover {
-    color: #0e5290;
+    color: #4a91c5;
 }
 
 .comments-grid-right h4 {
@@ -1417,7 +1447,7 @@ h4.title-hny {
 }
 
 .comments-grid-right ul li a {
-    color: #0e5290;
+    color: #4a91c5;
 }
 
 .single-page-form {}
@@ -1885,7 +1915,7 @@ footer,
 }
 
 .footer-grids h5 span {
-    color: #0e5290;
+    color: #4a91c5;
 }
 
 .footer-grids p,
@@ -1921,7 +1951,7 @@ footer,
 }
 
 .footer-grids button.btn {
-    background: #0e5290;
+    background: #4a91c5;
     color: #fff;
     font-size: 14px;
     letter-spacing: 1px;
