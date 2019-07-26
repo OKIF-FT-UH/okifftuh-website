@@ -36,11 +36,11 @@
                                             </tr>
                                         </thead>
 
-                                         <?php 
+                                        <tbody>
+                                        <?php 
                                             $no = 1;
                                             foreach($data as $get){ 
                                         ?>
-                                        <tbody>
                                             <tr>
                                                 <td style="vertical-align: middle;text-align: center;"><?= $no++ ?></td>
                                                 <td style="vertical-align: middle;text-align: left;"><?=$get->nama_mahasiswa ?></td>
@@ -50,7 +50,7 @@
                                                 <td style="vertical-align: middle;text-align: center;"><?=$get->sks_mahasiswa ?></td>
                                                 <td style="vertical-align: middle;text-align: center;"><?=$get->ipk_mahasiswa ?></td>
                                                 <td style="vertical-align: middle;text-align: center;">
-                                                    <button type="button" class="btn mb-1 btn-dark" data-toggle="modal" data-target="#modal_detail<?= $get->id_mahasiswa ?>"><i class="fa fa-info-circle"></i>
+                                                    <button type="button" class="btn mb-1 btn-info" data-toggle="modal" data-target="#modal_detail<?= $get->id_mahasiswa ?>"><i class="fa fa-info-circle"></i>
                                                     </button>
                                                     <button type="button" class="btn mb-1 btn-primary" data-toggle="modal" data-target="#modal_edit<?= $get->id_mahasiswa ?>"><i class="fa fa-pencil"></i>
                                                     </button>

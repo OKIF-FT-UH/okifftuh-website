@@ -31,11 +31,11 @@
                                                 <th style="text-align: center;vertical-align: middle;">Action</th>
                                             </tr>
                                         </thead>
+                                        <tbody>
                                         <?php 
                                         $no = 1;
                                         foreach($data as $get){ 
                                         ?>
-                                        <tbody>
                                            <tr>
                                                 <td style="vertical-align: middle;text-align: center;"><?= $no++ ?></td>
                                                 <td style="vertical-align: middle;text-align: left;"><img src="<?= base_url('assets/admin/img/sejarahPengurus/'.$get->foto_pengurus) ?>" class="img-responsive" style="max-height: 240px; max-width: 200px;" > </td>

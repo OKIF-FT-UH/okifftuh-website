@@ -37,12 +37,13 @@
                                             </tr>
                                         </thead>
 
-                                <?php 
-                                $no = 1;
-                                foreach($data as $get){ 
-                                ?>
+                                
                                     
                                         <tbody>
+                                        <?php 
+                                        $no = 1;
+                                        foreach($data as $get){ 
+                                        ?>
                                             <tr>
                                                 <td style="vertical-align: middle;text-align: center;"><?= $no++ ?></td>
                                                 <td style="vertical-align: middle;text-align: left;"><?= $get->nama_prestasi ?></td>

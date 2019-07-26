@@ -39,14 +39,14 @@
                                     </tr>
                                 </thead>
                                 <!-- <?= ($modul == 'admin') ? 'active' : '' ?> -->
+
+                                <tbody>
                                 <?php 
                                     $no = 1;
                                     foreach($data as $get){
                                     $id = $get->id_admin;
                                     $status = $get->status_admin; 
                                 ?>
-
-                                <tbody>
                                     <tr>
                                         <td style="vertical-align: middle;text-align: center;"><?= $no++ ?></td>
                                         <td style="vertical-align: middle;text-align: center;"><?= $get->nama_lengkap_admin ?></td>

@@ -35,11 +35,12 @@
                                             </tr>
                                         </thead>
 
-                                         <?php 
+                                         
+                                        <tbody>
+                                        <?php 
                                             $no = 1;
                                             foreach($data as $get){ 
                                         ?>
-                                        <tbody>
                                             <tr>
                                                 <td style="vertical-align: middle;text-align: center;"><?= $no++ ?></td>
                                                 <td style="vertical-align: middle;text-align: left;"><?=$get->nama_mahasiswa ?></td>

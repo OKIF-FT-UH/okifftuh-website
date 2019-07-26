@@ -76,7 +76,7 @@
                                     ?>
                                 </h6>
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-bordered zero-configuration">
+                                    <table class="table table-striped table-bordered zero-configuration" id="tabell">
                                         <thead>
                                             <tr>
                                                 <th style="text-align: center;vertical-align: middle;">No.</th>
@@ -89,6 +89,8 @@
                                             </tr>
                                         </thead>
 
+                                        
+                                        <tbody>
                                         <?php
                                             $no=1;
                                             foreach($data as $get){
@@ -97,7 +99,6 @@
                                                 $waktuApprove = date('d-M-Y', strtotime($get->acc_saran));
                                                 $kode = $get->kode_saran
                                         ?>
-                                        <tbody>
                                             <tr>
                                                 <td style="text-align: center;vertical-align: middle;"><?= $no++ ?></td>
                                                 <td style="text-align: center;vertical-align: middle;"><?= $get->nama_saran ?></td>
@@ -124,8 +125,16 @@
                                                 <?php } ?>
                                             </tr>
                                         </tbody>
-                                            <?php } 
-                                                    ?>
+                                            <?php } ?>
+                                              <tfoot>
+                                            <tr>
+                                                <th>s</th>
+                                                <th>Position</th>
+                                                <th>Office</th>
+                                                <th>Age</th>
+                                                <th>Start date</th>
+                                            </tr>
+                                        </tfoot>
                                     </table>
                                 </div>
 
@@ -298,3 +307,15 @@ $id = $get->id_saran;
          ?>                          
 
 <!-- End Success -->
+
+<script>
+$(document).ready(function() {
+    $('#tabell').dataTable({
+        "scrollX": true,
+        "pagingType": "numbers",
+        "processing": true,
+        "serverSide": true,
+        "ajax": "server.php"
+    } );
+} );
+</script>

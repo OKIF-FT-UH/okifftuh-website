@@ -32,13 +32,13 @@
                                             </tr>
                                         </thead>
 
-                                     <?php
-                                     $no=1;
+                                        <tbody>
+                                        <?php
+                                        $no=1;
                                         foreach($data as $get){ 
                                         $waktu = date('d-M-Y', strtotime($get->tanggal_galeri));
         
-                                     ?>
-                                        <tbody>
+                                        ?>
                                             <tr>
                                                 <td style="text-align: center;vertical-align: center;"><?= $no++ ?></td>
                                                 <td style="text-align: center;vertical-align: left;"><img src="<?= base_url('assets/admin/img/galeri/'.$get->foto_galeri)?>" class="img-responsive" style="max-height: 240px; max-width: 200px;"></td>
