@@ -42,12 +42,13 @@
                                             </tr>
                                         </thead>
 
+                                        
+                                        <tbody>
                                         <?php
                                             $no=1;
                                             foreach($data as $get){
                                                 $waktu = date('d-M-Y', strtotime($get->waktu_saran));
                                         ?>
-                                        <tbody>
                                             <tr>
                                                 <td style="text-align: center;vertical-align: middle;"><?= $no++ ?></td>
                                                 <td style="text-align: center;vertical-align: middle;"><?= $get->nama_saran ?></td>
@@ -61,9 +62,10 @@
                                                     </button>
                                                 </td>
                                             </tr>
-                                        </tbody>
                                             <?php } 
                                                     ?>
+                                        </tbody>
+                                            
                                     </table>
                                 </div>
                                      <?php }elseif($modul=='saranApprove'){ ?>
@@ -124,8 +126,9 @@
                                                 </td>
                                                 <?php } ?>
                                             </tr>
+                                             <?php } ?>
                                         </tbody>
-                                            <?php } ?>
+                                           
                                               <tfoot>
                                             <tr>
                                                 <th>s</th>
@@ -150,7 +153,7 @@
         <!--**********************************
             Content body end
         ***********************************-->
-<--! Begin Open Messages saranMasuk -->
+<!--Begin Open Messages saranMasuk-->
 <?php 
 if($modul=='saranMasuk'){
     foreach($data as $get){
