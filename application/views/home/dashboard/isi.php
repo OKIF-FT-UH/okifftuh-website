@@ -40,10 +40,10 @@
             <!-- banner-hny-info -->
             <div class="banner-hny-info">
                 <br>
-                <h3 style="font-size: 4.5vw;"><br>Organisasi Kemahasiswaan Informatika
-                    <br>Fakultas Teknik Universitas Hasanuddin</h3>
-                <div class="top-buttons mx-auto text-center mt-md-5 mt-3">
-                    <a href="single.html" class="btn more mr-2">About Us</a>
+                <h3 style="font-size: 3.7vw;"><br>ORGANISASI KEMAHASISWAAN INFORMATIKA
+                FAKULTAS TEKNIK UNIVERSITAS HASANUDDIN</h3>
+                <div class="top-buttons mx-auto text-center mt-md-4 mt-3">
+                    <a href="single.html" class="btn more mr-2" >About Us</a>
                     <a href="contact.html" class="btn">Contact Us</a>
                 </div>
                 <!-- <div class="d-flex hny-stats-inf">
@@ -80,7 +80,7 @@
     <section class="about py-5">
         <div class="container p-md-5">
             <div class="about-hny-info text-left px-md-5">
-                <h3 class="tittle-w3ls mb-3"><span class="pink">We</span> Design & Build</h3>
+                <h3 class="tittle-w3ls mb-3"><span class="pink">Selamat</span> Datang</h3>
                 <p class="sub-tittle mt-3 mb-4">Integer pulvinar leo id viverra feugiat. Pellentesque libero ut justo, semper at tempus vel, ultrices in ligula. Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Sed do eiusmod tempor incididunt ut labore et dolore
                     magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
@@ -95,7 +95,7 @@
             <div class="row inner_sec_info">
 
                 <div class="col-md-6 banner_bottom_grid help">
-                    <img src="<?= base_url('assets/home/'); ?>images/ab.jpg" alt=" " class="img-fluid">
+                    <img src="<?= base_url('assets/home/'); ?>images/if.PNG" alt=" " class="img-fluid">
                 </div>
                 <div class="col-md-6 banner_bottom_left mt-lg-0 mt-4">
                     <h4><a class="link-hny" href="services.html">
@@ -117,7 +117,7 @@
                             </div>
                         </div>
                         <div class="col-md-9 featured_grid_right_info pl-lg-0">
-                            <h4><a class="link-hny" href="single.html">Global Network</a></h4>
+                            <h4><a class="link-hny">Pendidikan</a></h4>
                             <p>Lorem Ipsum is simply text the printing and typesetting standard industry.</p>
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                             </div>
                         </div>
                         <div class="col-md-9 featured_grid_right_info pl-lg-0">
-                            <h4><a class="link-hny" href="single.html">Digital Agency</a></h4>
+                            <h4><a class="link-hny">Penelitian</a></h4>
                             <p>Lorem Ipsum is simply text the printing and typesetting standard industry.</p>
                         </div>
                     </div>
@@ -143,7 +143,7 @@
                             </div>
                         </div>
                         <div class="col-md-9 featured_grid_right_info pl-lg-0">
-                            <h4><a class="link-hny" href="single.html">Trusted Partner</a></h4>
+                            <h4><a class="link-hny">Pengabdian Masyarakat</a></h4>
                             <p>Lorem Ipsum is simply text the printing and typesetting standard industry.</p>
                         </div>
                     </div>
@@ -496,7 +496,7 @@
     <section class="testmonials" id="test">
         <div class="over-lay-blue py-5">
             <div class="container py-md-5">
-                <h3 class="tittle-w3ls two text-center mb-5">Our Testimonials</h3>
+                <h3 class="tittle-w3ls two text-center mb-5">Sepatah Kata</h3>
                 <div class="row my-4">
                     <div class="col-lg-4 testimonials_grid mt-3">
                         <div class="p-lg-5 p-4 testimonials-gd-vj">
@@ -549,24 +549,3 @@
     </section>
     <!--//testimonials-->
 
-    <!-- /news-letter -->
-    <section class="news-letter-w3pvt py-5">
-        <div class="container contact-form mx-auto text-left">
-            <h3 class="title-w3ls two text-left mb-3">Newsletter </h3>
-            <form method="post" action="#" class="w3ls-frm">
-                <div class="row subscribe-sec">
-                    <p class="news-para col-lg-3">Start working together?</p>
-                    <div class="col-lg-6 con-gd">
-                        <input type="email" class="form-control" id="email" placeholder="Your Email here..." name="email" required>
-
-                    </div>
-                    <div class="col-lg-3 con-gd">
-                        <button type="submit" class="btn submit">Subscribe</button>
-                    </div>
-
-                </div>
-
-            </form>
-        </div>
-    </section>
-    <!-- //news-letter -->

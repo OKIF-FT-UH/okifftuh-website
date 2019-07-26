@@ -157,11 +157,11 @@ li.social-icons a span {
 /* Background color change on Hover */
 
 .menu li a:hover {
-    color: #feac00;
+    color: #4a91c5;
 }
 
 .menu li.active a {
-    color: #feac00;
+    color: #4a91c5;
 }
 
 /* Hide Dropdowns by Default
@@ -456,12 +456,13 @@ li>a:only-child:after {
 
 /* banner-hny-info */
 .banner-hny-info {
-    padding: 14em 0 14em;
+    padding: 11em 0 11em;
     margin: 0 auto;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
+
 }
 
 /* banner slider */
@@ -526,7 +527,7 @@ li>a:only-child:after {
 #slide1:checked~div .fake-radio .radio-btn:nth-child(1),
 #slide2:checked~div .fake-radio .radio-btn:nth-child(2),
 #slide3:checked~div .fake-radio .radio-btn:nth-child(3) {
-    background: #feac00;
+    background: #0e5290;
 }
 
 .radio-btn {
@@ -564,7 +565,7 @@ li>a:only-child:after {
 
     0%,
     33.32333333333334% {
-        background: #feac00;
+        background: #0e5290;
     }
 
     33.333333333333336%,
@@ -674,9 +675,9 @@ li>a:only-child:after {
 }
 
 .btn:hover {
-    background: #feac00;
-    border: 2px solid #feac00;
-    color: #333;
+    background: #0e5290;
+    border: 2px solid #0e5290;
+    color: #111;
     transition: .5s ease-in;
     -webkit-transition: .5s ease-in;
     -moz-transition: .5s ease-in;
@@ -685,15 +686,15 @@ li>a:only-child:after {
 }
 
 .btn.more {
-    background: #feac00;
-    border: 2px solid #feac00;
-    color: #222;
+    background: #0e5290;
+    border: 2px solid #0e5290;
+    color: #111;
 }
 
 .btn.more.black:hover {
     background: #212529;
     border: 2px solid #212529;
-    color: #feac00;
+    color: #0470bc;
 }
 
 .wthree-w3ls {
@@ -837,7 +838,7 @@ p.sub-tittle {
 }
 
 .pink {
-    color: #feac00;
+    color: #0470bc;
 }
 
 h3.tittle-w3ls,
@@ -884,8 +885,8 @@ h3.tittle-w3ls.two {
 }
 
 .icon_left_grid span {
-    font-size: 2em;
-    color: #ffc107;
+    font-size: 2.5em;
+    color: #0e5290;
     margin-top: 0.1em;
 }
 
@@ -1086,7 +1087,7 @@ span.decription {
 
 
 .date-post .link-hny {
-    font-size: 0.9em;
+    font-size: 2.5em;
     font-weight: 600;
     color: #fff;
     letter-spacing: 1px;
@@ -1104,7 +1105,7 @@ span.decription {
 
 h6.date {
     font-size: 0.8em;
-    color: #feac00;
+    color: #0e5290;
 }
 
 /*-- //blogs--*/
@@ -1118,6 +1119,7 @@ h6.date {
 
 .link-hny {
     color: #222222;
+    font-size: 1.1em;
 
 }
 
@@ -1167,8 +1169,8 @@ h6.date {
 }
 
 .con-gd button.btn {
-    background: #feac00;
-    border: 2px solid #feac00;
+    background: #0e5290;
+    border: 2px solid #0e5290;
     color: #222;
     cursor: pointer;
     padding: 13px 0;
@@ -1178,7 +1180,7 @@ h6.date {
 .con-gd button.btn:hover {
     background: #212529;
     border: 2px solid #212529;
-    color: #feac00;
+    color: #0e5290;
 }
 
 p.news-para {
@@ -1305,7 +1307,7 @@ ol.breadcrumb li {
 }
 
 ol.breadcrumb li a {
-    color: #feac00;
+    color: #0e5290;
 }
 
 .breadcrumb-item.active {
@@ -1399,7 +1401,7 @@ h4.title-hny {
 }
 
 .social-icons-footer ul li a:hover {
-    color: #feac00;
+    color: #0e5290;
 }
 
 .comments-grid-right h4 {
@@ -1415,7 +1417,7 @@ h4.title-hny {
 }
 
 .comments-grid-right ul li a {
-    color: #feac00;
+    color: #0e5290;
 }
 
 .single-page-form {}
@@ -1883,7 +1885,7 @@ footer,
 }
 
 .footer-grids h5 span {
-    color: #feac00;
+    color: #0e5290;
 }
 
 .footer-grids p,
@@ -1919,7 +1921,7 @@ footer,
 }
 
 .footer-grids button.btn {
-    background: #feac00;
+    background: #0e5290;
     color: #fff;
     font-size: 14px;
     letter-spacing: 1px;
