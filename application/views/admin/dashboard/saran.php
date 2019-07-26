@@ -85,8 +85,8 @@
                                                 <th style="text-align: center;vertical-align: middle;">Nama</th>
                                                 <th style="text-align: center;vertical-align: middle;">Email</th>
                                                 <th style="text-align: center;vertical-align: middle;">Perihal</th>
+                                                <th style="text-align: center;vertical-align: middle;">Tanggapan</th>
                                                 <th style="text-align: center;vertical-align: middle;">Tanggal Masuk</th>
-                                                <th style="text-align: center;vertical-align: middle;">Tanggpan</th>
                                                 <th style="text-align: center;vertical-align: middle;">Tanggal Penyelesaian</th>
                                                 <th style="text-align: center;vertical-align: middle;">Action</th>
                                             </tr>
@@ -107,13 +107,12 @@
                                                 <td style="text-align: center;vertical-align: middle;"><?= $get->nama_saran ?></td>
                                                 <td style="text-align: center;vertical-align: middle;"><?= $get->email_saran ?></td>
                                                 <td style="text-align: center;vertical-align: middle;"><?= $get->perihal_saran ?></td>
-                                                <td style="text-align: center;vertical-align: middle;"><?= $waktu ?></td>
+                                                
 
                                                 
                                                 <?php
                                                 if($kode==1){ 
                                                  ?>
-                                                <td style="text-align: center;vertical-align: middle;"> - </td>
                                                 <td style="text-align: center;vertical-align: middle;"> - </td>
                                                 <td style="text-align: center;vertical-align: middle;">
                                                     <button type="button" class="btn mb-1 btn-primary" data-toggle="modal" data-target="#openMsgApprove<?= $get->id_saran ?>"><i class="fa fa-envelope-open"></i>
@@ -122,12 +121,28 @@
                                                 <?php }elseif ($kode==2) {
                                                 ?>
                                                 <td style="text-align: center;vertical-align: middle;"><?= $get->tanggapan_saran ?></td>
+                                                    <button type="button" class="btn mb-1 btn-success" data-toggle="modal" data-target="#successSaran<?= $get->id_saran ?>"><i class="fa fa-check-square-o"></i>
+                                                    </button>
+                                                </td>
+                                                <?php } ?>
+                                                <td style="text-align: center;vertical-align: middle;"><?= $waktu ?></td>
+                                                <?php
+                                                if($kode==1){ 
+                                                 ?>
+                                                <td style="text-align: center;vertical-align: middle;"> - </td>
+                                                <td style="text-align: center;vertical-align: middle;">
+                                                    <button type="button" class="btn mb-1 btn-primary" data-toggle="modal" data-target="#openMsgApprove<?= $get->id_saran ?>"><i class="fa fa-envelope-open"></i>
+                                                    </button>
+                                                </td>
+                                                <?php }elseif ($kode==2) {
+                                                ?>
                                                 <td style="text-align: center;vertical-align: middle;"><?= $waktuApprove ?></td>
                                                 <td style="text-align: center;vertical-align: middle;">
                                                     <button type="button" class="btn mb-1 btn-success" data-toggle="modal" data-target="#successSaran<?= $get->id_saran ?>"><i class="fa fa-check-square-o"></i>
                                                     </button>
                                                 </td>
                                                 <?php } ?>
+
                                             </tr>
                                              <?php } ?>
                                         </tbody>
