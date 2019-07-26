@@ -98,7 +98,6 @@
                                             $no=1;
                                             foreach($data as $get){
                                                 $waktu = date('d-M-Y', strtotime($get->waktu_saran));
-                                                $today = date('Y-m-d H:i:s');
                                                 $waktuApprove = date('d-M-Y', strtotime($get->acc_saran));
                                                 $kode = $get->kode_saran
                                         ?>
@@ -114,16 +113,10 @@
                                                 if($kode==1){ 
                                                  ?>
                                                 <td style="text-align: center;vertical-align: middle;"> - </td>
-                                                <td style="text-align: center;vertical-align: middle;">
-                                                    <button type="button" class="btn mb-1 btn-primary" data-toggle="modal" data-target="#openMsgApprove<?= $get->id_saran ?>"><i class="fa fa-envelope-open"></i>
-                                                    </button>
-                                                </td>
+
                                                 <?php }elseif ($kode==2) {
                                                 ?>
                                                 <td style="text-align: center;vertical-align: middle;"><?= $get->tanggapan_saran ?></td>
-                                                    <button type="button" class="btn mb-1 btn-success" data-toggle="modal" data-target="#successSaran<?= $get->id_saran ?>"><i class="fa fa-check-square-o"></i>
-                                                    </button>
-                                                </td>
                                                 <?php } ?>
                                                 <td style="text-align: center;vertical-align: middle;"><?= $waktu ?></td>
                                                 <?php
