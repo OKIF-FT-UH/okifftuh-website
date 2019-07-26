@@ -95,7 +95,7 @@
             <div class="row inner_sec_info">
 
                 <div class="col-md-6 banner_bottom_grid help">
-                    <img src="<?= base_url('assets/home/'); ?>images/if.PNG" alt=" " class="img-fluid">
+                    <img src="<?= base_url('assets/home/'); ?>images/if.PNG" alt=" " class="img-fluid-if">
                 </div>
                 <div class="col-md-6 banner_bottom_left mt-lg-0 mt-4">
                     <h4><a class="link-hny" href="services.html">
