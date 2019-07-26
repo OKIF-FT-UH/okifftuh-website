@@ -15,6 +15,15 @@ class Home extends CI_Controller {
         );
         $this->load->view('home/_layouts/wrapper', $data);
 	}
+
+    public function profil(){
+        $data = array(
+            'nav'       => 'Profil',
+            'isi'       => 'home/dashboard/isi2', 
+        );
+        $this->load->view('home/_layouts2/wrapper2', $data);
+
+    }
 }
 
 ?>
