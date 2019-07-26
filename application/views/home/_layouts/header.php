@@ -60,9 +60,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                         <li>
                             <!-- First Tier Drop Down -->
-                            <label for="drop-1" class="toggle toggle-1">Pengurus <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
+                            <label for="drop-3" class="toggle toggle-2">Pengurus <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
                             <a href="#">Pengurus  <span class="fa fa-angle-down" aria-hidden="true"></span></a>
-                            <input type="checkbox" id="drop-1" />
+                            <input type="checkbox" id="drop-3" />
                             <ul>
 
                                 <li><a href="services.html" class="drop-text">DMMIF FT-UH</a></li>
@@ -72,11 +72,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                         <li>
                             <!-- First Tier Drop Down -->
-                            <label for="drop-3" class="toggle toggle-3">Informasi <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
-                            <a href="#">Informasi  <span class="fa fa-angle-down" aria-hidden="true"></span></a>
-                            <input type="checkbox" id="drop-3" />
-                            <ul>
-
+                            <label for="drop-4" class="toggle toggle-3">Pengurus <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
+                            <a href="#">Pengurus  <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                            <input type="checkbox" id="drop-4" />
+                            <ul style="margin-left:9rem;">
                                 <li><a href="services.html" class="drop-text">Kegiatan</a></li>
                                 <li><a href="timeline.html" class="drop-text">Beasiswa</a></li>
                                 <li><a href="team.html" class="drop-text">Prestasi</a></li>

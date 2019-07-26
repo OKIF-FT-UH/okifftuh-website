@@ -221,6 +221,7 @@ li>a:only-child:after {
     content: '';
 }
 
+
 /* Media Queries
 --------------------------------------------- */
 
@@ -352,6 +353,58 @@ li>a:only-child:after {
     nav ul ul li a {
         color: #fff;
         font-size: 0.8em;
+    }
+
+    nav ul li ul li:hover {
+        background: none;
+    }
+
+    label.toggle.toggle-3 {
+        width: 94%;
+        font-size: 13px;
+    }
+
+    nav ul li ul li .toggle,
+    nav ul ul a {
+        background-color: #343a40;
+    }
+
+    /* Hide Dropdowns by Default */
+    nav ul ul {
+        margin-left: 0rem !important;
+        float: none;
+        position: static;
+        color: #ffffff;
+        /* has to be the same number as the "line-height" of "nav a" */
+        text-align: left;
+    }
+
+    /* Hide menus on hover */
+    nav ul ul li:hover>ul,
+    nav ul li:hover>ul {
+        display: none;
+    }
+
+    nav ul {
+        margin-left: 0em;
+    }
+
+    /* Fisrt Tier Dropdown */
+    nav ul ul li {
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+
+    nav ul ul ul li {
+        position: static;
+        /* has to be the same number as the "width" of "nav ul ul li" */
+    }
+
+    nav ul ul li a {
+        color: #fff;
+        font-size: 0.8em;
+        margin-left: 0rem;
     }
 
     nav ul li ul li:hover {
