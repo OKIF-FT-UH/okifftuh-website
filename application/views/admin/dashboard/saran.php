@@ -86,6 +86,7 @@
                                                 <th style="text-align: center;vertical-align: middle;">Email</th>
                                                 <th style="text-align: center;vertical-align: middle;">Perihal</th>
                                                 <th style="text-align: center;vertical-align: middle;">Tanggal Masuk</th>
+                                                <th style="text-align: center;vertical-align: middle;">Tanggpan</th>
                                                 <th style="text-align: center;vertical-align: middle;">Tanggal Penyelesaian</th>
                                                 <th style="text-align: center;vertical-align: middle;">Action</th>
                                             </tr>
@@ -113,12 +114,14 @@
                                                 if($kode==1){ 
                                                  ?>
                                                 <td style="text-align: center;vertical-align: middle;"> - </td>
+                                                <td style="text-align: center;vertical-align: middle;"> - </td>
                                                 <td style="text-align: center;vertical-align: middle;">
                                                     <button type="button" class="btn mb-1 btn-primary" data-toggle="modal" data-target="#openMsgApprove<?= $get->id_saran ?>"><i class="fa fa-envelope-open"></i>
                                                     </button>
                                                 </td>
                                                 <?php }elseif ($kode==2) {
                                                 ?>
+                                                <td style="text-align: center;vertical-align: middle;"><?= $get->tanggapan_saran ?></td>
                                                 <td style="text-align: center;vertical-align: middle;"><?= $waktuApprove ?></td>
                                                 <td style="text-align: center;vertical-align: middle;">
                                                     <button type="button" class="btn mb-1 btn-success" data-toggle="modal" data-target="#successSaran<?= $get->id_saran ?>"><i class="fa fa-check-square-o"></i>
@@ -218,6 +221,10 @@ if($modul=='saranMasuk'){
                                                             <label for="message-text" class="col-form-label">Isi Saran:</label>
                                                             <textarea class="form-control" id="message-text" disabled><?= $get->isi_saran ?></textarea>
                                                         </div>
+                                                        <div class="form-group">
+                                                            <label for="message-text" class="col-form-label">Tanggapan Saran:</label>
+                                                            <textarea class="form-control" id="message-text" name="tanggapan_saran"></textarea>
+                                                        </div>
                                                         <div class="modal-footer">
                                                             <button type="submit" class="btn btn-primary">Telah diselesaikan!</button>
                                                          </div>
@@ -287,6 +294,10 @@ $id = $get->id_saran;
                                                         <div class="form-group">
                                                             <label for="message-text" class="col-form-label">Isi Saran:</label>
                                                             <textarea class="form-control" id="message-text" disabled><?= $get->isi_saran ?></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="message-text" class="col-form-label">Tanggapan Saran:</label>
+                                                            <textarea class="form-control" id="message-text" name="tanggapan_saran" disabled><?= $get->tanggapan_saran  ?></textarea>
                                                         </div>
                                                         <div class="modal-footer">
                                                         <div class="modal-body">Saran Telah dilaksanakan!</div>
