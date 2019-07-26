@@ -39,7 +39,8 @@
             </div>
             <!-- banner-hny-info -->
             <div class="banner-hny-info">
-                <h3 style="font-size: 50px;"><br>Organisasi Kemahasiswaan Informatika
+                <br>
+                <h3 style="font-size: 4.5vw;"><br>Organisasi Kemahasiswaan Informatika
                     <br>Fakultas Teknik Universitas Hasanuddin</h3>
                 <div class="top-buttons mx-auto text-center mt-md-5 mt-3">
                     <a href="single.html" class="btn more mr-2">About Us</a>
