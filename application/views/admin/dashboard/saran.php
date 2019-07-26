@@ -85,6 +85,7 @@
                                                 <th style="text-align: center;vertical-align: middle;">Nama</th>
                                                 <th style="text-align: center;vertical-align: middle;">Email</th>
                                                 <th style="text-align: center;vertical-align: middle;">Perihal</th>
+                                                <th style="text-align: center;vertical-align: middle;">Tanggapan</th>
                                                 <th style="text-align: center;vertical-align: middle;">Tanggal Masuk</th>
                                                 <th style="text-align: center;vertical-align: middle;">Tanggal Penyelesaian</th>
                                                 <th style="text-align: center;vertical-align: middle;">Action</th>
@@ -97,7 +98,6 @@
                                             $no=1;
                                             foreach($data as $get){
                                                 $waktu = date('d-M-Y', strtotime($get->waktu_saran));
-                                                $today = date('Y-m-d H:i:s');
                                                 $waktuApprove = date('d-M-Y', strtotime($get->acc_saran));
                                                 $kode = $get->kode_saran
                                         ?>
@@ -106,9 +106,19 @@
                                                 <td style="text-align: center;vertical-align: middle;"><?= $get->nama_saran ?></td>
                                                 <td style="text-align: center;vertical-align: middle;"><?= $get->email_saran ?></td>
                                                 <td style="text-align: center;vertical-align: middle;"><?= $get->perihal_saran ?></td>
-                                                <td style="text-align: center;vertical-align: middle;"><?= $waktu ?></td>
+                                                
 
                                                 
+                                                <?php
+                                                if($kode==1){ 
+                                                 ?>
+                                                <td style="text-align: center;vertical-align: middle;"> - </td>
+
+                                                <?php }elseif ($kode==2) {
+                                                ?>
+                                                <td style="text-align: center;vertical-align: middle;"><?= $get->tanggapan_saran ?></td>
+                                                <?php } ?>
+                                                <td style="text-align: center;vertical-align: middle;"><?= $waktu ?></td>
                                                 <?php
                                                 if($kode==1){ 
                                                  ?>
@@ -125,19 +135,10 @@
                                                     </button>
                                                 </td>
                                                 <?php } ?>
+
                                             </tr>
                                              <?php } ?>
                                         </tbody>
-                                           
-                                              <tfoot>
-                                            <tr>
-                                                <th>s</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                            </tr>
-                                        </tfoot>
                                     </table>
                                 </div>
 
@@ -228,6 +229,10 @@ if($modul=='saranMasuk'){
                                                             <label for="message-text" class="col-form-label">Isi Saran:</label>
                                                             <textarea class="form-control" id="message-text" disabled><?= $get->isi_saran ?></textarea>
                                                         </div>
+                                                        <div class="form-group">
+                                                            <label for="message-text" class="col-form-label">Tanggapan Saran:</label>
+                                                            <textarea class="form-control" id="message-text" name="tanggapan_saran"></textarea>
+                                                        </div>
                                                         <div class="modal-footer">
                                                             <button type="submit" class="btn btn-primary">Telah diselesaikan!</button>
                                                          </div>
@@ -297,6 +302,10 @@ $id = $get->id_saran;
                                                         <div class="form-group">
                                                             <label for="message-text" class="col-form-label">Isi Saran:</label>
                                                             <textarea class="form-control" id="message-text" disabled><?= $get->isi_saran ?></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="message-text" class="col-form-label">Tanggapan Saran:</label>
+                                                            <textarea class="form-control" id="message-text" name="tanggapan_saran" disabled><?= $get->tanggapan_saran  ?></textarea>
                                                         </div>
                                                         <div class="modal-footer">
                                                         <div class="modal-body">Saran Telah dilaksanakan!</div>

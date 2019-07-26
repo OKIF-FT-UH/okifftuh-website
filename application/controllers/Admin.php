@@ -715,8 +715,10 @@ public function deleteDaftarPrestasi($id){
 
     public function saranProses($id){
         $where = array('id_saran' => $id);
+        $input = $this->input->post(NULL, FALSE);
         $data = array(
             'kode_saran' => '1',
+            'tanggapan_saran' => $input['tanggapan_saran'],
             );
         $this->Crud->u('saran', $data, $where);
         $this->session->set_flashdata('info','Saran Telah diproses');
@@ -725,8 +727,12 @@ public function deleteDaftarPrestasi($id){
 
     public function saranDone($id){
         $where = array('id_saran' => $id);
+        $input = $this->input->post(NULL, FALSE);
+        $today = date('Y-m-d H:i:s');
         $data = array(
             'kode_saran' => '2',
+            'tanggapan_saran' => $input['tanggapan_saran'],
+            'acc_saran' => $today,
             );
         $this->Crud->u('saran', $data, $where);
         $this->session->set_flashdata('info','Saran Telah dilaksanakan');
