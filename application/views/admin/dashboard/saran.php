@@ -128,16 +128,6 @@
                                             </tr>
                                              <?php } ?>
                                         </tbody>
-                                           
-                                              <tfoot>
-                                            <tr>
-                                                <th>s</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                            </tr>
-                                        </tfoot>
                                     </table>
                                 </div>
 
