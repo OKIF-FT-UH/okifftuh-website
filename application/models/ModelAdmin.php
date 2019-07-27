@@ -16,6 +16,8 @@ class ModelAdmin extends CI_Model {
                     'username_admin'		=>	$x->username_admin,
                     'status_admin'			=> $x->status_admin,
                     'nama_lengkap_admin'	=> $x->nama_lengkap_admin,
+                    'foto_admin'            => $x->foto_admin,
+                    'password_admin'        => $x->password_admin,
                     "status" 				=> "login",
                 );
             }

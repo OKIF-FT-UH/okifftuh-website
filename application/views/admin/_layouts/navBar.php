@@ -43,7 +43,6 @@
         ***********************************-->
         <div class="header">    
             <div class="header-content clearfix">
-                
                 <div class="nav-control">
                     <div class="hamburger">
                         <span class="toggle-icon"><i class="icon-menu"></i></span>
@@ -185,6 +184,7 @@
                                 </div>
                             </div>
                         </li> -->
+                        <?php $id = $this->session->userdata('id_admin') ?>
                         <li class="icons dropdown">
                             <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
                                 <span class="activity active"></span>
@@ -194,7 +194,7 @@
                                 <div class="dropdown-content-body">
                                     <ul>
                                         <li>
-                                            <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
+                                            <button type="button" class="btn mb-1 btn-link" data-toggle="modal" data-target="#update_modal<?=$id?>"><i class="icon-user"></i> <span>Profile</span></button>  
                                         </li>
 <!--                                         <li>
                                             <a href="email-inbox.html"><i class="icon-envelope-open"></i> <span>Inbox</span> <div class="badge gradient-3 badge-pill badge-primary">3</div></a>
@@ -204,7 +204,7 @@
                                         <li>
                                             <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
                                         </li> -->
-                                        <li><a href="<?= site_url('login/logout') ?>"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                        <li><button type="button" class="btn mb-1 btn-link" onclick="window.location.href='<?= site_url('login/logout') ?>'" ><i class="icon-key"></i> <span>Logout</span></button></li>
                                     </ul>
                                 </div>
                             </div>
@@ -216,3 +216,56 @@
         <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
+
+<!-- Edit Profil -->
+
+<!-- Begin Update Modal -->
+<?php
+ $id = $this->session->userdata('id_admin') 
+ ?>
+<div class="modal fade" id="update_modal<?=$id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Administrator</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="<?= base_url('admin/updateProfil/'.$id) ?>" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="nama-lengkap" class="col-form-label">Nama Lengkap:</label>
+                        <input type="text" class="form-control" name="nama_lengkap_admin" value="<?= $this->session->userdata('nama_lengkap_admin') ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="col-form-label">Username:</label>
+                        <input type="text" class="form-control" name="username_admin" value="<?= $this->session->userdata('username_admin') ?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-form-label">Password:</label>
+                        <input type="text" class="form-control" name="password_admin" placeholder="kosongkan jika tidak ingin diubah" value="">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" class="form-control-file" name="foto_admin" accept=".png, .jpg, .jpeg">
+                        <div style="font-size: 10px">
+                            File hanya JPG dan PNG dengan ukuran Maks. 2048 Kb
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <img src="<?= base_url('assets/admin/img/fotoAdmin/'.$this->session->userdata('foto_admin')) ?>" class="img-responsive" style="max-height: 240px; width:300px; margin-top: 20px;">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" readonly name="foto_lama" value="<?= $this->session->userdata('foto_admin')?>">
+                        <input type="hidden" readonly name="password_lama" value="<?=$this->session->userdata('password_admin')?>">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                    </div>
+                </form>
+            </div>  
+        </div>
+    </div>
+</div>
+
+
+<!-- End Edit Profil -->

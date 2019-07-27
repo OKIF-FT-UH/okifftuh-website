@@ -885,6 +885,85 @@ public function deleteDaftarPrestasi($id){
             redirect('admin/admin');
         }
     }
+
+    public function updateProfil($id){
+        $where = array('id_admin' => $id);
+        $input = $this->input->post(NULL, FALSE);
+
+        if(!empty($_FILES['foto_admin']['tmp_name'])){
+                
+                $filenya = $_FILES['foto_admin']['name'];
+
+                if($filenya = ''){
+                    $this->session->set_flashdata('info', 'Gagal Menambahkan Informasi');
+                    redirect('admin/admin');
+                }else{
+                    $config['upload_path'] = './assets/admin/img/fotoAdmin';
+                    $config['allowed_types'] = 'jpg|png|jpeg';
+                    $config['max_size'] = '';
+                    
+                    $this->load->library('upload', $config);
+                    if($config['max_size'] >= 2048){
+                        $this->session->set_flashdata('info', 'File Melewati Batas Ukuran');
+                        redirect('admin/admin');
+                    }
+                    //unlink(base_url('assets/img/produk/'.$input['judul_foto']));
+                    unlink($config['upload_path'].'/'.$input['foto_lama']);
+
+                    if(!$this->upload->do_upload('foto_admin')){
+                        //die();
+                        $this->session->set_flashdata('info', 'Upload File Gagal, Periksa Ukuran dan Ekstensi');
+                        redirect('admin/admin');
+                    }else{
+                        $filenya =  $this->upload->data('file_name');
+                    }
+
+                    if ($this->input->post('password_admin') != '' ){
+                        //ada md5
+                        $items = array(
+                        'nama_lengkap_admin'  => $input['nama_lengkap_admin'],
+                        'username_admin'      => $input['username_admin'],
+                        'password_admin'      => md5($input['password_admin']),
+                        'foto_admin'          => $filenya,
+                        );
+                    }else{
+                        //kirim pass lama
+                        $items = array(
+                        'nama_lengkap_admin'  => $input['nama_lengkap_admin'],
+                        'username_admin'      => $input['username_admin'],
+                        'password_admin'      => $input['password_lama'],
+                        'foto_admin'          => $filenya,
+                        );
+                    }
+
+                    //$this->Crud->u('barang', $items, $where);
+                    $this->db->update('admin', $items, $where);
+                    $this->session->set_flashdata('info', 'Data Sukses Diupdate');
+                    redirect('admin/admin');
+
+                }
+        }else{
+            if ($this->input->post('password_admin') != '' ){
+                //ada md5
+                $items = array(
+                'nama_lengkap_admin'  => $input['nama_lengkap_admin'],
+                'username_admin'      => $input['username_admin'],
+                'password_admin'      => md5($input['password_admin']),
+                );
+            }else{
+                //kirim pass lama
+                $items = array(
+                'nama_lengkap_admin'  => $input['nama_lengkap_admin'],
+                'username_admin'      => $input['username_admin'],
+                'password_admin'      => $input['password_lama'],
+                );
+            }
+
+            $this->Crud->u('admin', $items, $where);
+            redirect('login/logout');
+        }
+
+    }
     //End Admin
 
     //===Begin Modul Pengurus===
