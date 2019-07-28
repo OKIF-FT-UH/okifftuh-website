@@ -21,7 +21,8 @@ class Home extends CI_Controller {
             'nav'       => 'Profil',
             'isi'       => 'home/dashboard/isi2', 
         );
-        $this->load->view('home/_layouts/wrapper2', $data);
+        $this->load->view('home/_layouts2/wrapper2', $data);
+
     }
 }
 

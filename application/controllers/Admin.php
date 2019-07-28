@@ -939,7 +939,7 @@ public function deleteDaftarPrestasi($id){
                     //$this->Crud->u('barang', $items, $where);
                     $this->db->update('admin', $items, $where);
                     $this->session->set_flashdata('info', 'Data Sukses Diupdate');
-                    redirect('login/logout');
+                    redirect('admin/admin');
 
                 }
         }else{
