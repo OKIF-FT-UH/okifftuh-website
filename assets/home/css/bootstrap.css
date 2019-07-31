@@ -478,7 +478,8 @@ mark,
 }
 
 .img-fluid-if{
-  max-width: 70%;  
+  max-width: 70%;
+  height: auto;
 }
 
 .img-fluid {
