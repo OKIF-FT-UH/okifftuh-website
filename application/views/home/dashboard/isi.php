@@ -154,8 +154,9 @@
     <!--//ab-->
 
     <!-- /blogs -->
-    <section class="blog-posts" id="blog">
+    <section class="blog-posts pt-5" id="blog">
         <div class="blog-w3pvt-info-content container-fluid">
+            <h3 class="tittle-w3ls text-center mt-5 mb-5"><span class="pink">OKIF FT-UH</span> Terkini</h3>
             <div class="blog-grids-main row text-left">
                 <div class="col-lg-3 col-md-6 blog-grid-img px-0">
                     <img src="<?= base_url('assets/home/'); ?>images/g2.jpg" alt="Popup Image" class="img-fluid" />
