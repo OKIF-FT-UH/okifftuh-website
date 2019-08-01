@@ -24,6 +24,16 @@ class Home extends CI_Controller {
         $this->load->view('home/_layouts2/wrapper2', $data);
 
     }
+
+    public function galeri(){
+        $data = array(
+            'nav'       => 'galeri',
+            'galeri'    => $this->Crud->ga('galeri'),
+            'isi'       => 'home/dashboard/galeri',
+        );
+        $this->load->view('home/_layouts2/wrapper2', $data);
+    }
+
 }
 
 ?>
