@@ -72,7 +72,7 @@ class Home extends CI_Controller {
     public function addSaran(){
         $data = array(
             'title'     => 'Kritik & Saran',
-            'nav'       => 'Pengurus HMIF',
+            'nav'       => 'Kritik & Saran',
             'isi'       => 'home/dashboard/saran',
         );
         $this->load->view('home/_layouts2/wrapper2', $data);
