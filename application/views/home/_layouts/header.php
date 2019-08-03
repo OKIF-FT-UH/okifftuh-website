@@ -60,7 +60,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                         <li><a href="<?=base_url('Home/profil/') ?>">Profil</a></li>
 
-                        <li>
+                        <li <?= ($navi == 'pengurusDmmif' || 'pengurusHmif') ? 'active' : '' ?>>
                             <!-- First Tier Drop Down -->
                             <label for="drop-3" class="toggle toggle-2">Pengurus <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
                             <a href="#">Pengurus  <span class="fa fa-angle-down" aria-hidden="true"></span></a>
@@ -90,7 +90,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                         <li><a href="<?= base_url('Home/galeri') ?>">Galeri</a></li>
                         <li><a href="#gallery">Arsip</a></li>
-                        <li class="<?= ($navi == 'saran') ? 'active' : '' ?>"><a href="<?= base_url('Home/addSaran') ?>">Kritik & Saran</a></li>
+                        <li class="<?= ($navi == 'addSaran') ? 'active' : '' ?>"><a href="<?= base_url('Home/addSaran') ?>">Kritik & Saran</a></li>
                     </ul>
                 </nav>
                 <!-- //nav -->
