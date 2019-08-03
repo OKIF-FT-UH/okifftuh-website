@@ -67,8 +67,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <input type="checkbox" id="drop-3" />
                             <ul>
 
-                                <li><a href="services.html" class="drop-text">DMMIF FT-UH</a></li>
-                                <li><a href="timeline.html" class="drop-text">HMIF FT-UH</a></li>
+                                <li><a href="<?= base_url('Home/pengurusDmmif') ?>" class="drop-text">DMMIF FT-UH</a></li>
+                                <li><a href="<?= base_url('Home/pengurusHmif') ?>" class="drop-text">HMIF FT-UH</a></li>
                             </ul>
                         </li>
 
@@ -90,7 +90,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                         <li><a href="<?= base_url('Home/galeri') ?>">Galeri</a></li>
                         <li><a href="#gallery">Arsip</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li class="<?= ($navi == 'saran') ? 'active' : '' ?>"><a href="<?= base_url('Home/addSaran') ?>">Kritik & Saran</a></li>
                     </ul>
                 </nav>
                 <!-- //nav -->

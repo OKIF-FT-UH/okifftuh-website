@@ -45,6 +45,53 @@ class Home extends CI_Controller {
         $this->load->view('home/_layouts2/wrapper2', $data);
     }
 
+    public function pengurusDmmif(){
+        $where = array('tipe_pengurus' => 1);
+        $data = array(
+            'title'     => 'DMMIF FT-UH',
+            'nav'       => 'Pengurus DMMIF',
+            'isi'       => 'home/dashboard/pengurus',
+            'data'      => $this->Crud->gw('pengurus', $where),
+            'folder'    => 'dmmif',
+        );
+        $this->load->view('home/_layouts2/wrapper2', $data);
+    }
+
+    public function pengurusHmif(){
+        $where = array('tipe_pengurus' => 2);
+        $data = array(
+            'title'     => 'HMIF FT-UH',
+            'nav'       => 'Pengurus HMIF',
+            'isi'       => 'home/dashboard/pengurus',
+            'data'      => $this->Crud->gw('pengurus', $where),
+            'folder'    => 'hmif',
+        );
+        $this->load->view('home/_layouts2/wrapper2', $data);
+    }
+
+    public function addSaran(){
+        $data = array(
+            'title'     => 'Kritik & Saran',
+            'nav'       => 'Pengurus HMIF',
+            'isi'       => 'home/dashboard/saran',
+        );
+        $this->load->view('home/_layouts2/wrapper2', $data);
+    }
+
+    public function doAddSaran(){
+        $input = $this->input->post( NULL, TRUE);
+        $today = date('Y-m-d H:i:s');
+        $data = array(
+            'nama_saran' => $input['nama_saran'],
+            'email_saran' => $input['email_saran'],
+            'perihal_saran' => $input['perihal_saran'],
+            'isi_saran' => $input['isi_saran'],
+            'waktu_saran' => $today,
+        );
+        $this->db->insert('saran', $data);
+        $this->session->set_flashdata('info','Saran Telah Terkirim');
+        redirect('home/addSaran');
+    }
 }
 
 ?>
