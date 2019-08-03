@@ -21,6 +21,8 @@ class Home extends CI_Controller {
             'isi'        => 'home/dashboard/isi',
             'terkiniA'   => $this->ModelHome->infoKini($table, $limit, $firstA, $field, $ad), 
             'terkiniB'   => $this->ModelHome->infoKini($table, $limit, $firstB, $field, $ad),
+            'title'      => 'OKIF FT-UH',
+            'isi'        => 'home/dashboard/isi', 
         );
         $this->load->view('home/_layouts/wrapper', $data);
 	}

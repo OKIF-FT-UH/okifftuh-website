@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html lang="zxx">
 
 <head>
-    <title>Infinitude Corporate Category Bootstrap Responsive Web Template | Home :: W3layouts</title>
+    <title><?= $title ?></title>
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
@@ -24,6 +24,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         }
 
     </script>
+    <link rel="icon" type="image/png" sizes="16x16" href="<?=base_url('assets/if.png')?>">
     <!-- //Meta tag Keywords -->
     <!-- Custom-Files -->
     <link rel="stylesheet" href="<?= base_url('assets/home/'); ?>css/bootstrap.css">
