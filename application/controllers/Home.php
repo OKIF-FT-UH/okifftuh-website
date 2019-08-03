@@ -11,6 +11,7 @@ class Home extends CI_Controller {
 
 	public function index(){
 		$data = array(
+            'title' => 'OKIF FT-UH',
             'isi' => 'home/dashboard/isi', 
         );
         $this->load->view('home/_layouts/wrapper', $data);
