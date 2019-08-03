@@ -112,7 +112,7 @@
                     <div class="row features-hny-inner-gd">
                         <div class="col-md-3 featured_grid_left">
                             <div class="icon_left_grid">
-                                <span class="fa fa-globe" aria-hidden="true"></span>
+                                <span class="fa fa-graduation-cap" aria-hidden="true"></span>
                             </div>
                         </div>
                         <div class="col-md-9 featured_grid_right_info pl-lg-0">
@@ -153,246 +153,10 @@
     </section>
     <!--//ab-->
 
-    <!--/services-->
-    <section class="services" id="services">
-        <div class="over-lay-blue py-5">
-            <div class="container py-md-5">
-                <div class="row my-4">
-                    <div class="col-lg-5 services-innfo pr-5">
-                        <h3 class="tittle-w3ls two mb-3 text-left"><span class="pink">What</span> We Provide</h3>
-                        <p class="sub-tittle mt-2 mb-sm-3 text-left">Integer pulvinar leo id viverra feugiat. Pellentesque libero ut justo, semper at tempus vel, ultrices in ligula..</p>
-                        <a href="services.html"><img src="<?= base_url('assets/home/'); ?>images/ab2.jpg" alt="w3pvt" class="img-fluid"></a>
-                    </div>
-                    <div class="col-lg-7 services-grid-inf">
-                        <div class="row services-w3pvt-main mt-5">
-                            <div class="col-lg-6 feature-gird">
-                                <div class="row features-hny-inner-gd mt-3">
-                                    <div class="col-md-2 featured_grid_left">
-                                        <div class="icon_left_grid">
-                                            <span class="fa fa-paint-brush" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-10 featured_grid_right_info">
-                                        <h4><a class="link-hny" href="single.html">UI/UX Designs</a></h4>
-                                        <p>Lorem Ipsum is simply text the printing and typesetting standard industry.</p>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-6 feature-gird">
-                                <div class="row features-hny-inner-gd mt-3">
-                                    <div class="col-md-2 featured_grid_left">
-                                        <div class="icon_left_grid">
-                                            <span class="fa fa-bullhorn" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-10 featured_grid_right_info">
-                                        <h4><a class="link-hny" href="single.html">SEO Marketing</a></h4>
-                                        <p>Lorem Ipsum is simply text the printing and typesetting standard industry.</p>
-
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row services-w3pvt-main mt-5">
-                            <div class="col-lg-6 feature-gird ">
-                                <div class="row features-hny-inner-gd mt-3">
-                                    <div class="col-md-2 featured_grid_left">
-                                        <div class="icon_left_grid">
-                                            <span class="fa fa-shield" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-10 featured_grid_right_info">
-                                        <h4><a class="link-hny" href="single.html">User Experience</a></h4>
-                                        <p>Lorem Ipsum is simply text the printing and typesetting standard industry.</p>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-6 feature-gird">
-                                <div class="row features-hny-inner-gd mt-3">
-                                    <div class="col-md-2 featured_grid_left">
-                                        <div class="icon_left_grid">
-                                            <span class="fa fa-lightbulb-o" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-10 featured_grid_right_info">
-                                        <h4><a class="link-hny" href="single.html">Creative Strategy</a></h4>
-                                        <p>Lorem Ipsum is simply text the printing and typesetting standard industry.</p>
-
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--//services-->
-    <!-- /projects -->
-    <section class="projects py-5" id="gallery">
-        <div class="container py-md-5">
-            <h3 class="tittle-w3ls text-left mb-5"><span class="pink">Stunning</span> Projects</h3>
-            <div class="row news-grids mt-md-5 mt-4 text-center">
-                <div class="col-md-4 gal-img">
-                    <a href="#gal1"><img src="<?= base_url('assets/home/'); ?>images/g1.jpg" alt="w3pvt" class="img-fluid"></a>
-                    <div class="gal-info">
-                        <h5>View Project<span class="decription">Website</span></h5>
-                    </div>
-                </div>
-                <div class="col-md-4 gal-img">
-                    <a href="#gal2"><img src="<?= base_url('assets/home/'); ?>images/g2.jpg" alt="w3pvt" class="img-fluid"></a>
-                    <div class="gal-info">
-                        <h5>View Project<span class="decription">Website</span></h5>
-                    </div>
-                </div>
-                <div class="col-md-4 gal-img">
-                    <a href="#gal3"><img src="<?= base_url('assets/home/'); ?>images/g3.jpg" alt="w3pvt" class="img-fluid"></a>
-                    <div class="gal-info">
-                        <h5>View Project<span class="decription">Website</span></h5>
-                    </div>
-                </div>
-                <div class="col-md-4 gal-img">
-                    <a href="#gal4"><img src="<?= base_url('assets/home/'); ?>images/g4.jpg" alt="w3pvt" class="img-fluid"></a>
-                    <div class="gal-info">
-                        <h5>View Project<span class="decription">Website</span></h5>
-                    </div>
-                </div>
-
-                <div class="col-md-4 gal-img">
-                    <a href="#gal5"><img src="<?= base_url('assets/home/'); ?>images/g5.jpg" alt="w3pvt" class="img-fluid"></a>
-                    <div class="gal-info">
-                        <h5>View Project<span class="decription">Website</span></h5>
-                    </div>
-                </div>
-                <div class="col-md-4 gal-img">
-                    <a href="#gal6"><img src="<?= base_url('assets/home/'); ?>images/g6.jpg" alt="w3pvt" class="img-fluid"></a>
-                    <div class="gal-info">
-                        <h5>View Project<span class="decription">Website</span></h5>
-                    </div>
-                </div>
-                <div class="col-md-4 gal-img">
-                    <a href="#gal7"><img src="<?= base_url('assets/home/'); ?>images/g7.jpg" alt="w3pvt" class="img-fluid"></a>
-                    <div class="gal-info">
-                        <h5>View Project<span class="decription">Website</span></h5>
-                    </div>
-                </div>
-                <div class="col-md-4 gal-img">
-                    <a href="#gal8"><img src="<?= base_url('assets/home/'); ?>images/g8.jpg" alt="w3pvt" class="img-fluid"></a>
-                    <div class="gal-info">
-                        <h5>View Project<span class="decription">Website</span></h5>
-                    </div>
-                </div>
-                <div class="col-md-4 gal-img">
-                    <a href="#gal9"><img src="<?= base_url('assets/home/'); ?>images/g9.jpg" alt="w3pvt" class="img-fluid"></a>
-                    <div class="gal-info">
-                        <h5>View Project<span class="decription">Website</span></h5>
-                    </div>
-                </div>
-
-            </div>
-            <!-- popup-->
-            <div id="gal1" class="pop-overlay">
-                <div class="popup">
-                    <img src="<?= base_url('assets/home/'); ?>images/g1.jpg" alt="Popup Image" class="img-fluid" />
-                    <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>
-                    <a class="close" href="#gallery">&times;</a>
-                </div>
-            </div>
-            <!-- //popup -->
-            <!-- popup-->
-            <div id="gal2" class="pop-overlay">
-                <div class="popup">
-                    <img src="<?= base_url('assets/home/'); ?>images/g2.jpg" alt="Popup Image" class="img-fluid" />
-                    <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>
-                    <a class="close" href="#gallery">&times;</a>
-                </div>
-            </div>
-            <!-- //popup -->
-            <!-- popup-->
-            <div id="gal3" class="pop-overlay">
-                <div class="popup">
-                    <img src="<?= base_url('assets/home/'); ?>images/g3.jpg" alt="Popup Image" class="img-fluid" />
-                    <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>
-                    <a class="close" href="#gallery">&times;</a>
-                </div>
-            </div>
-            <!-- //popup3 -->
-            <!-- popup-->
-            <div id="gal4" class="pop-overlay">
-                <div class="popup">
-                    <img src="<?= base_url('assets/home/'); ?>images/g4.jpg" alt="Popup Image" class="img-fluid" />
-                    <h5>View Project</h5>
-                    <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>
-                    <a class="close" href="#gallery">&times;</a>
-                </div>
-            </div>
-            <!-- //popup -->
-            <!-- popup-->
-            <div id="gal5" class="pop-overlay">
-                <div class="popup">
-                    <img src="<?= base_url('assets/home/'); ?>images/g5.jpg" alt="Popup Image" class="img-fluid" />
-                    <h5 class="mt-3">View Project</h5>
-                    <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>
-                    <a class="close" href="#gallery">&times;</a>
-                </div>
-            </div>
-            <!-- //popup -->
-            <!-- popup-->
-            <div id="gal6" class="pop-overlay">
-                <div class="popup">
-                    <img src="<?= base_url('assets/home/'); ?>images/g6.jpg" alt="Popup Image" class="img-fluid" />
-                    <h5 class="mt-3">View Project</h5>
-                    <p>Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>
-                    <a class="close" href="#gallery">&times;</a>
-                </div>
-            </div>
-            <!-- //popup -->
-            <!-- popup-->
-            <div id="gal7" class="pop-overlay">
-                <div class="popup">
-                    <img src="<?= base_url('assets/home/'); ?>images/g7.jpg" alt="Popup Image" class="img-fluid" />
-                    <h5 class="mt-3">View Project</h5>
-                    <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>
-                    <a class="close" href="#gallery">&times;</a>
-                </div>
-            </div>
-            <!-- //popup -->
-            <!-- popup-->
-            <div id="gal8" class="pop-overlay">
-                <div class="popup">
-                    <img src="<?= base_url('assets/home/'); ?>images/g8.jpg" alt="Popup Image" class="img-fluid" />
-                    <h5 class="mt-3">View Project</h5>
-                    <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>
-                    <a class="close" href="#gallery">&times;</a>
-                </div>
-            </div>
-            <!-- //popup -->
-            <!-- popup-->
-            <div id="gal9" class="pop-overlay">
-                <div class="popup">
-                    <img src="<?= base_url('assets/home/'); ?>images/g9.jpg" alt="Popup Image" class="img-fluid" />
-                    <h5 class="mt-3">View Project</h5>s
-                    <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>
-                    <a class="close" href="#gallery">&times;</a>
-                </div>
-            </div>
-            <!-- //popup -->
-        </div>
-    </section>
-    <!-- //projects -->
     <!-- /blogs -->
-    <section class="blog-posts" id="blog">
+    <section class="blog-posts pt-5" id="blog">
         <div class="blog-w3pvt-info-content container-fluid">
-            <h3 class="tittle-w3ls text-center mb-5">Recent Blog Posts</h3>
+            <h3 class="tittle-w3ls text-center mt-5 mb-5"><span class="pink">OKIF FT-UH</span> Terkini</h3>
             <div class="blog-grids-main row text-left">
                 <div class="col-lg-3 col-md-6 blog-grid-img px-0">
                     <img src="<?= base_url('assets/home/'); ?>images/g2.jpg" alt="Popup Image" class="img-fluid" />
@@ -445,49 +209,29 @@
 
     </section>
     <!-- //blogs -->
+
     <!--/mid-->
-    <section class="banner_bottom py-5" id="appointment">
-        <div class="container py-md-5">
-            <div class="row inner_sec_info">
+    <section class="banner_bottom" id="appointment">
+
+            <div class="container py-md-5">
+                <div class="row inner_sec_info">
 
 
-                <div class="col-lg-5 banner_bottom_left">
+                    <div class="col-lg-6 banner_bottom_left">
 
-                    <div class="login p-md-5 p-4 mx-auto bg-white mw-100">
-                        <h4>
-                            Make An Appointment</h4>
-                        <form action="#" method="post">
-                            <div class="form-group">
-                                <label>First name</label>
+                        <div class="login p-md-5 p-4 mx-auto bg-white mw-100"  style="background:none !important;">
+                            <h4><a class="link-hny" href="contact.html">Stat Your Project Now?</a></h4>
+                            <p class="mt-3">Lorem Ipsum is simply text the printing and typesetting standard industry.Quisque sagittis lacus eu lorem. </p>
 
-                                <input type="text" class="form-control" id="validationDefault01" placeholder="" required="">
-                            </div>
-                            <div class="form-group">
-                                <label>Last name</label>
-                                <input type="text" class="form-control" id="validationDefault02" placeholder="" required="">
-                            </div>
-
-                            <div class="form-group mb-4">
-                                <label class="mb-2">Password</label>
-                                <input type="password" class="form-control" id="password1" placeholder="" required="">
-                            </div>
-
-                            <button type="submit" class="btn more black submit mb-4">Appointment</button>
-
-                        </form>
+                        </div>
 
                     </div>
-
-                </div>
-                <div class="col-lg-7 banner_bottom_grid help pl-lg-5">
-                    <img src="<?= base_url('assets/home/'); ?>images/ab2.jpg" alt=" " class="img-fluid mb-4">
-                    <h4><a class="link-hny" href="contact.html">Stat Your Project Now?</a></h4>
-                    <p class="mt-3">Lorem Ipsum is simply text the printing and typesetting standard industry.Quisque sagittis lacus eu lorem. </p>
-
+                    <div class="col-lg-6 banner_bottom_grid help pl-lg-5">
+                        <img src="<?= base_url('assets/home/'); ?>images/ab2.jpg" alt=" " class="img-fluid mb-4">
+                    </div>
                 </div>
             </div>
 
-        </div>
     </section>
     <!--//mid-->
 

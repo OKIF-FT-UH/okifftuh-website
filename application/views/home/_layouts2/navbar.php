@@ -49,7 +49,7 @@
                         </li>
 
 
-                        <li><a href="#gallery">Galeri</a></li>
+                        <li><a href="<?= base_url('Home/galeri') ?>">Galeri</a></li>
                         <li><a href="#gallery">Arsip</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>

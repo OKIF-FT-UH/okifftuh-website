@@ -699,25 +699,15 @@ li>a:only-child:after {
 
 .btn.more.contact{
 
-    border: 2px solid #fff !important;
-    padding: 11px 30px !important;
-    color: #fff !important;
-    font-size: 16px !important;
-    letter-spacing: 1px !important;
-    text-transform: capitalize !important;
-    display: inline-block !important;
+    border: 2px solid #fff;
+    color: #fff;
     background: none;
 }
 
 .btn.more.contact:hover{
     background: #0e5290;
-    border: 2px solid #0e5290 !important;
-    color: #111 !important;
-    transition: .5s ease-in;
-    -webkit-transition: .5s ease-in;
-    -moz-transition: .5s ease-in;
-    -o-transition: .5s ease-in;
-    -ms-transition: .5s ease-in;
+    border: 2px solid #0e5290;
+    color: #111;
 
 }
 
@@ -1154,7 +1144,7 @@ h6.date {
 }
 
 .link-hny:hover {
-    color: #ffc107;
+    color: #2fa9ff;
     transition: .5s ease-in;
     -webkit-transition: .5s ease-in;
     -moz-transition: .5s ease-in;
