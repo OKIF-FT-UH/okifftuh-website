@@ -158,51 +158,91 @@
         <div class="blog-w3pvt-info-content container-fluid">
             <h3 class="tittle-w3ls text-center mt-5 mb-5"><span class="pink">OKIF FT-UH</span> Terkini</h3>
             <div class="blog-grids-main row text-left">
-                <div class="col-lg-3 col-md-6 blog-grid-img px-0">
-                    <img src="<?= base_url('assets/home/'); ?>images/g2.jpg" alt="Popup Image" class="img-fluid" />
-                </div>
-                <div class="col-lg-3 col-md-6 blog-grid-info px-0">
-                    <div class="date-post">
-                        <h6 class="date">May, 04th 2019</h6>
-                        <h4><a class="link-hny" href="single.html">Blog Post1</a></h4>
-                        <p>Lorem Ipsum is simply text the printing and typesetting standard industry.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 blog-grid-img px-0">
-                    <img src="<?= base_url('assets/home/'); ?>images/g4.jpg" alt="Popup Image" class="img-fluid" />
-                </div>
-                <div class="col-lg-3 col-md-6 blog-grid-info px-0 ">
-                    <div class="date-post">
-                        <h6 class="date">May, 04th 2019</h6>
-                        <h4><a class="link-hny" href="single.html">Blog Post2</a></h4>
-                        <p>Lorem Ipsum is simply text the printing and typesetting standard industry.</p>
-                    </div>
-                </div>
+                <?php foreach ($terkiniA as $get): 
+                    $kode  = $get->id_kategori_informasi;
+                    $judul = $get->judul_informasi;
+                    $isi   = $get->isi_informasi;
+                    $foto  = $get->foto_informasi;
+                    $tgl   = $get->tanggal_informasi;
 
+
+                        if($kode == '1'){
+                            $folder = 'himpunan';
+                        }else if($kode == '2'){
+                            $folder = 'kemahasiswaan';
+                        }else if($kode == '3'){
+                            $folder = 'beasiswa';
+                        }else if($kode == '4'){
+                            $folder = 'prestasi';
+                        }else if($kode == '5'){
+                            $folder = 'artikel';
+                        }else if($kode == '6'){
+                            $folder = 'lomba';
+                        }
+                ?>
+
+
+                    <div class="col-lg-3 col-md-6 blog-grid-img px-0">
+                        <img src="<?= base_url('assets/admin/img/'.$folder.'/'.$get->foto_informasi)?>" alt="Popup Image" class="img-fluid" />
+                    </div>
+                    <div class="col-lg-3 col-md-6 blog-grid-info px-0">
+                        <div class="date-post">
+                            <h6 class="date">May, 04th 2019</h6>
+                            <h4>
+                                <a class="link-hny" href="single.html">
+                                    <abbr title="<?= $judul ?>" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important;"><?= $batasJudul = character_limiter($judul, 15); ?> 
+                                    </abbr>
+                                </a>
+                            </h4>
+                            <p>
+                                <!-- <?= $batasIsi = character_limiter($isi, 25); ?> -->        
+                            </p>
+                        </div>
+                </div>
+                <?php endforeach ?>
             </div>
+
             <div class="blog-grids-main row text-left">
+                <?php foreach ($terkiniB as $get): 
+                    $kode  = $get->id_kategori_informasi;
+                    $judul = $get->judul_informasi;
+                    $isi   = $get->isi_informasi;
+                    $foto  = $get->foto_informasi;
+                    $tgl   = $get->tanggal_informasi;
 
-                <div class="col-lg-3 col-md-6 blog-grid-info px-0">
-                    <div class="date-post">
-                        <h6 class="date">May, 04th 2019</h6>
-                        <h4><a class="link-hny" href="single.html">Blog Post3</a></h4>
-                        <p>Lorem Ipsum is simply text the printing and typesetting standard industry.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 blog-grid-img px-0">
-                    <img src="<?= base_url('assets/home/'); ?>images/g6.jpg" alt="Popup Image" class="img-fluid" />
-                </div>
 
-                <div class="col-lg-3 col-md-6 blog-grid-info px-0">
-                    <div class="date-post">
-                        <h6 class="date">May, 04th 2019</h6>
-                        <h4><a class="link-hny" href="single.html">Blog Post4</a></h4>
-                        <p>Lorem Ipsum is simply text the printing and typesetting standard industry.</p>
+                        if($kode == '1'){
+                            $folder = 'himpunan';
+                        }else if($kode == '2'){
+                            $folder = 'kemahasiswaan';
+                        }else if($kode == '3'){
+                            $folder = 'beasiswa';
+                        }else if($kode == '4'){
+                            $folder = 'prestasi';
+                        }else if($kode == '5'){
+                            $folder = 'artikel';
+                        }else if($kode == '6'){
+                            $folder = 'lomba';
+                        }
+                ?>
+                    <div class="col-lg-3 col-md-6 blog-grid-info px-0">
+                        <div class="date-post">
+                            <h6 class="date">May, 04th 2019</h6>
+                            <h4>
+                                <a class="link-hny" href="single.html">
+                                    <abbr title="<?= $judul ?>" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important;"><?= $batasJudul = character_limiter($judul, 15); ?> 
+                                    </abbr>
+                                </a>
+                            </h4>
+                            <p>
+                                <!-- <?= $batasIsi = character_limiter($isi, 25); ?> -->        
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 blog-grid-img px-0">
-                    <img src="<?= base_url('assets/home/'); ?>images/g8.jpg" alt="Popup Image" class="img-fluid" />
-                </div>
+                    <div class="col-lg-3 col-md-6 blog-grid-img px-0">
+                        <img src="<?= base_url('assets/admin/img/'.$folder.'/'.$get->foto_informasi)?>" alt="Popup Image" class="img-fluid" />
+                    </div>
+                <?php endforeach ?>
 
             </div>
         </div>

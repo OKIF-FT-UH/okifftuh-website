@@ -10,8 +10,17 @@ class Home extends CI_Controller {
     }
 
 	public function index(){
+        $table = 'informasi';
+        $firstA = 0;
+        $firstB = 2;
+        $limit  = 2;
+        $field  = 'tanggal_informasi';
+        $ad     = 'desc';
+
 		$data = array(
-            'isi' => 'home/dashboard/isi', 
+            'isi'        => 'home/dashboard/isi',
+            'terkiniA'   => $this->ModelHome->infoKini($table, $limit, $firstA, $field, $ad), 
+            'terkiniB'   => $this->ModelHome->infoKini($table, $limit, $firstB, $field, $ad),
         );
         $this->load->view('home/_layouts/wrapper', $data);
 	}

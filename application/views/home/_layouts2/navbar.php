@@ -1,5 +1,6 @@
 <body>
     <!--/home -->
+    <?php $navi = $this->uri->segment(2); ?>
     <div id="home" class="inner-w3pvt-page">
         <div class="overlay-innerpage">
             <!--/top-nav -->
@@ -17,9 +18,9 @@
                     <label for="drop" class="toggle">Menu</label>
                     <input type="checkbox" id="drop" />
                     <ul class="menu mr-auto">
-                        <li class="active"><a href="<?=base_url('Home/index/') ?>">Home</a></li>
+                        <li class="<?= ($navi == '' ? 'active' : '' ) ?>"><a href="<?=base_url('Home/index/') ?>">Home</a></li>
 
-                        <li><a href="about.html">Profil</a></li>
+                        <li><a href="<?=base_url('Home/profil/') ?>">Profil</a></li>
 
                         <li>
                             <!-- First Tier Drop Down -->
@@ -49,7 +50,7 @@
                         </li>
 
 
-                        <li><a href="<?= base_url('Home/galeri') ?>">Galeri</a></li>
+                        <li class="<?= ($navi == 'galeri') ? 'active' : '' ?>"><a href="<?= base_url('Home/galeri') ?>">Galeri</a></li>
                         <li><a href="#gallery">Arsip</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>

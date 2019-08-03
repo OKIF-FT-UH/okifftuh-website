@@ -38,6 +38,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <body>
     <!-- home -->
+    <?php $navi = $this->uri->segment(2); ?>
     <div id="home">
         <!--/top-nav -->
         <div class="top_w3pvt_main container">
@@ -54,7 +55,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <label for="drop" class="toggle">Menu</label>
                     <input type="checkbox" id="drop" />
                     <ul class="menu mr-auto">
-                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="<?= ($navi == 'index' or $navi == '') ? 'active' : '' ?>"><a href="<?=base_url('Home/index/') ?>">Home</a></li>
 
                         <li><a href="<?=base_url('Home/profil/') ?>">Profil</a></li>
 
