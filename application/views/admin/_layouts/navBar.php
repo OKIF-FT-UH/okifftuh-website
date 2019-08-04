@@ -26,7 +26,7 @@
         <div class="nav-header">
             <div class="brand-logo">
                 <a href="<?= site_url('admin') ?>">
-                    <b class="logo-abbr" style="color: white">IF</b>
+                    <b class="logo-abbr" style="color: white"><img src="<?=base_url('assets/if.png')?>"></b>
                     <span class="logo-compact"><b style="color: white">IF</b></span>
                     <span class="brand-title">
                         <b style="color: white;">OKIF FT-UH</b>

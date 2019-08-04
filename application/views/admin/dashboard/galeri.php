@@ -79,7 +79,7 @@
                                             <form method="post" action="<?= site_url('admin/addGaleri')?>" enctype="multipart/form-data">
                                                 <div class="form-group">
                                                     <label for="message-text" class="col-form-label">Foto</label>
-                                                    <input type="file" name="userfile" maxlength="40" class="form-control">
+                                                    <input type="file" class="form-control-file" name="fotoPengurus" accept=".png, .jpg, .jpeg" required><br>
                                                     <div style="font-size: 10px">File hanya JPG dan PNG dengan ukuran Maks. 2048 Kb</div> 
                                                 </div>
                                                 <div class="form-group">
@@ -144,8 +144,8 @@ $id = $get->id_galeri;
                                             <form method="post" action="<?= site_url('admin/editGaleri/'.$id)?>" enctype="multipart/form-data">
                                                 <div class="form-group">
                                                     <label for="message-text" class="col-form-label">Foto</label>
-                                                    <input type="file" name="userfile" maxlength="40" class="form-control">
-                                                    <div style="font-size: 10px">File hanya JPG dan PNG dengan ukuran Maks. 2048 Kb</div>
+                                                    <input type="file" class="form-control-file" name="fotoPengurus" accept=".png, .jpg, .jpeg" required>
+                                                    <div style="font-size: 10px">File hanya JPG dan PNG dengan ukuran Maks. 2048 Kb</div><br>
                                                     <img src="<?= base_url('assets/admin/img/galeri/'.$get->foto_galeri)?>" class="img-responsive" style="max-height: 240px; max-width: 200px;">
                                                 </div>
                                                 <div class="form-group">
