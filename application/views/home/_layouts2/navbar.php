@@ -10,7 +10,7 @@
                     <!-- nav -->
                     <nav class="wthree-w3ls">
                         <div id="logo">
-                        <h1> <a class="navbar-brand px-0 mx-0" href="index.html">OKIF FT-UH
+                        <h1> <a class="navbar-brand px-0 mx-0" href="<?= site_url('home') ?>">OKIF FT-UH
                             </a>
                         </h1>
                     </div>
