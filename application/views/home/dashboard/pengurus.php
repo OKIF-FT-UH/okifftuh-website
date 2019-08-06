@@ -8,7 +8,7 @@
                 <?php foreach($dataA as $get){ ?>
                 <div class="col-md-4 team-gd text-center mx-auto">
                     <div class="team-img mt-5">
-                        <a href="team.html"><img src="<?= base_url('assets/admin/img/pengurus/'.$folder.'/'.$get->foto_pengurus) ?>" class="img-fluid" alt="user-image"></a>
+                        <img src="<?= base_url('assets/admin/img/pengurus/'.$folder.'/'.$get->foto_pengurus) ?>" class="img-fluid" alt="user-image">
                     </div>
                     <div class="team-info">
                         <span class="sub-tittle-team"><?= $get->jabatan_pengurus ?></span>
@@ -34,7 +34,7 @@
                 <?php foreach($dataA as $get){ ?>
                 <div class="col-md-4 team-gd text-center mx-auto">
                     <div class="team-img mt-5">
-                        <a href="team.html"><img src="<?= base_url('assets/admin/img/pengurus/'.$folder.'/'.$get->foto_pengurus) ?>" class="img-fluid" alt="user-image"></a>
+                        <img src="<?= base_url('assets/admin/img/pengurus/'.$folder.'/'.$get->foto_pengurus) ?>" class="img-fluid" alt="user-image">
                     </div>
                     <div class="team-info">
                         <span class="sub-tittle-team"><?= $get->jabatan_pengurus ?></span>
@@ -60,7 +60,7 @@
                 <?php foreach($dataC as $get){ ?>
                 <div class="col-md-4 team-gd text-center mx-auto">
                     <div class="team-img mt-5">
-                        <a href="team.html"><img src="<?= base_url('assets/admin/img/pengurus/'.$folder.'/'.$get->foto_pengurus) ?>" class="img-fluid" alt="user-image"></a>
+                        <img src="<?= base_url('assets/admin/img/pengurus/'.$folder.'/'.$get->foto_pengurus) ?>" class="img-fluid" alt="user-image">
                     </div>
                     <div class="team-info">
                         <span class="sub-tittle-team"><?= $get->jabatan_pengurus ?></span>
@@ -87,7 +87,7 @@
                 <?php foreach($dataB as $get){ ?>
                 <div class="col-md-4 team-gd text-center">
                     <div class="team-img mt-5">
-                        <a href="team.html"><img src="<?= base_url('assets/admin/img/pengurus/'.$folder.'/'.$get->foto_pengurus) ?>" class="img-fluid" alt="user-image"></a>
+                        <img src="<?= base_url('assets/admin/img/pengurus/'.$folder.'/'.$get->foto_pengurus) ?>" class="img-fluid" alt="user-image">
                     </div>
                     <div class="team-info">
                         <span class="sub-tittle-team"><?= $get->jabatan_pengurus ?></span>

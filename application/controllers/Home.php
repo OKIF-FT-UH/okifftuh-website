@@ -44,7 +44,7 @@ class Home extends CI_Controller {
         );
         $this->load->view('home/_layouts2/wrapper2', $data);
     }
-
+//Pengurus Begin
     public function pengurusDmmif(){
         $table = 'pengurus';
         $where = array(
@@ -91,6 +91,18 @@ class Home extends CI_Controller {
         $this->load->view('home/_layouts2/wrapper2', $data);
     }
 
+    public function sejarahPengurus(){
+        $data = array(
+            'title'    => 'Sejarah Kepengurusan',
+            'nav'      => 'Sejarah Kepengurusan',
+            'isi'      => 'home/dashboard/sejarahPengurus',
+        );
+        $this->load->view('home/_layouts2/wrapper2', $data);
+    }
+
+//End Pengurus
+
+//Saran Begin
     public function addSaran(){
         $data = array(
             'title'     => 'Kritik & Saran',
@@ -114,6 +126,8 @@ class Home extends CI_Controller {
         $this->session->set_flashdata('info','Saran Telah Terkirim');
         redirect('home/addSaran');
     }
+//End Saran
+
 }
 
 ?>
