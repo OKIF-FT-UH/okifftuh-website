@@ -8,7 +8,7 @@
                 <div class="col-md-4 gal-img">
                     <a href="#gal<?= $get->id_galeri ?>"><img src="<?= base_url('assets/admin/img/galeri/'.$get->foto_galeri) ?>" alt="w3pvt" class="img-fluid" id="current<?= $get->id_galeri ?>"></a>
                     <div class="gal-info">
-                        <h5><?= $get->caption_galeri ?></h5>
+                        <h5><span class="decription"><?=$get->tanggal_galeri ?></span><?= word_limiter($get->caption_galeri, 10)?></h5>
                     </div>
                 </div>
                 <!-- popup-->

@@ -37,9 +37,11 @@ class Home extends CI_Controller {
     }
 
     public function galeri(){
+        $ad = 'desc';
+        $row = 'tanggal_galeri';
         $data = array(
             'nav'       => 'galeri',
-            'galeri'    => $this->Crud->ga('galeri'),
+            'galeri'    => $this->ModelHome->orderinfo('galeri',$row, $ad),
             'isi'       => 'home/dashboard/galeri',
         );
         $this->load->view('home/_layouts2/wrapper2', $data);
