@@ -123,7 +123,7 @@ class Home extends CI_Controller {
         $start  = $this->uri->segment(3);
 
         //Config Pagination
-        $config['base_url']     = 'http://localhost/okifftuh/home/informasi';
+        $config['base_url']     = base_url('home/informasi');
         $config['total_rows']   = $this->Crud->ca($table);
         $config['per_page']     = 5;
         //Styles
@@ -173,7 +173,7 @@ class Home extends CI_Controller {
         $start  = $this->uri->segment(3);
 
         //Config Pagination
-        $config['base_url']     = 'http://localhost/okifftuh/home/himpunan';
+        $config['base_url']     = base_url('home/himpunan');
         $config['total_rows']   = $this->Crud->cw($table,$where);
         $config['per_page']     = 5;
         //Styles
@@ -225,7 +225,7 @@ class Home extends CI_Controller {
         $start  = $this->uri->segment(3);
 
         //Config Pagination
-        $config['base_url']     = 'http://localhost/okifftuh/home/kemahasiswaan';
+        $config['base_url']     = base_url('home/kemahasiswaan');
         $config['total_rows']   = $this->Crud->cw($table,$where);
         $config['per_page']     = 5;
         //Styles
@@ -277,7 +277,7 @@ class Home extends CI_Controller {
         $start  = $this->uri->segment(3);
 
         //Config Pagination
-        $config['base_url']     = 'http://localhost/okifftuh/home/beasiswa';
+        $config['base_url']     = base_url('home/beasiswa');
         $config['total_rows']   = $this->Crud->cw($table,$where);
         $config['per_page']     = 5;
         //Styles
@@ -329,7 +329,7 @@ class Home extends CI_Controller {
         $start  = $this->uri->segment(3);
 
         //Config Pagination
-        $config['base_url']     = 'http://localhost/okifftuh/home/prestasi';
+        $config['base_url']     = base_url('home/prestasi');
         $config['total_rows']   = $this->Crud->cw($table,$where);
         $config['per_page']     = 5;
         //Styles
@@ -381,7 +381,7 @@ class Home extends CI_Controller {
         $start  = $this->uri->segment(3);
 
         //Config Pagination
-        $config['base_url']     = 'http://localhost/okifftuh/home/artikel';
+        $config['base_url']     = base_url('home/artikel');
         $config['total_rows']   = $this->Crud->cw($table,$where);
         $config['per_page']     = 5;
         //Styles
@@ -433,7 +433,7 @@ class Home extends CI_Controller {
         $start  = $this->uri->segment(3);
 
         //Config Pagination
-        $config['base_url']     = 'http://localhost/okifftuh/home/lomba';
+        $config['base_url']     = base_url('home/lomba');
         $config['total_rows']   = $this->Crud->cw($table,$where);
         $config['per_page']     = 5;
         //Styles

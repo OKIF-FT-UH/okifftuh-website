@@ -36,7 +36,7 @@
                 <div class="content-sing-w3pvt px-lg-5">
                     <h1 style="font-family: helvetica Neue;"><b><?=$judul ?></b></h1>
                     <div>
-                    <a href="<?=base_url('home/'.$folder) ?>"><h4 style="font-size:1.1em;"> <?=$kategori ?></a>&ensp;<i class="fa fa-eye" style="color:gray !important;" aria-hidden="true"> <?=$view ?></i></h4>
+                    <a href="<?=base_url('home/'.$folder) ?>"><h4 style="font-size:1em;">From <i><?=$kategori?></i></a>&ensp;<i class="fa fa-eye" style="color:gray !important;" aria-hidden="true"> <?=$view ?></i></h4>
                     </div></br>
                     <img class="img-fluid mb-2" src="<?= base_url('assets/admin/img/'.$folder.'/'.$get->foto_informasi)?>" alt="">
                     <h6 class="date">By <?=$penulis?> | <?=$waktu?></h6>
