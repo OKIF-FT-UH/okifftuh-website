@@ -46,24 +46,46 @@ class Home extends CI_Controller {
     }
 
     public function pengurusDmmif(){
-        $where = array('tipe_pengurus' => 1);
+        $table = 'pengurus';
+        $where = array(
+            'tipe_pengurus' =>1
+        );
+        $firstA = 0;
+        $firstB = 1;
+        $firstC = 2;
+        $limitA = 1;
+        $limitB = 100;
+        $field  = 'id_pengurus';
+        $ad     = 'asc';
         $data = array(
             'title'     => 'DMMIF FT-UH',
             'nav'       => 'Pengurus DMMIF',
             'isi'       => 'home/dashboard/pengurus',
-            'data'      => $this->Crud->gw('pengurus', $where),
+            'dataA'      => $this->ModelHome->pengurus($table, $where, $limitA,$firstA,$field,$ad),
+            'dataC'      => $this->ModelHome->pengurus($table, $where, $limitA,$firstB,$field,$ad),
+            'dataB'      => $this->ModelHome->pengurus($table, $where, $limitB,$firstC,$field,$ad),
             'folder'    => 'dmmif',
         );
         $this->load->view('home/_layouts2/wrapper2', $data);
     }
 
     public function pengurusHmif(){
-        $where = array('tipe_pengurus' => 2);
+        $table = 'pengurus';
+        $where = array(
+            'tipe_pengurus' =>2
+        );
+        $firstA = 0;
+        $firstB = 1;
+        $limitA = 1;
+        $limitB = 100;
+        $field  = 'id_pengurus';
+        $ad     = 'asc';
         $data = array(
             'title'     => 'HMIF FT-UH',
             'nav'       => 'Pengurus HMIF',
             'isi'       => 'home/dashboard/pengurus',
-            'data'      => $this->Crud->gw('pengurus', $where),
+            'dataA'      => $this->ModelHome->pengurus($table, $where, $limitA,$firstA,$field,$ad),
+            'dataB'      => $this->ModelHome->pengurus($table, $where, $limitB,$firstB,$field,$ad),
             'folder'    => 'hmif',
         );
         $this->load->view('home/_layouts2/wrapper2', $data);

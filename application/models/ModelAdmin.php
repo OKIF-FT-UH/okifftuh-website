@@ -63,6 +63,15 @@ class ModelAdmin extends CI_Model {
 
         return $query->result();
     }
+
+    public function requestSaranApprove(){
+        $this->db->select('*');
+        $this->db->from('saran');
+        $this->db->where_in('kode_saran', array('1', '2'));
+        $query = $this->db->get();
+
+        return $query->result();
+    }
     // public function data_customer($where){
     //     $this->db->select( '*' );
     //     $this->db->from( 'estimasi' );

@@ -694,11 +694,10 @@ public function deleteDaftarPrestasi($id){
     }
 
     public function saranApprove(){
-        $where = array('kode_saran' != 0);
         $data = array(
             'title'     => 'Saran Masuk', 
             'isi'       => 'admin/dashboard/saran',
-            'data'      => $this->ModelAdmin->requestSaran($where),
+            'data'      => $this->ModelAdmin->requestSaranApprove(),
         );
         $this->load->view('admin/_layouts/wrapper', $data);
     }
@@ -710,7 +709,7 @@ public function deleteDaftarPrestasi($id){
         $this->Crud->d('saran', $where);
         $this->session->set_flashdata('info','Saran telah dihapus');
         redirect('admin/saranMasuk');
-      
+    
     }
 
     public function saranProses($id){
