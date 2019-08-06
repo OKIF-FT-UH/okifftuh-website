@@ -123,6 +123,9 @@ class Home extends CI_Controller {
         $row    = 'tanggal_informasi';
         $ad     = 'desc';
         $start  = $this->uri->segment(3);
+        $limit  = 4;
+        $first  = 0;
+        $rowpopular = 'view_informasi';
 
         //Config Pagination
         $config['base_url']     = base_url('home/informasi');
@@ -159,10 +162,11 @@ class Home extends CI_Controller {
         $this->pagination->initialize($config);
 
         $data   = array(
-            'title'     => 'Informasi',
-            'nav'       => 'Informasi',
-            'data'      => $this->ModelHome->getinfo($table,$config['per_page'],$start,$row,$ad),
-            'isi'       => 'home/dashboard/informasi',
+            'title'         => 'Informasi',
+            'nav'           => 'Informasi',
+            'data'          => $this->ModelHome->getinfo($table,$config['per_page'],$start,$row,$ad),
+            'populardata'   => $this->ModelHome->getinfo($table,$limit,$first,$rowpopular,$ad),
+            'isi'           => 'home/dashboard/informasi',
         );
         $this->load->view('home/_layouts2/wrapper2', $data);
     }
@@ -173,6 +177,9 @@ class Home extends CI_Controller {
         $row    = 'tanggal_informasi';
         $ad     = 'desc';
         $start  = $this->uri->segment(3);
+        $limit  = 4;
+        $first  = 0;
+        $rowpopular = 'view_informasi';
 
         //Config Pagination
         $config['base_url']     = base_url('home/himpunan');
@@ -209,10 +216,11 @@ class Home extends CI_Controller {
         $this->pagination->initialize($config);
 
         $data   = array(
-            'title'     => 'Kegiatan Himpunan',
-            'nav'       => 'Informasi / Kegiatan Himpunan',
-            'data'      => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
-            'isi'       => 'home/dashboard/informasi',
+            'title'         => 'Kegiatan Himpunan',
+            'nav'           => 'Informasi / Kegiatan Himpunan',
+            'data'          => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
+            'populardata'   => $this->ModelHome->getinfo($table,$limit,$first,$rowpopular,$ad),
+            'isi'           => 'home/dashboard/informasi',
         );
         $this->load->view('home/_layouts2/wrapper2', $data); 
 
@@ -225,6 +233,9 @@ class Home extends CI_Controller {
         $row    = 'tanggal_informasi';
         $ad     = 'desc';
         $start  = $this->uri->segment(3);
+        $limit  = 4;
+        $first  = 0;
+        $rowpopular = 'view_informasi';
 
         //Config Pagination
         $config['base_url']     = base_url('home/kemahasiswaan');
@@ -261,10 +272,11 @@ class Home extends CI_Controller {
         $this->pagination->initialize($config);
 
         $data   = array(
-            'title'     => 'Informasi Kemahasiswaan',
-            'nav'       => 'Informasi / Kemahasiswaan',
-            'data'      => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
-            'isi'       => 'home/dashboard/informasi',
+            'title'         => 'Informasi Kemahasiswaan',
+            'nav'           => 'Informasi / Kemahasiswaan',
+            'data'          => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
+            'populardata'   => $this->ModelHome->getinfo($table,$limit,$first,$rowpopular,$ad),
+            'isi'           => 'home/dashboard/informasi',
         );
         $this->load->view('home/_layouts2/wrapper2', $data); 
 
@@ -277,6 +289,9 @@ class Home extends CI_Controller {
         $row    = 'tanggal_informasi';
         $ad     = 'desc';
         $start  = $this->uri->segment(3);
+        $limit  = 4;
+        $first  = 0;
+        $rowpopular = 'view_informasi';
 
         //Config Pagination
         $config['base_url']     = base_url('home/beasiswa');
@@ -313,10 +328,11 @@ class Home extends CI_Controller {
         $this->pagination->initialize($config);
 
         $data   = array(
-            'title'     => 'info Beasiswa',
-            'nav'       => 'Informasi / Beasiswa',
-            'data'      => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
-            'isi'       => 'home/dashboard/informasi',
+            'title'         => 'info Beasiswa',
+            'nav'           => 'Informasi / Beasiswa',
+            'data'          => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
+            'populardata'   => $this->ModelHome->getinfo($table,$limit,$first,$rowpopular,$ad),
+            'isi'           => 'home/dashboard/informasi',
         );
         $this->load->view('home/_layouts2/wrapper2', $data); 
 
@@ -329,6 +345,9 @@ class Home extends CI_Controller {
         $row    = 'tanggal_informasi';
         $ad     = 'desc';
         $start  = $this->uri->segment(3);
+        $limit  = 4;
+        $first  = 0;
+        $rowpopular = 'view_informasi';
 
         //Config Pagination
         $config['base_url']     = base_url('home/prestasi');
@@ -365,10 +384,11 @@ class Home extends CI_Controller {
         $this->pagination->initialize($config);
 
         $data   = array(
-            'title'     => 'Info Prestasi',
-            'nav'       => 'Informasi / Prestasi',
-            'data'      => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
-            'isi'       => 'home/dashboard/informasi',
+            'title'         => 'Info Prestasi',
+            'nav'           => 'Informasi / Prestasi',
+            'data'          => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
+            'populardata'   => $this->ModelHome->getinfo($table,$limit,$first,$rowpopular,$ad),
+            'isi'           => 'home/dashboard/informasi',
         );
         $this->load->view('home/_layouts2/wrapper2', $data); 
 
@@ -381,6 +401,9 @@ class Home extends CI_Controller {
         $row    = 'tanggal_informasi';
         $ad     = 'desc';
         $start  = $this->uri->segment(3);
+        $limit  = 4;
+        $first  = 0;
+        $rowpopular = 'view_informasi';
 
         //Config Pagination
         $config['base_url']     = base_url('home/artikel');
@@ -417,10 +440,11 @@ class Home extends CI_Controller {
         $this->pagination->initialize($config);
 
         $data   = array(
-            'title'     => 'Artikel',
-            'nav'       => 'Informasi / Artikel',
-            'data'      => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
-            'isi'       => 'home/dashboard/informasi',
+            'title'         => 'Artikel',
+            'nav'           => 'Informasi / Artikel',
+            'data'          => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
+            'populardata'   => $this->ModelHome->getinfo($table,$limit,$first,$rowpopular,$ad),
+            'isi'           => 'home/dashboard/informasi',
         );
         $this->load->view('home/_layouts2/wrapper2', $data); 
 
@@ -433,6 +457,9 @@ class Home extends CI_Controller {
         $row    = 'tanggal_informasi';
         $ad     = 'desc';
         $start  = $this->uri->segment(3);
+        $limit  = 4;
+        $first  = 0;
+        $rowpopular = 'view_informasi';
 
         //Config Pagination
         $config['base_url']     = base_url('home/lomba');
@@ -468,10 +495,11 @@ class Home extends CI_Controller {
         //Initializing
         $this->pagination->initialize($config);
         $data   = array(
-            'title'     => 'Info Lomba',
-            'nav'       => 'Informasi / Lomba',
-            'data'      => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
-            'isi'       => 'home/dashboard/informasi',
+            'title'         => 'Info Lomba',
+            'nav'           => 'Informasi / Lomba',
+            'data'          => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
+            'populardata'   => $this->ModelHome->getinfo($table,$limit,$first,$rowpopular,$ad),
+            'isi'           => 'home/dashboard/informasi',
         );
         $this->load->view('home/_layouts2/wrapper2', $data); 
 
