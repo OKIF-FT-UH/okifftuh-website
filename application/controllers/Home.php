@@ -92,6 +92,394 @@ class Home extends CI_Controller {
         $this->session->set_flashdata('info','Saran Telah Terkirim');
         redirect('home/addSaran');
     }
+
+    //== Begin Informasi==//
+    public function informasi(){
+        $table  = 'informasi';
+        $row    = 'tanggal_informasi';
+        $ad     = 'desc';
+        $start  = $this->uri->segment(3);
+
+        //Config Pagination
+        $config['base_url']     = 'http://localhost/okifftuh/home/informasi';
+        $config['total_rows']   = $this->Crud->ca($table);
+        $config['per_page']     = 5;
+        //Styles
+        $config['full_tag_open']  = '<nav><ul class="pagination">';
+        $config['full_tag_close'] = '</ul></nav>';
+
+        $config['first_link']      = 'First';
+        $config['first_tag_open']  = '<li class="page-item">';
+        $config['first_tag_close'] = '</li>';
+
+        $config['last_link']      = 'Last';
+        $config['last_tag_open']  = '<li class="page-item">';
+        $config['last_tag_close'] = '</li>';
+
+        $config['next_link']       = '&raquo';
+        $config['next_tag_open']   = '<li class="page-item">';
+        $config['next_tag_close']  = '</li>';
+
+        $config['prev_link']       = '&laquo';
+        $config['prev_tag_open']   = '<li class="page-item">';
+        $config['prev_tag_close']  = '</li>';
+
+        $config['cur_tag_open']   = '<li class="page-item active" aria-current="page"><a class="page-link" href="#">';
+        $config['cur_tag_close']  = '</a></li>';
+
+        $config['num_tag_open']   = '<li class="page-item">';
+        $config['num_tag_close']  = '</li>';
+
+        $config['attributes']     = array('class' => 'page-link');
+        //Initializing
+        $this->pagination->initialize($config);
+
+        $data   = array(
+            'title'     => 'Informasi',
+            'nav'       => 'Informasi',
+            'data'      => $this->ModelHome->getinfo($table,$config['per_page'],$start,$row,$ad),
+            'isi'       => 'home/dashboard/informasi',
+        );
+        $this->load->view('home/_layouts2/wrapper2', $data);
+    }
+    //Begin Himpunan
+    public function himpunan(){
+        $where  = array('id_kategori_informasi' => 1);
+        $table  = 'informasi';
+        $row    = 'tanggal_informasi';
+        $ad     = 'desc';
+        $start  = $this->uri->segment(3);
+
+        //Config Pagination
+        $config['base_url']     = 'http://localhost/okifftuh/home/himpunan';
+        $config['total_rows']   = $this->Crud->cw($table,$where);
+        $config['per_page']     = 5;
+        //Styles
+        $config['full_tag_open']  = '<nav><ul class="pagination">';
+        $config['full_tag_close'] = '</ul></nav>';
+
+        $config['first_link']      = 'First';
+        $config['first_tag_open']  = '<li class="page-item">';
+        $config['first_tag_close'] = '</li>';
+
+        $config['last_link']      = 'Last';
+        $config['last_tag_open']  = '<li class="page-item">';
+        $config['last_tag_close'] = '</li>';
+
+        $config['next_link']       = '&raquo';
+        $config['next_tag_open']   = '<li class="page-item">';
+        $config['next_tag_close']  = '</li>';
+
+        $config['prev_link']       = '&laquo';
+        $config['prev_tag_open']   = '<li class="page-item">';
+        $config['prev_tag_close']  = '</li>';
+
+        $config['cur_tag_open']   = '<li class="page-item active" aria-current="page"><a class="page-link" href="#">';
+        $config['cur_tag_close']  = '</a></li>';
+
+        $config['num_tag_open']   = '<li class="page-item">';
+        $config['num_tag_close']  = '</li>';
+
+        $config['attributes']     = array('class' => 'page-link');
+        //Initializing
+        $this->pagination->initialize($config);
+
+        $data   = array(
+            'title'     => 'Kegiatan Himpunan',
+            'nav'       => 'Informasi / Kegiatan Himpunan',
+            'data'      => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
+            'isi'       => 'home/dashboard/informasi',
+        );
+        $this->load->view('home/_layouts2/wrapper2', $data); 
+
+    }
+    //END Himpunan
+    //Begin Kemahasiswaan
+    public function kemahasiswaan(){
+        $where  = array('id_kategori_informasi' => 2);
+        $table  = 'informasi';
+        $row    = 'tanggal_informasi';
+        $ad     = 'desc';
+        $start  = $this->uri->segment(3);
+
+        //Config Pagination
+        $config['base_url']     = 'http://localhost/okifftuh/home/kemahasiswaan';
+        $config['total_rows']   = $this->Crud->cw($table,$where);
+        $config['per_page']     = 5;
+        //Styles
+        $config['full_tag_open']  = '<nav><ul class="pagination">';
+        $config['full_tag_close'] = '</ul></nav>';
+
+        $config['first_link']      = 'First';
+        $config['first_tag_open']  = '<li class="page-item">';
+        $config['first_tag_close'] = '</li>';
+
+        $config['last_link']      = 'Last';
+        $config['last_tag_open']  = '<li class="page-item">';
+        $config['last_tag_close'] = '</li>';
+
+        $config['next_link']       = '&raquo';
+        $config['next_tag_open']   = '<li class="page-item">';
+        $config['next_tag_close']  = '</li>';
+
+        $config['prev_link']       = '&laquo';
+        $config['prev_tag_open']   = '<li class="page-item">';
+        $config['prev_tag_close']  = '</li>';
+
+        $config['cur_tag_open']   = '<li class="page-item active" aria-current="page"><a class="page-link" href="#">';
+        $config['cur_tag_close']  = '</a></li>';
+
+        $config['num_tag_open']   = '<li class="page-item">';
+        $config['num_tag_close']  = '</li>';
+
+        $config['attributes']     = array('class' => 'page-link');
+        //Initializing
+        $this->pagination->initialize($config);
+
+        $data   = array(
+            'title'     => 'Informasi Kemahasiswaan',
+            'nav'       => 'Informasi / Kemahasiswaan',
+            'data'      => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
+            'isi'       => 'home/dashboard/informasi',
+        );
+        $this->load->view('home/_layouts2/wrapper2', $data); 
+
+    }
+    //END Kemahasiswaan
+    //Begin Beasiswa
+    public function beasiswa(){
+        $where  = array('id_kategori_informasi' => 3);
+        $table  = 'informasi';
+        $row    = 'tanggal_informasi';
+        $ad     = 'desc';
+        $start  = $this->uri->segment(3);
+
+        //Config Pagination
+        $config['base_url']     = 'http://localhost/okifftuh/home/beasiswa';
+        $config['total_rows']   = $this->Crud->cw($table,$where);
+        $config['per_page']     = 5;
+        //Styles
+        $config['full_tag_open']  = '<nav><ul class="pagination">';
+        $config['full_tag_close'] = '</ul></nav>';
+
+        $config['first_link']      = 'First';
+        $config['first_tag_open']  = '<li class="page-item">';
+        $config['first_tag_close'] = '</li>';
+
+        $config['last_link']      = 'Last';
+        $config['last_tag_open']  = '<li class="page-item">';
+        $config['last_tag_close'] = '</li>';
+
+        $config['next_link']       = '&raquo';
+        $config['next_tag_open']   = '<li class="page-item">';
+        $config['next_tag_close']  = '</li>';
+
+        $config['prev_link']       = '&laquo';
+        $config['prev_tag_open']   = '<li class="page-item">';
+        $config['prev_tag_close']  = '</li>';
+
+        $config['cur_tag_open']   = '<li class="page-item active" aria-current="page"><a class="page-link" href="#">';
+        $config['cur_tag_close']  = '</a></li>';
+
+        $config['num_tag_open']   = '<li class="page-item">';
+        $config['num_tag_close']  = '</li>';
+
+        $config['attributes']     = array('class' => 'page-link');
+        //Initializing
+        $this->pagination->initialize($config);
+
+        $data   = array(
+            'title'     => 'info Beasiswa',
+            'nav'       => 'Informasi / Beasiswa',
+            'data'      => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
+            'isi'       => 'home/dashboard/informasi',
+        );
+        $this->load->view('home/_layouts2/wrapper2', $data); 
+
+    }
+    //END Beasiswa
+    //Begin Prestasi
+    public function prestasi(){
+        $where  = array('id_kategori_informasi' => 4);
+        $table  = 'informasi';
+        $row    = 'tanggal_informasi';
+        $ad     = 'desc';
+        $start  = $this->uri->segment(3);
+
+        //Config Pagination
+        $config['base_url']     = 'http://localhost/okifftuh/home/prestasi';
+        $config['total_rows']   = $this->Crud->cw($table,$where);
+        $config['per_page']     = 5;
+        //Styles
+        $config['full_tag_open']  = '<nav><ul class="pagination">';
+        $config['full_tag_close'] = '</ul></nav>';
+
+        $config['first_link']      = 'First';
+        $config['first_tag_open']  = '<li class="page-item">';
+        $config['first_tag_close'] = '</li>';
+
+        $config['last_link']      = 'Last';
+        $config['last_tag_open']  = '<li class="page-item">';
+        $config['last_tag_close'] = '</li>';
+
+        $config['next_link']       = '&raquo';
+        $config['next_tag_open']   = '<li class="page-item">';
+        $config['next_tag_close']  = '</li>';
+
+        $config['prev_link']       = '&laquo';
+        $config['prev_tag_open']   = '<li class="page-item">';
+        $config['prev_tag_close']  = '</li>';
+
+        $config['cur_tag_open']   = '<li class="page-item active" aria-current="page"><a class="page-link" href="#">';
+        $config['cur_tag_close']  = '</a></li>';
+
+        $config['num_tag_open']   = '<li class="page-item">';
+        $config['num_tag_close']  = '</li>';
+
+        $config['attributes']     = array('class' => 'page-link');
+        //Initializing
+        $this->pagination->initialize($config);
+
+        $data   = array(
+            'title'     => 'Info Prestasi',
+            'nav'       => 'Informasi / Prestasi',
+            'data'      => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
+            'isi'       => 'home/dashboard/informasi',
+        );
+        $this->load->view('home/_layouts2/wrapper2', $data); 
+
+    }
+    //END Prestasi
+    //Begin Artikel
+    public function artikel(){
+        $where  = array('id_kategori_informasi' => 5);
+        $table  = 'informasi';
+        $row    = 'tanggal_informasi';
+        $ad     = 'desc';
+        $start  = $this->uri->segment(3);
+
+        //Config Pagination
+        $config['base_url']     = 'http://localhost/okifftuh/home/artikel';
+        $config['total_rows']   = $this->Crud->cw($table,$where);
+        $config['per_page']     = 5;
+        //Styles
+        $config['full_tag_open']  = '<nav><ul class="pagination">';
+        $config['full_tag_close'] = '</ul></nav>';
+
+        $config['first_link']      = 'First';
+        $config['first_tag_open']  = '<li class="page-item">';
+        $config['first_tag_close'] = '</li>';
+
+        $config['last_link']      = 'Last';
+        $config['last_tag_open']  = '<li class="page-item">';
+        $config['last_tag_close'] = '</li>';
+
+        $config['next_link']       = '&raquo';
+        $config['next_tag_open']   = '<li class="page-item">';
+        $config['next_tag_close']  = '</li>';
+
+        $config['prev_link']       = '&laquo';
+        $config['prev_tag_open']   = '<li class="page-item">';
+        $config['prev_tag_close']  = '</li>';
+
+        $config['cur_tag_open']   = '<li class="page-item active" aria-current="page"><a class="page-link" href="#">';
+        $config['cur_tag_close']  = '</a></li>';
+
+        $config['num_tag_open']   = '<li class="page-item">';
+        $config['num_tag_close']  = '</li>';
+
+        $config['attributes']     = array('class' => 'page-link');
+        //Initializing
+        $this->pagination->initialize($config);
+
+        $data   = array(
+            'title'     => 'Artikel',
+            'nav'       => 'Informasi / Artikel',
+            'data'      => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
+            'isi'       => 'home/dashboard/informasi',
+        );
+        $this->load->view('home/_layouts2/wrapper2', $data); 
+
+    }
+    //END Artikel
+    //Begin Lomba
+    public function lomba(){
+        $where  = array('id_kategori_informasi' => 6);
+        $table  = 'informasi';
+        $row    = 'tanggal_informasi';
+        $ad     = 'desc';
+        $start  = $this->uri->segment(3);
+
+        //Config Pagination
+        $config['base_url']     = 'http://localhost/okifftuh/home/lomba';
+        $config['total_rows']   = $this->Crud->cw($table,$where);
+        $config['per_page']     = 5;
+        //Styles
+        $config['full_tag_open']  = '<nav><ul class="pagination">';
+        $config['full_tag_close'] = '</ul></nav>';
+
+        $config['first_link']      = 'First';
+        $config['first_tag_open']  = '<li class="page-item">';
+        $config['first_tag_close'] = '</li>';
+
+        $config['last_link']      = 'Last';
+        $config['last_tag_open']  = '<li class="page-item">';
+        $config['last_tag_close'] = '</li>';
+
+        $config['next_link']       = '&raquo';
+        $config['next_tag_open']   = '<li class="page-item">';
+        $config['next_tag_close']  = '</li>';
+
+        $config['prev_link']       = '&laquo';
+        $config['prev_tag_open']   = '<li class="page-item">';
+        $config['prev_tag_close']  = '</li>';
+
+        $config['cur_tag_open']   = '<li class="page-item active" aria-current="page"><a class="page-link" href="#">';
+        $config['cur_tag_close']  = '</a></li>';
+
+        $config['num_tag_open']   = '<li class="page-item">';
+        $config['num_tag_close']  = '</li>';
+
+        $config['attributes']     = array('class' => 'page-link');
+        //Initializing
+        $this->pagination->initialize($config);
+        $data   = array(
+            'title'     => 'Info Lomba',
+            'nav'       => 'Informasi / Lomba',
+            'data'      => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
+            'isi'       => 'home/dashboard/informasi',
+        );
+        $this->load->view('home/_layouts2/wrapper2', $data); 
+
+    }
+    //END Lomba
+    //Begin Count
+    public function count($id_informasi){
+        $where  = array('id_informasi' => $id_informasi);
+        $input = $this->input->post(NULL, FALSE);
+        $view = $input['view'];
+
+        $dataview = array('view_informasi'  => $view + 1,);
+
+        $this->Crud->u('informasi', $dataview, $where);
+        redirect('home/readMore/'.$id_informasi);
+    }
+    //End Count
+    //Begin Read More
+    public function readMore($id_informasi){
+        $where  = array('id_informasi' => $id_informasi);
+        $data   = array(
+            
+            'title'             => 'Informasi',
+            'nav'               => 'Informasi / Single Page',
+            'data'              => $this->Crud->gw('informasi', $where),
+            'isi'               => 'home/dashboard/readmore',
+        );
+        $this->load->view('home/_layouts2/wrapper2', $data);
+
+    }
+    //End Read More
+    //== End Informasi ==//
 }
 
 ?>
