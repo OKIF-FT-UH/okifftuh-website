@@ -100,6 +100,15 @@ class Home extends CI_Controller {
         $this->load->view('home/_layouts2/wrapper2', $data);
     }
 
+    public function programKerja(){
+        $data = array(
+            'title'    => 'Program Kerja HMIF FT-UH',
+            'nav'      => 'Program Kerja HMIF FT-UH',
+            'isi'      => 'home/dashboard/programKerja',
+        );
+        $this->load->view('home/_layouts2/wrapper2', $data);
+    }
+
 //End Pengurus
 
 //Saran Begin
