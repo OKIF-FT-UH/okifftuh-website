@@ -144,7 +144,7 @@ $id = $get->id_galeri;
                                             <form method="post" action="<?= site_url('admin/editGaleri/'.$id)?>" enctype="multipart/form-data">
                                                 <div class="form-group">
                                                     <label for="message-text" class="col-form-label">Foto</label>
-                                                    <input type="file" class="form-control-file" name="userfile" accept=".png, .jpg, .jpeg" required>
+                                                    <input type="file" class="form-control-file" name="userfile" accept=".png, .jpg, .jpeg">
                                                     <div style="font-size: 10px">File hanya JPG dan PNG dengan ukuran Maks. 2048 Kb</div><br>
                                                     <img src="<?= base_url('assets/admin/img/galeri/'.$get->foto_galeri)?>" class="img-responsive" style="max-height: 240px; max-width: 200px;">
                                                 </div>

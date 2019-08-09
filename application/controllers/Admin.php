@@ -596,11 +596,27 @@ public function deleteDaftarPrestasi($id){
                 $this->session->set_flashdata('info', 'Upload File Gagal, Periksa Ukuran dan Ekstensi');
                 redirect('admin/galeri/');
             }else{
-                $filenya =  $this->upload->data('file_name');
+                $filenya =  $this->upload->data();
+
+                //Begin Resizing
+                $configer =  array(
+                  'image_library'   => 'gd2',
+                  'source_image'    =>  './assets/admin/img/galeri/'.$filenya['file_name'],
+                  'new_image'       =>  './assets/admin/img/galeri/resized/',
+                  'quality'         =>  '100%',
+                  'maintain_ratio'  =>  FALSE,
+                  'width'           =>  600,
+                  'height'          =>  400,
+                );
+
+                $this->load->library('image_lib', $configer);
+                $this->image_lib->resize();
+                //End Resizing
+
             }
             $today = date('Y-m-d H:i:s');
             $data = array(
-                'foto_galeri'        => $filenya,
+                'foto_galeri'        => $filenya['file_name'],
                 'caption_galeri'     => $input['caption_galeri'],
                 'tanggal_galeri'     => $today,
                 
@@ -616,6 +632,7 @@ public function deleteDaftarPrestasi($id){
         $input = $this->input->post(NULL, TRUE);
         $where = array('id_galeri' => $id);
         unlink('./assets/admin/img/galeri/'.$input['foto_galeri']);
+        unlink('./assets/admin/img/galeri/resized/'.$input['foto_galeri']);
 
         $this->Crud->d('galeri', $where);
         $this->session->set_flashdata('info', 'Data Sukses Dihapus');
@@ -646,17 +663,31 @@ public function deleteDaftarPrestasi($id){
                 }
                 //unlink(base_url('assets/img/produk/'.$input['judul_foto']));
                 unlink('./assets/admin/img/galeri/'.$input['foto_lama']);
+                unlink('./assets/admin/img/galeri/resized/'.$input['foto_lama']);
 
                 if(!$this->upload->do_upload('userfile')){
                     //die();
                     $this->session->set_flashdata('info', 'Upload File Gagal, Periksa Ukuran dan Ekstensi');
                     redirect('admin/galeri');
                 }else{
-                    $filenya =  $this->upload->data('file_name');
+                    $filenya =  $this->upload->data();
+
+                    $configer =  array(
+                      'image_library'   => 'gd2',
+                      'source_image'    =>  './assets/admin/img/galeri/'.$filenya['file_name'],
+                      'new_image'       =>  './assets/admin/img/galeri/resized/',
+                      'quality'         =>  '100%',
+                      'maintain_ratio'  =>  FALSE,
+                      'width'           =>  600,
+                      'height'          =>  400,
+                    );
+
+                    $this->load->library('image_lib', $configer);
+                    $this->image_lib->resize();
                 }
                 $today = date('Y-m-d H:i:s');
                 $items = array(
-                    'foto_galeri'        => $filenya,
+                    'foto_galeri'        => $filenya['file_name'],
                     'caption_galeri'     => $input['caption_galeri'],
                     'tanggal_galeri'     => $today,
                 );
