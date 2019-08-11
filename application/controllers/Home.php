@@ -92,10 +92,21 @@ class Home extends CI_Controller {
     }
 
     public function sejarahPengurus(){
+        $table  = 'sejarah_pengurus';
+        $firstA = 0;
+        $firstB = 1;
+        $limitA = 1;
+        $limitB = 100;
+        $field  = 'id_pengurus';
+        $ad   = 'asc';
         $data = array(
-            'title'    => 'Sejarah Kepengurusan',
+            'title'    => 'Sejarah Pengurus', 
             'nav'      => 'Sejarah Kepengurusan',
             'isi'      => 'home/dashboard/sejarahPengurus',
+            'dataA'    => $this->ModelHome->infoKini($table, $limitA,$firstA,$field,$ad),
+            'dataB'    => $this->ModelHome->infoKini($table, $limitB,$firstB,$field,$ad),
+            'folder'   => 'sejarahPengurus',
+            'periode'  => $this->get
         );
         $this->load->view('home/_layouts2/wrapper2', $data);
     }
@@ -151,33 +162,7 @@ class Home extends CI_Controller {
         $config['base_url']     = base_url('home/informasi');
         $config['total_rows']   = $this->Crud->ca($table);
         $config['per_page']     = 5;
-        //Styles
-        $config['full_tag_open']  = '<nav><ul class="pagination">';
-        $config['full_tag_close'] = '</ul></nav>';
 
-        $config['first_link']      = 'First';
-        $config['first_tag_open']  = '<li class="page-item">';
-        $config['first_tag_close'] = '</li>';
-
-        $config['last_link']      = 'Last';
-        $config['last_tag_open']  = '<li class="page-item">';
-        $config['last_tag_close'] = '</li>';
-
-        $config['next_link']       = '&raquo';
-        $config['next_tag_open']   = '<li class="page-item">';
-        $config['next_tag_close']  = '</li>';
-
-        $config['prev_link']       = '&laquo';
-        $config['prev_tag_open']   = '<li class="page-item">';
-        $config['prev_tag_close']  = '</li>';
-
-        $config['cur_tag_open']   = '<li class="page-item active" aria-current="page"><a class="page-link" href="#">';
-        $config['cur_tag_close']  = '</a></li>';
-
-        $config['num_tag_open']   = '<li class="page-item">';
-        $config['num_tag_close']  = '</li>';
-
-        $config['attributes']     = array('class' => 'page-link');
         //Initializing
         $this->pagination->initialize($config);
 
@@ -205,33 +190,7 @@ class Home extends CI_Controller {
         $config['base_url']     = base_url('home/himpunan');
         $config['total_rows']   = $this->Crud->cw($table,$where);
         $config['per_page']     = 5;
-        //Styles
-        $config['full_tag_open']  = '<nav><ul class="pagination">';
-        $config['full_tag_close'] = '</ul></nav>';
-
-        $config['first_link']      = 'First';
-        $config['first_tag_open']  = '<li class="page-item">';
-        $config['first_tag_close'] = '</li>';
-
-        $config['last_link']      = 'Last';
-        $config['last_tag_open']  = '<li class="page-item">';
-        $config['last_tag_close'] = '</li>';
-
-        $config['next_link']       = '&raquo';
-        $config['next_tag_open']   = '<li class="page-item">';
-        $config['next_tag_close']  = '</li>';
-
-        $config['prev_link']       = '&laquo';
-        $config['prev_tag_open']   = '<li class="page-item">';
-        $config['prev_tag_close']  = '</li>';
-
-        $config['cur_tag_open']   = '<li class="page-item active" aria-current="page"><a class="page-link" href="#">';
-        $config['cur_tag_close']  = '</a></li>';
-
-        $config['num_tag_open']   = '<li class="page-item">';
-        $config['num_tag_close']  = '</li>';
-
-        $config['attributes']     = array('class' => 'page-link');
+       
         //Initializing
         $this->pagination->initialize($config);
 
@@ -261,33 +220,7 @@ class Home extends CI_Controller {
         $config['base_url']     = base_url('home/kemahasiswaan');
         $config['total_rows']   = $this->Crud->cw($table,$where);
         $config['per_page']     = 5;
-        //Styles
-        $config['full_tag_open']  = '<nav><ul class="pagination">';
-        $config['full_tag_close'] = '</ul></nav>';
 
-        $config['first_link']      = 'First';
-        $config['first_tag_open']  = '<li class="page-item">';
-        $config['first_tag_close'] = '</li>';
-
-        $config['last_link']      = 'Last';
-        $config['last_tag_open']  = '<li class="page-item">';
-        $config['last_tag_close'] = '</li>';
-
-        $config['next_link']       = '&raquo';
-        $config['next_tag_open']   = '<li class="page-item">';
-        $config['next_tag_close']  = '</li>';
-
-        $config['prev_link']       = '&laquo';
-        $config['prev_tag_open']   = '<li class="page-item">';
-        $config['prev_tag_close']  = '</li>';
-
-        $config['cur_tag_open']   = '<li class="page-item active" aria-current="page"><a class="page-link" href="#">';
-        $config['cur_tag_close']  = '</a></li>';
-
-        $config['num_tag_open']   = '<li class="page-item">';
-        $config['num_tag_close']  = '</li>';
-
-        $config['attributes']     = array('class' => 'page-link');
         //Initializing
         $this->pagination->initialize($config);
 
@@ -317,33 +250,7 @@ class Home extends CI_Controller {
         $config['base_url']     = base_url('home/beasiswa');
         $config['total_rows']   = $this->Crud->cw($table,$where);
         $config['per_page']     = 5;
-        //Styles
-        $config['full_tag_open']  = '<nav><ul class="pagination">';
-        $config['full_tag_close'] = '</ul></nav>';
 
-        $config['first_link']      = 'First';
-        $config['first_tag_open']  = '<li class="page-item">';
-        $config['first_tag_close'] = '</li>';
-
-        $config['last_link']      = 'Last';
-        $config['last_tag_open']  = '<li class="page-item">';
-        $config['last_tag_close'] = '</li>';
-
-        $config['next_link']       = '&raquo';
-        $config['next_tag_open']   = '<li class="page-item">';
-        $config['next_tag_close']  = '</li>';
-
-        $config['prev_link']       = '&laquo';
-        $config['prev_tag_open']   = '<li class="page-item">';
-        $config['prev_tag_close']  = '</li>';
-
-        $config['cur_tag_open']   = '<li class="page-item active" aria-current="page"><a class="page-link" href="#">';
-        $config['cur_tag_close']  = '</a></li>';
-
-        $config['num_tag_open']   = '<li class="page-item">';
-        $config['num_tag_close']  = '</li>';
-
-        $config['attributes']     = array('class' => 'page-link');
         //Initializing
         $this->pagination->initialize($config);
 
@@ -374,32 +281,7 @@ class Home extends CI_Controller {
         $config['total_rows']   = $this->Crud->cw($table,$where);
         $config['per_page']     = 5;
         //Styles
-        $config['full_tag_open']  = '<nav><ul class="pagination">';
-        $config['full_tag_close'] = '</ul></nav>';
 
-        $config['first_link']      = 'First';
-        $config['first_tag_open']  = '<li class="page-item">';
-        $config['first_tag_close'] = '</li>';
-
-        $config['last_link']      = 'Last';
-        $config['last_tag_open']  = '<li class="page-item">';
-        $config['last_tag_close'] = '</li>';
-
-        $config['next_link']       = '&raquo';
-        $config['next_tag_open']   = '<li class="page-item">';
-        $config['next_tag_close']  = '</li>';
-
-        $config['prev_link']       = '&laquo';
-        $config['prev_tag_open']   = '<li class="page-item">';
-        $config['prev_tag_close']  = '</li>';
-
-        $config['cur_tag_open']   = '<li class="page-item active" aria-current="page"><a class="page-link" href="#">';
-        $config['cur_tag_close']  = '</a></li>';
-
-        $config['num_tag_open']   = '<li class="page-item">';
-        $config['num_tag_close']  = '</li>';
-
-        $config['attributes']     = array('class' => 'page-link');
         //Initializing
         $this->pagination->initialize($config);
 
@@ -429,33 +311,7 @@ class Home extends CI_Controller {
         $config['base_url']     = base_url('home/artikel');
         $config['total_rows']   = $this->Crud->cw($table,$where);
         $config['per_page']     = 5;
-        //Styles
-        $config['full_tag_open']  = '<nav><ul class="pagination">';
-        $config['full_tag_close'] = '</ul></nav>';
 
-        $config['first_link']      = 'First';
-        $config['first_tag_open']  = '<li class="page-item">';
-        $config['first_tag_close'] = '</li>';
-
-        $config['last_link']      = 'Last';
-        $config['last_tag_open']  = '<li class="page-item">';
-        $config['last_tag_close'] = '</li>';
-
-        $config['next_link']       = '&raquo';
-        $config['next_tag_open']   = '<li class="page-item">';
-        $config['next_tag_close']  = '</li>';
-
-        $config['prev_link']       = '&laquo';
-        $config['prev_tag_open']   = '<li class="page-item">';
-        $config['prev_tag_close']  = '</li>';
-
-        $config['cur_tag_open']   = '<li class="page-item active" aria-current="page"><a class="page-link" href="#">';
-        $config['cur_tag_close']  = '</a></li>';
-
-        $config['num_tag_open']   = '<li class="page-item">';
-        $config['num_tag_close']  = '</li>';
-
-        $config['attributes']     = array('class' => 'page-link');
         //Initializing
         $this->pagination->initialize($config);
 
@@ -485,33 +341,7 @@ class Home extends CI_Controller {
         $config['base_url']     = base_url('home/lomba');
         $config['total_rows']   = $this->Crud->cw($table,$where);
         $config['per_page']     = 5;
-        //Styles
-        $config['full_tag_open']  = '<nav><ul class="pagination">';
-        $config['full_tag_close'] = '</ul></nav>';
 
-        $config['first_link']      = 'First';
-        $config['first_tag_open']  = '<li class="page-item">';
-        $config['first_tag_close'] = '</li>';
-
-        $config['last_link']      = 'Last';
-        $config['last_tag_open']  = '<li class="page-item">';
-        $config['last_tag_close'] = '</li>';
-
-        $config['next_link']       = '&raquo';
-        $config['next_tag_open']   = '<li class="page-item">';
-        $config['next_tag_close']  = '</li>';
-
-        $config['prev_link']       = '&laquo';
-        $config['prev_tag_open']   = '<li class="page-item">';
-        $config['prev_tag_close']  = '</li>';
-
-        $config['cur_tag_open']   = '<li class="page-item active" aria-current="page"><a class="page-link" href="#">';
-        $config['cur_tag_close']  = '</a></li>';
-
-        $config['num_tag_open']   = '<li class="page-item">';
-        $config['num_tag_close']  = '</li>';
-
-        $config['attributes']     = array('class' => 'page-link');
         //Initializing
         $this->pagination->initialize($config);
         $data   = array(
@@ -550,8 +380,30 @@ class Home extends CI_Controller {
         $this->load->view('home/_layouts2/wrapper2', $data);
 
     }
+
+    public function daftarPrestasi(){
+        $ad     = 'desc';
+        $field  = 'id_prestasi';
+        $first  = $this->uri->segment(3);
+
+        $config['base_url']     = base_url('home/daftarPrestasi');
+        $config['total_rows']   = $this->ModelHome->cw('prestasi');
+        $config['per_page']     = 10;
+        
+        //Initializing
+        $this->pagination->initialize($config);
+        $data = array(
+            'title' => 'Daftar Prestasi',
+            'prestasi' => $this->ModelHome->prestasi('prestasi',$config['per_page'],$first,$field,$ad),
+            'nav'   => 'Daftar Prestasi',
+            'isi'   => 'home/dashboard/daftarPrestasi',
+            'nomor' => $first,
+        );
+        $this->load->view('home/_layouts2/wrapper2', $data);
+    }
     //End Read More
     //== End Informasi ==//
+
 }
 
 ?>
