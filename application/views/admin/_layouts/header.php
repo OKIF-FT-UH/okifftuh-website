@@ -1,4 +1,3 @@
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,24 +10,22 @@
     <link href="<?=base_url('assets/admin/css/style.css')?>" rel="stylesheet">
 
     <?php
-
     $modul = $this->uri->segment(2);
-    if($modul == 'createInformation' || $modul == 'editInformation'){
-    	echo '
-			<script type="text/javascript" src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-
-			<script type="text/javascript">
+    if($modul == 'createInformation' || $modul == 'editInformation') : ?>
+		<script type="text/javascript" src="https://cloud.tinymce.com/stable/tinymce.min.js"> </script>
+		<script type="text/javascript">
 			tinyMCE.init({
 			         // General options
 			         mode : "textareas",
 			        // theme : "advanced",
 			});
+		</script>
+    <?php endif; ?>
 
-			</script>
-
-    	';
-    }
-
-    ?>
+    <?php if($modul == 'galeri') : ?>
+        <!-- Date picker plugins css -->
+        <link href="<?= base_url('assets/admin/')?>plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+         <link href="./plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+    <?php endif; ?>
 
 </head>

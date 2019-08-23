@@ -21,7 +21,7 @@
                 <div id="gal<?= $get->id_galeri ?>" class="pop-overlay">
                     <div class="popup">
                         <img src="<?= base_url('assets/admin/img/galeri/'.$get->foto_galeri); ?>" alt="Popup Image" class="img-fluid" />
-                        <p class="mt-4"><?= $get->caption_galeri ?>.</p>
+                        <p class="mt-4"><?= $get->caption_galeri ?></p>
                         <a class="close" href="#current<?= $get->id_galeri ?>">&times;</a>
                     </div>
                 </div>
