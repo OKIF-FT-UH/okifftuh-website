@@ -106,7 +106,6 @@ class Home extends CI_Controller {
             'dataA'    => $this->ModelHome->infoKini($table, $limitA,$firstA,$field,$ad),
             'dataB'    => $this->ModelHome->infoKini($table, $limitB,$firstB,$field,$ad),
             'folder'   => 'sejarahPengurus',
-            'periode'  => $this->get
         );
         $this->load->view('home/_layouts2/wrapper2', $data);
     }
@@ -142,9 +141,38 @@ class Home extends CI_Controller {
             'isi_saran' => $input['isi_saran'],
             'waktu_saran' => $today,
         );
+
         $this->db->insert('saran', $data);
+        $this->_sendEmail();
         $this->session->set_flashdata('info','Saran Telah Terkirim');
         redirect('home/addSaran');
+    }
+
+    private function _sendEmail(){
+        $config = [
+            'protocol' => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_user' => 'gilbertmabar@gmail.com',
+            'smtp_pass' => 'okifftuh',
+            'smtp_port' => 465,
+            'mailType'  => 'html',
+            'charset'   => 'utf-8',
+            'newline'   => "\r\n" 
+        ];
+
+        $this->load->library('email', $config);
+        $this->email->initialize($config); 
+        $message = $this->load->view('home/dashboard/email','',true);
+        $this->email->from('gilbertmabar@gmail.com', 'OKIF FT-UH');
+        $this->email->to($this->input->post(email_saran));
+        $this->email->subject('Confirmation Mail');
+        $this->email->message($message);
+        if($this->email->send()){
+            return true;
+        }else{
+            echo $this->email->print_debugger();
+            die; 
+        }
     }
 //End Saran
 

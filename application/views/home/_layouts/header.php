@@ -70,7 +70,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <li><a href="<?= base_url('Home/pengurusDmmif') ?>" class="drop-text">DMMIF FT-UH</a></li>
                                 <li><a href="<?= base_url('Home/pengurusHmif') ?>" class="drop-text">HMIF FT-UH</a></li>
                                 <li><a href="<?= base_url('Home/programKerja') ?>" class="drop-text">Program Kerja HMIF FT-UH</a></li>
-                                <li><a href="<?= base_url('Home/sejarahPengurus') ?>" class="drop-text">Sejarah Penguruss</a></li>
+                                <li><a href="<?= base_url('Home/sejarahPengurus') ?>" class="drop-text">Sejarah Pengurus</a></li>
                             </ul>
                         </li>
 

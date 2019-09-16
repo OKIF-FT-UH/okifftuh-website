@@ -664,7 +664,7 @@ li>a:only-child:after {
 }
 
 .btn {
-    border: 2px solid #fff;
+    border: 2px solid #4a91c5;
     padding: 11px 30px;
     color: #fff;
     font-size: 16px;
@@ -744,6 +744,7 @@ li>a:only-child:after {
     background: none;
     color: #0470bc;
 }
+
 
 .wthree-w3ls {
     border-bottom: 1px solid rgba(221, 221, 221, 0.25);
@@ -1089,7 +1090,7 @@ span.decription {
 .popup {
     background: #fff;
     border-radius: 5px;
-    width: 35%;
+    width: 50%;
     position: relative;
     margin: 8em auto;
     padding: 3em 1em;
@@ -1117,6 +1118,39 @@ span.decription {
 .popup .close:hover {
     color: #30c39e;
 }
+
+.popup2 {
+    background: #fff;
+    border-radius: 5px;
+    width: 75%;
+    position: relative;
+    margin: 4em auto;
+    padding: 2em 1em;
+}
+
+.popup2 p {
+    font-size: 15px;
+    color: #666;
+    letter-spacing: .5px;
+    line-height: 30px;
+}
+
+
+.popup2 .close {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+
+.popup2 .close:hover {
+    color: #30c39e;
+}
+
 
 
 /*-- //popup --*/

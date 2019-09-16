@@ -1862,8 +1862,8 @@ pre code {
 
 .table .thead-dark th {
   color: #fff;
-  background-color: #212529;
-  border-color: #32383e;
+  background-color: #0470BC;
+  border-color: #0470BC;
 }
 
 .table .thead-light th {
@@ -2814,7 +2814,7 @@ fieldset:disabled a.btn {
 
 .btn-outline-secondary {
   color: #6c757d;
-  background-color: transparent;
+  background-color: #4a91c5;
   background-image: none;
   border-color: #6c757d;
 }
