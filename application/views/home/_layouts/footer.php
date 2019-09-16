@@ -32,12 +32,12 @@
                     <h4 class="mb-4">Quick Links</h4>
                     <div class="links-wthree d-flex">
                         <ul class="list-info-wthree">
-                            <li><a href="#"><span class="fa fa-angle-double-right" aria-hidden="true"></span> Online Websites</a></li>
-                            <li><a href="#"><span class="fa fa-angle-double-right" aria-hidden="true"></span> Free Application</a></li>
-                            <li><a href="#"><span class="fa fa-angle-double-right" aria-hidden="true"></span> Support Helpline</a></li>
-                            <li><a href="#"><span class="fa fa-angle-double-right" aria-hidden="true"></span> Privacy Ploicy</a></li>
-                            <li><a href="#"><span class="fa fa-angle-double-right" aria-hidden="true"></span> Ready to Build</a></li>
-                            <li><a href="#"><span class="fa fa-angle-double-right" aria-hidden="true"></span> Free Application</a></li>
+                            <li><a href="https://unhas.ac.id"><span class="fa fa-angle-double-right" aria-hidden="true"></span> Universitas Hasanuddin</a></li>
+                            <li><a href="https://portal-akademik.unhas.ac.id"><span class="fa fa-angle-double-right" aria-hidden="true"></span> Portal Unhas</a></li>
+                            <li><a href="https://sso.unhas.ac.id/"><span class="fa fa-angle-double-right" aria-hidden="true"></span> SSO Unhas</a></li>
+                            <li><a href="http://lms2.unhas.ac.id/cl1/"><span class="fa fa-angle-double-right" aria-hidden="true"></span> LMS Unhas</a></li>
+                            <li><a href="https://eng.unhas.ac.id/informatika/"><span class="fa fa-angle-double-right" aria-hidden="true"></span> Departemen Informatika</a></li>
+                            <li><a href="https://okft-uh.org/"><span class="fa fa-angle-double-right" aria-hidden="true"></span> OKFT-UH</a></li>
                         </ul>
                         <ul class="list-info-wthree ml-5">
                             <li>
@@ -70,10 +70,9 @@
                 </div>
                 <div class="col-lg-4 mt-4 ad-info">
                     <h4 class="mb-4">Contact Info</h4>
-                    <p><span class="fa fa-map-marker"></span>90 nsequursu dsdesdc,
-                        xxx Honey Street 049436.<span>Newyork, NY.</span></p>
+                    <p><span class="fa fa-map-marker"></span>Class Room Fakultas Teknik Universitas Hasanuddin
+                    <span>Gowa, Sulawesi Selatan</span></p>
                     <p class="phone"><span class="fa fa-phone"></span> +1(12) 123 456 789 </p>
-                    <p class="phone"><span class="fa fa-fax"></span> +1(12) 123 456 789 </p>
                     <p><span class="fa fa-envelope"></span><a href="mailto:info@example.com">info@example.com</a></p>
                 </div>
 
