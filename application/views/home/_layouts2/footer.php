@@ -7,8 +7,7 @@
                     <h2> <a class="navbar-brand px-0 mx-0 mb-4" href="index.html">OKIF FT-UH
                         </a>
                     </h2>
-                    <p class="mb-3">Lorem Ipsum is simply text the printing and typesetting standard industry. Onec Consequat sapien ut cursus rhoncus. Nullam dui mi, vulputate ac metus.</p>
-                    <h5>Trusted by <span>500+ People</span> </h5>
+                    <p class="mb-3">Organisasi Kemahasiswaan Informatika Fakultas Teknik Universitas Hasanuddin ialah Organisasi Kemahasiswaan di Departemen Teknik Informatika Fakultas Teknik Universitas Hasanuddin yang kemudian disingkat OKIF FT-UH </h5>
                     <div class="icon-social mt-4">
                         <a href="#" class="button-footr">
                             <span class="fa mx-2 fa-facebook"></span>

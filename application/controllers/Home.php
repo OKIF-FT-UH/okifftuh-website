@@ -6,7 +6,7 @@ class Home extends CI_Controller {
 	public function __construct() {
         parent::__construct();
         date_default_timezone_set('Asia/Makassar');
-       
+    
     }
 
 	public function index(){
@@ -218,7 +218,7 @@ class Home extends CI_Controller {
         $config['base_url']     = base_url('home/himpunan');
         $config['total_rows']   = $this->Crud->cw($table,$where);
         $config['per_page']     = 5;
-       
+
         //Initializing
         $this->pagination->initialize($config);
 

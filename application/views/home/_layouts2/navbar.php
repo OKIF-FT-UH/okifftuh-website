@@ -39,15 +39,15 @@
                         <li>
                             <!-- First Tier Drop Down -->
                             <label for="drop-4" class="toggle toggle-3">Informasi <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
-                            <a href="#">Informasi  <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                            <a href="<?= base_url('Home/informasi') ?>">Informasi  <span class="fa fa-angle-down" aria-hidden="true"></span></a>
                             <input type="checkbox" id="drop-4" />
                             <ul style="margin-left:9rem;">
-                                <li><a href="services.html" class="drop-text">Kegiatan</a></li>
-                                <li><a href="timeline.html" class="drop-text">Beasiswa</a></li>
-                                <li><a href="team.html" class="drop-text">Prestasi</a></li>
-                                <li><a href="team.html" class="drop-text">Kemahasiswaan</a></li>
-                                <li><a href="typo.html" class="drop-text">Artikel</a></li>
-                                <li><a href="error.html" class="drop-text">Daftar Prestasi</a></li>
+                                <li><a href="<?= base_url('Home/kegiatan') ?>" class="drop-text">Kegiatan</a></li>
+                                <li><a href="<?= base_url('Home/beasiswa') ?>" class="drop-text">Beasiswa</a></li>
+                                <li><a href="<?= base_url('Home/prestasi') ?>" class="drop-text">Prestasi</a></li>
+                                <li><a href="<?= base_url('Home/kemahasiswaan') ?>">Kemahasiswaan</a></li>
+                                <li><a href="<?= base_url('Home/artikel') ?>" class="drop-text">Artikel</a></li>
+                                <li><a href="<?= base_url('Home/daftarPrestasi') ?>" class="drop-text">Daftar Prestasi</a></li>
                             </ul>
                         </li>
 
