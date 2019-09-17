@@ -4,11 +4,10 @@
             <div class="row footer-grids">
                 <div class="col-lg-4 mt-4">
 
-                    <h2> <a class="navbar-brand px-0 mx-0 mb-4" href="index.html">Infinitude
+                    <h2> <a class="navbar-brand px-0 mx-0 mb-4" href="index.html">OKIF FT-UH
                         </a>
                     </h2>
-                    <p class="mb-3">Lorem Ipsum is simply text the printing and typesetting standard industry. Onec Consequat sapien ut cursus rhoncus. Nullam dui mi, vulputate ac metus.</p>
-                    <h5>Trusted by <span>500+ People</span> </h5>
+                    <p class="mb-3">Organisasi Kemahasiswaan Informatika Fakultas Teknik Universitas Hasanuddin ialah Organisasi Kemahasiswaan di Departemen Teknik Informatika Fakultas Teknik Universitas Hasanuddin yang kemudian disingkat OKIF FT-UH </h5>
                     <div class="icon-social mt-4">
                         <a href="#" class="button-footr">
                             <span class="fa mx-2 fa-facebook"></span>
@@ -17,15 +16,8 @@
                             <span class="fa mx-2 fa-twitter"></span>
                         </a>
                         <a href="#" class="button-footr">
-                            <span class="fa mx-2 fa-dribbble"></span>
+                            <span class="fa mx-2 fa-instagram"></span>
                         </a>
-                        <a href="#" class="button-footr">
-                            <span class="fa mx-2 fa-pinterest"></span>
-                        </a>
-                        <a href="#" class="button-footr">
-                            <span class="fa mx-2 fa-google-plus"></span>
-                        </a>
-
                     </div>
                 </div>
                 <div class="col-lg-4 mt-4">
@@ -72,8 +64,7 @@
                     <h4 class="mb-4">Contact Info</h4>
                     <p><span class="fa fa-map-marker"></span>Class Room Fakultas Teknik Universitas Hasanuddin
                     <span>Gowa, Sulawesi Selatan</span></p>
-                    <p class="phone"><span class="fa fa-phone"></span> +1(12) 123 456 789 </p>
-                    <p><span class="fa fa-envelope"></span><a href="mailto:info@example.com">info@example.com</a></p>
+                    <p><span class="fa fa-envelope"></span><a href="mailto:info@example.com">okifftuh@gmail.com</a></p>
                 </div>
 
             </div>
