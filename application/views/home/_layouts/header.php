@@ -58,9 +58,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <ul class="menu mr-auto">
                         <li class="<?= ($navi == 'index' or $navi == '') ? 'active' : '' ?>"><a href="<?=base_url('Home/index/') ?>">Home</a></li>
 
-                        <li><a href="<?=base_url('Home/profil/') ?>">Profil</a></li>
+                        <li class="<?= ($navi == 'profil' ? 'active' : 'profil' ) ?>"><a href="<?=base_url('Home/profil/') ?>">Profil</a></li>
 
-                        <li <?= ($navi == 'pengurusDmmif' || 'pengurusHmif') ? 'active' : '' ?>>
+                        <li>
                             <!-- First Tier Drop Down -->
                             <label for="drop-3" class="toggle toggle-2">Pengurus <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
                             <a href="#">Pengurus  <span class="fa fa-angle-down" aria-hidden="true"></span></a>
@@ -80,7 +80,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <a href="<?= base_url('Home/informasi') ?>">Informasi  <span class="fa fa-angle-down" aria-hidden="true"></span></a>
                             <input type="checkbox" id="drop-4" />
                             <ul style="margin-left:9rem;">
-                                <li><a href="<?= base_url('Home/kegiatan') ?>" class="drop-text">Kegiatan</a></li>
+                                <li><a href="<?= base_url('Home/himpunan') ?>" class="drop-text">Kegiatan</a></li>
                                 <li><a href="<?= base_url('Home/beasiswa') ?>" class="drop-text">Beasiswa</a></li>
                                 <li><a href="<?= base_url('Home/prestasi') ?>" class="drop-text">Prestasi</a></li>
                                 <li><a href="<?= base_url('Home/kemahasiswaan') ?>">Kemahasiswaan</a></li>
@@ -91,7 +91,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
                         <li><a href="<?= base_url('Home/galeri') ?>">Galeri</a></li>
-                        <li><a href="#gallery">Arsip</a></li>
+                        <li class="<?= ($navi == 'arsip') ? 'active' : '' ?>"><a href="<?=base_url('Home/arsip') ?>">Arsip</a></li>
                         <li class="<?= ($navi == 'addSaran') ? 'active' : '' ?>"><a href="<?= base_url('Home/addSaran') ?>">Kritik & Saran</a></li>
                     </ul>
                 </nav>

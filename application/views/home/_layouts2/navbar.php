@@ -20,19 +20,19 @@
                     <ul class="menu mr-auto">
                         <li class="<?= ($navi == '' ? 'active' : '' ) ?>"><a href="<?=base_url('Home/index/') ?>">Home</a></li>
 
-                        <li><a href="<?=base_url('Home/profil/') ?>">Profil</a></li>
+                        <li class="<?= ($navi == 'profil' ? 'active' : '' ) ?>"><a href="<?=base_url('Home/profil/') ?>">Profil</a></li>
 
-                        <li <?= ($navi == 'pengurusDmmif' || 'pengurusHmif') ? 'active' : '' ?>>
+                        <li>
                             <!-- First Tier Drop Down -->
                             <label for="drop-3" class="toggle toggle-2">Pengurus <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
                             <a href="#">Pengurus  <span class="fa fa-angle-down" aria-hidden="true"></span></a>
                             <input type="checkbox" id="drop-3" />
                             <ul>
 
-                                <li><a href="<?= base_url('Home/pengurusDmmif') ?>" class="drop-text">DMMIF FT-UH</a></li>
-                                <li><a href="<?= base_url('Home/pengurusHmif') ?>" class="drop-text">HMIF FT-UH</a></li>
-                                <li><a href="<?= base_url('Home/programKerja') ?>" class="drop-text">Program Kerja HMIF FT-UH</a></li>
-                                <li><a href="<?= base_url('Home/sejarahPengurus') ?>" class="drop-text">Sejarah Pengurus</a></li>
+                                <li class="<?= ($navi == 'pengurusDmmif') ? 'active' : '' ?>"><a href="<?= base_url('Home/pengurusDmmif') ?>" class="drop-text">DMMIF FT-UH</a></li>
+                                <li class="<?= ($navi == 'pengurusHmif') ? 'active' : '' ?>"><a href="<?= base_url('Home/pengurusHmif') ?>" class="drop-text">HMIF FT-UH</a></li>
+                                <li class="<?= ($navi == 'programKerja') ? 'active' : '' ?>"><a href="<?= base_url('Home/programKerja') ?>" class="drop-text">Program Kerja HMIF FT-UH</a></li>
+                                <li class="<?= ($navi == 'sejarahPengurus') ? 'active' : '' ?>"><a href="<?= base_url('Home/sejarahPengurus') ?>" class="drop-text">Sejarah Pengurus</a></li>
                             </ul>
                         </li>
 
@@ -42,18 +42,18 @@
                             <a href="<?= base_url('Home/informasi') ?>">Informasi  <span class="fa fa-angle-down" aria-hidden="true"></span></a>
                             <input type="checkbox" id="drop-4" />
                             <ul style="margin-left:9rem;">
-                                <li><a href="<?= base_url('Home/kegiatan') ?>" class="drop-text">Kegiatan</a></li>
-                                <li><a href="<?= base_url('Home/beasiswa') ?>" class="drop-text">Beasiswa</a></li>
-                                <li><a href="<?= base_url('Home/prestasi') ?>" class="drop-text">Prestasi</a></li>
-                                <li><a href="<?= base_url('Home/kemahasiswaan') ?>">Kemahasiswaan</a></li>
-                                <li><a href="<?= base_url('Home/artikel') ?>" class="drop-text">Artikel</a></li>
-                                <li><a href="<?= base_url('Home/daftarPrestasi') ?>" class="drop-text">Daftar Prestasi</a></li>
+                                <li class="<?= ($navi == 'himpunan') ? 'active' : '' ?>"><a href="<?= base_url('Home/himpunan') ?>" class="drop-text">Kegiatan</a></li>
+                                <li class="<?= ($navi == 'beasiswa') ? 'active' : '' ?>"><a href="<?= base_url('Home/beasiswa') ?>" class="drop-text">Beasiswa</a></li>
+                                <li class="<?= ($navi == 'prestasi') ? 'active' : '' ?>"><a href="<?= base_url('Home/prestasi') ?>" class="drop-text">Prestasi</a></li>
+                                <li class="<?= ($navi == 'kemahasiswaan') ? 'active' : '' ?>"><a href="<?= base_url('Home/kemahasiswaan') ?>">Kemahasiswaan</a></li>
+                                <li class="<?= ($navi == 'artikel') ? 'active' : '' ?>"><a href="<?= base_url('Home/artikel') ?>" class="drop-text">Artikel</a></li>
+                                <li class="<?= ($navi == 'daftarPrestasi') ? 'active' : '' ?>"><a href="<?= base_url('Home/daftarPrestasi') ?>" class="drop-text">Daftar Prestasi</a></li>
                             </ul>
                         </li>
 
 
                         <li class="<?= ($navi == 'galeri') ? 'active' : '' ?>"><a href="<?= base_url('Home/galeri') ?>">Galeri</a></li>
-                        <li><a href="#gallery">Arsip</a></li>
+                        <li class="<?= ($navi == 'arsip') ? 'active' : '' ?>"><a href="<?=base_url('Home/arsip') ?>">Arsip</a></li>
                         <li class="<?= ($navi == 'addSaran') ? 'active' : '' ?>"><a href="<?= base_url('Home/addSaran') ?>">Kritik & Saran</a></li>
                     </ul>
                     </nav>

@@ -20,7 +20,7 @@
                   <th scope="col">Nama</th>
                   <th scope="col">Prestasi</th>
                   <th scope="col">Kegiatan Prestasi</th>
-                  <th scope="col">Kegiatan Prestasi</th>
+                  <th scope="col">Tahun Prestasi</th>
                 </tr>
               </thead>
               <tbody>

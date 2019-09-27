@@ -38,38 +38,11 @@
                             <li><a href="https://eng.unhas.ac.id/informatika/"><span class="fa fa-angle-double-right" aria-hidden="true"></span> Departemen Informatika</a></li>
                             <li><a href="https://okft-uh.org/"><span class="fa fa-angle-double-right" aria-hidden="true"></span> OKFT-UH</a></li>
                         </ul>
-                        <ul class="list-info-wthree ml-5">
-                            <li>
-                                <a href="#"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                                    About Us
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                                    Single Page
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                                    Team
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                                    Contact Us
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 mt-4 ad-info">
                     <h4 class="mb-4">Contact Info</h4>
-                    <p><span class="fa fa-map-marker"></span>Class Room Fakultas Teknik Universitas Hasanuddin
+                    <p><span class="fa fa-map-marker"></span>Gedung Classroom Lt.1 Fakultas Teknik Universitas Hasanuddin
                     <span>Gowa, Sulawesi Selatan</span></p>
                     <p><span class="fa fa-envelope"></span><a href="mailto:info@example.com">okifftuh@gmail.com</a></p>
                 </div>

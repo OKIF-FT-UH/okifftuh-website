@@ -432,6 +432,16 @@ class Home extends CI_Controller {
     //End Read More
     //== End Informasi ==//
 
+    //==Begin Arsip==//
+    public function arsip(){
+    $data = array(
+            'nav'       => 'Arsip',
+            'isi'       => 'home/dashboard/arsip', 
+        );
+        $this->load->view('home/_layouts2/wrapper2', $data);
+    }
+    //==END Arsip==//
+
 }
 
 ?>
