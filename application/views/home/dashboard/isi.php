@@ -81,10 +81,8 @@
         <div class="container p-md-5">
             <div class="about-hny-info text-left px-md-5">
                 <h3 class="tittle-w3ls mb-3"><span class="pink">Selamat</span> Datang</h3>
-                <p class="sub-tittle mt-3 mb-4">Integer pulvinar leo id viverra feugiat. Pellentesque libero ut justo, semper at tempus vel, ultrices in ligula. Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Sed do eiusmod tempor incididunt ut labore et dolore
-                    magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                <a class="btn more black" href="single.html" role="button">Read More</a>
+                <p class="sub-tittle mt-3 mb-4">Organisasi Kemahasiswaan Informatika Fakultas Teknik Universitas Hasanuddin ialah Organisasi Kemahasiswaan di Departemen Teknik Informatika Fakultas Teknik Universitas Hasanuddin yang kemudian disingkat OKIF FT-UH</p>
+                <a class="btn more black" href="<?= base_url('Home/profil') ?>" role="button">Read More</a>
             </div>
         </div>
     </section>
@@ -117,7 +115,7 @@
                         </div>
                         <div class="col-md-9 featured_grid_right_info pl-lg-0">
                             <h4><a class="link-hny">Pendidikan</a></h4>
-                            <p>Lorem Ipsum is simply text the printing and typesetting standard industry.</p>
+                            <p>Pendidikan dan pengajaran adalah point pertama dan utama dari Tri Dharma Perguruan Tinggi. Pendidikan danpengajaran memiliki peranan yang sangat penting dalam suatu proses pembelajaran.</p>
                         </div>
                     </div>
                 </div>
@@ -130,7 +128,7 @@
                         </div>
                         <div class="col-md-9 featured_grid_right_info pl-lg-0">
                             <h4><a class="link-hny">Penelitian</a></h4>
-                            <p>Lorem Ipsum is simply text the printing and typesetting standard industry.</p>
+                            <p>Peneitian dan pengembangan juga sangatlah penting bagi kemajuan perguruan tinggi,kesejahteraan masyarakat serta kemajuan bangsa dan negara. Dari penelitian dan pengembangan maka mahasiswa mampu mengembangkan ilmu dan teknologi .</p>
                         </div>
                     </div>
                 </div>
@@ -143,7 +141,7 @@
                         </div>
                         <div class="col-md-9 featured_grid_right_info pl-lg-0">
                             <h4><a class="link-hny">Pengabdian Masyarakat</a></h4>
-                            <p>Lorem Ipsum is simply text the printing and typesetting standard industry.</p>
+                            <p>Menurut undang – undang tentang pendidikan tinggi, pengabdian kepada masyarakat adalah kegiatan sivitas akademika yang memanfaatkan ilmu pengetahuan dan teknologi untuk memajukan kesejahteraan masyarakat dan mencerdaskan kehidupan bangsa. Pada hal ini mahasiswa harus mampu bersosialisasi dengan masyarakatdan mampu berkontribusi nyata. </p>
                         </div>
                     </div>
                 </div>
