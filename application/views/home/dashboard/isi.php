@@ -98,10 +98,16 @@
                 <div class="col-md-6 banner_bottom_left mt-lg-0 mt-4">
                     <h4><a class="link-hny" href="services.html">
                             OKIF FT-UH</a></h4>
-                    <p>Pellentesque convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget
-                        pulvinar neque pharetra ac.</p>
-                    <p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget
-                        pulvinar neque pharetra ac.</p>
+                    <p>OKIF FT-UH adalah Organisasi Kemahasiswaan dalam lingkup Departemen Teknik Informatika yang bertujuan sebagai sarana peningkatan kualitas ketakwaan kepada Tuhan Yang
+                    Maha Esa, yang berasaskan nilai-nilai luhur Pancasila demi terwujudnya cita – cita bangsa dengan mengembangkan wawasan, integritas, potensi diri, kemampuan keprofesian, serta pengabdianmasyarakat sebagaimana termaktub dalam PDOKIF FT-UH.</p>
+                    <p>Pencapaian tujuan OKIF FT-UH dapat dilakukan apabila kerjasama semua unsur yang ada
+                    	dalam organisasi ini berjalan dengan baik dan lancar. Oleh karena itu perlu dilakukan
+                    	pengendalian
+                    	proses kerjasama pada semua unsur organisasi agar pencapaian tujuan OKIF FT-UH berlangsung
+                    	secara efektif dan efisien. Salah satu pengendalian yang dimaksud adalah pengendalian secara
+                    	menyeluruh tanpa menitikberatkan salah satu unsur tertentu. Pengendalian proses kerjasama
+                    	disusun dalam pedoman administrasi yang merupakan bagian dari organisasi secara umum.
+                    </p>
 
                 </div>
             </div>
@@ -187,7 +193,7 @@
                         <div class="date-post">
                             <h6 class="date">May, 04th 2019</h6>
                             <h4>
-                                <a class="link-hny" href="single.html">
+                                <a class="link-hny" href="<?=base_url('home/count/'.$get->id_informasi)?>">
                                     <abbr title="<?= $judul ?>" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important;"><?= $batasJudul = character_limiter($judul, 15); ?> 
                                     </abbr>
                                 </a>
