@@ -1,6 +1,6 @@
 <section class="projects py-5" id="gallery">
         <div class="container py-md-5">
-            <h3 class="tittle-w3ls text-left mb-5"><span class="pink">Prestasi</span> yang Telah Kami diraih</h3>
+            <h3 class="tittle-w3ls text-left mb-5"><span class="pink">Prestasi</span> yang Telah Kami Raih</h3>
             <div class="row">
               <div class="col-md-4 offset-md-8">
                 <form action="<?= base_url('home/daftarPrestasi') ?>" method="post">
