@@ -9,14 +9,17 @@
                     </h2>
                     <p class="mb-3">Organisasi Kemahasiswaan Informatika Fakultas Teknik Universitas Hasanuddin ialah Organisasi Kemahasiswaan di Departemen Teknik Informatika Fakultas Teknik Universitas Hasanuddin yang kemudian disingkat OKIF FT-UH </h5>
                     <div class="icon-social mt-4">
-                        <a href="#" class="button-footr">
+                        <a href="https://www.facebook.com/okifftuh/" class="button-footr">
                             <span class="fa mx-2 fa-facebook"></span>
                         </a>
-                        <a href="#" class="button-footr">
+                        <a href="https://www.twitter.com/okifftuh/" class="button-footr">
                             <span class="fa mx-2 fa-twitter"></span>
                         </a>
-                        <a href="#" class="button-footr">
+                        <a href="https://www.instagram.com/okifftuh/" class="button-footr">
                             <span class="fa mx-2 fa-instagram"></span>
+                        </a>
+                        <a href="https://www.youtube.com/okifftuh/" class="button-footr">
+                            <span class="fa mx-2 fa-youtube"></span>
                         </a>
                     </div>
                 </div>
