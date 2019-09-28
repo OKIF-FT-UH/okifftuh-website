@@ -54,8 +54,8 @@
                     <div class="row align-right">
                         <div class="col-md-6"></div>
                         <div class="col-md-6">
-                            <a href="single.html" class="btn more about" >About Us</a>
-                            <a href="contact.html" class="btn more contact">Contact Us</a>
+                            <a href="<?=base_url('Home/profil/')?>" class="btn more about" >About Us</a>
+                            <a href="<?=base_url('Home/addSaran/')?>" class="btn more contact">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -95,10 +95,19 @@
             <div class="about-hny-info text-left px-md-5">
                 <h3 class="tittle-w3ls mb-3"><span class="pink">Selamat</span> Datang</h3>
                 <p class="sub-tittle mt-3 mb-4">Organisasi Kemahasiswaan Informatika Fakultas Teknik Universitas Hasanuddin ialah Organisasi Kemahasiswaan di Departemen Teknik Informatika Fakultas Teknik Universitas Hasanuddin yang kemudian disingkat OKIF FT-UH</p>
-                <a class="btn more black" href="<?= base_url('Home/profil') ?>" role="button">Read More</a>
+                <a class="btn more black" href="#wel" role="button">Read More</a>
             </div>
         </div>
     </section>
+    <!-- popup-->
+                <div id="wel" class="pop-overlay">
+                    <div class="popup">
+                        <p class="mt-4">OKIF FT-UH yang resmi berdiri pada tahun 2015 adalah organisasi kemahasiswaan non-struktural di Departemen Teknik Informatika intra Universitas Hasanuddin yang berstatus otonom dan secara organisatoris merupakan bagian dari OKFT-UH. 
+                        Website OKIF FT-UH hadir sebagai langkah untuk memudahkan anggota-anggota lingkup OKIF FT-UH maupun orang luar untuk memperoleh informasi-informasi terbaru dan factual mengenai kabar terbaru mengenai OKIF FT-UH, informasi tentang kemahasiswaan, informasi kegiatan, dan berbagai informasi yang mahasiswa butuhkan.</p>
+                        <a class="close" href="#current">&times;</a>
+                    </div>
+                </div>
+                <!-- //popup -->
     <!-- //about -->
     <!--/ab-->
     <section class="banner_bottom py-5">
@@ -314,14 +323,14 @@
                 <div class="row my-4">
                     <div class="col-lg-4 testimonials_grid mt-3">
                         <div class="p-lg-5 p-4 testimonials-gd-vj">
-                            <p class="sub-test"><span class="fa fa-quote-left s4" aria-hidden="true"></span> Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod possimus, omnis voluptas.
+                            <p class="sub-test"><span class="fa fa-quote-left s4" aria-hidden="true"></span> 
                             </p>
                             <div class="row mt-4">
                                 <div class="col-3 testi-img-res">
-                                    <img src="<?= base_url('assets/home/'); ?>images/t1.jpg" alt=" " class="img-fluid">
+                                    <img src="<?= base_url('assets/home/'); ?>" alt=" " class="img-fluid">
                                 </div>
                                 <div class="col-9 testi_grid">
-                                    <h5 class="mb-2">Thomas Carl</h5>
+                                    <h5 class="mb-2">-</h5>
                                     <p>Add xxxx</p>
                                 </div>
                             </div>
@@ -329,14 +338,14 @@
                     </div>
                     <div class="col-lg-4 testimonials_grid mt-3">
                         <div class="p-lg-5 p-4 testimonials-gd-vj">
-                            <p class="sub-test"><span class="fa fa-quote-left s4" aria-hidden="true"></span>Quisque sagittis lacus eu lorem , cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod possimus.
+                            <p class="sub-test"><span class="fa fa-quote-left s4" aria-hidden="true"></span>
                             </p>
                             <div class="row mt-4">
                                 <div class="col-3 testi-img-res">
-                                    <img src="<?= base_url('assets/home/'); ?>images/t2.jpg" alt=" " class="img-fluid">
+                                    <img src="<?= base_url('assets/home/'); ?>" alt=" " class="img-fluid">
                                 </div>
                                 <div class="col-9 testi_grid">
-                                    <h5 class="mb-2">Adam Ster</h5>
+                                    <h5 class="mb-2">-</h5>
                                     <p>Add xxxx</p>
                                 </div>
                             </div>
@@ -344,14 +353,14 @@
                     </div>
                     <div class="col-lg-4 testimonials_grid mt-3">
                         <div class="p-lg-5 p-4 testimonials-gd-vj">
-                            <p class="sub-test"><span class="fa fa-quote-left s4" aria-hidden="true"></span> Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod possimus, omnis voluptas.
+                            <p class="sub-test"><span class="fa fa-quote-left s4" aria-hidden="true"></span>
                             </p>
                             <div class="row mt-4">
                                 <div class="col-3 testi-img-res">
-                                    <img src="<?= base_url('assets/home/'); ?>images/t1.jpg" alt=" " class="img-fluid">
+                                    <img src="<?= base_url('assets/home/'); ?>" alt=" " class="img-fluid">
                                 </div>
                                 <div class="col-9 testi_grid">
-                                    <h5 class="mb-2">Dane Walker</h5>
+                                    <h5 class="mb-2">-</h5>
                                     <p>Add xxxx</p>
                                 </div>
                             </div>
