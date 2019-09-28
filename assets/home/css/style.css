@@ -616,7 +616,7 @@ li>a:only-child:after {
 
 /* background images for banner */
 .banner-w3pvt-1 {
-    background: url(../images/banner1.jpg) no-repeat top;
+    background: url(../images/jumbotron-1.png) no-repeat top;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -626,7 +626,7 @@ li>a:only-child:after {
 }
 
 .banner-w3pvt-2 {
-    background: url(../images/banner2.jpg) no-repeat center;
+    background: url(../images/jumbotron-2.png) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -636,7 +636,7 @@ li>a:only-child:after {
 }
 
 .banner-w3pvt-3 {
-    background: url(../images/banner3.jpg) no-repeat center;
+    background: url(../images/jumbotron-3.png) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -646,7 +646,7 @@ li>a:only-child:after {
 }
 
 .overlay-w3ls {
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0);
     min-height: 800px;
 }
 
@@ -710,6 +710,15 @@ li>a:only-child:after {
     border: none;
     background: none;
 
+}
+
+.btn.more.home{
+    padding: 0;
+    border: none;
+    background: none;
+    color: #ffffff;
+    white-space: normal;
+    text-align: left;
 }
 
 .btn.more.contact{
@@ -1296,7 +1305,7 @@ p.news-para {
 /*--//placeholder-color--*/
 /* testimonials */
 .testmonials {
-    background: url(../images/banner3.jpg) no-repeat top;
+    background: url(../images/if3d.png) no-repeat top;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;

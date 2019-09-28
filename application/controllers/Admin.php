@@ -15,7 +15,8 @@ class Admin extends CI_Controller {
 
 	public function index(){
 		$data = array(
-            'isi' => 'admin/dashboard/isi', 
+            'isi' => 'admin/dashboard/isi',
+            'title' => 'Dashboard Admin OKIF FT-UH', 
         );
         $this->load->view('admin/_layouts/wrapper', $data);
 	}
