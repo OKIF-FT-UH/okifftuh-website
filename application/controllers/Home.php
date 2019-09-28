@@ -29,6 +29,7 @@ class Home extends CI_Controller {
 
     public function profil(){
         $data = array(
+            'title'     => 'Profil | OKIF FT-UH',
             'nav'       => 'Profil',
             'title'     => 'Profil OKIF FT-UH',
             'isi'       => 'home/dashboard/isi2', 
