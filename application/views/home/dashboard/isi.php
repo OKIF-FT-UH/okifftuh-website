@@ -40,11 +40,24 @@
             <!-- banner-hny-info -->
             <div class="banner-hny-info">
                 <br>
-                <h3 style="font-size: 3.7vw;"><br>ORGANISASI KEMAHASISWAAN INFORMATIKA
+                <div class="col-12">
+                    <div class="row align-right">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6">
+                            <h3 style="font-size: 3vw; text-align:left; font-family:helvetica;"><br>ORGANISASI KEMAHASISWAAN INFORMATIKA
                 FAKULTAS TEKNIK UNIVERSITAS HASANUDDIN</h3>
-                <div class="top-buttons mx-auto text-center mt-md-4 mt-3">
-                    <a href="single.html" class="btn more about" >About Us</a>
-                    <a href="contact.html" class="btn more contact">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="col-12">
+                    <div class="row align-right">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6">
+                            <a href="single.html" class="btn more about" >About Us</a>
+                            <a href="contact.html" class="btn more contact">Contact Us</a>
+                        </div>
+                    </div>
                 </div>
                 <!-- <div class="d-flex hny-stats-inf">
                     <div class="col-md-4 stats_w3pvt_counter_grid mt-3">
@@ -276,14 +289,16 @@
                     <div class="col-lg-6 banner_bottom_left">
 
                         <div class="login p-md-5 p-4 mx-auto bg-white mw-100"  style="background:none !important;">
-                            <h4><a class="link-hny" href="contact.html">Stat Your Project Now?</a></h4>
-                            <p class="mt-3">Lorem Ipsum is simply text the printing and typesetting standard industry.Quisque sagittis lacus eu lorem. </p>
+                            <h4><a class="link-hny" href="contact.html">Video Struktur Kepngurusan OKIF FT-UH</a></h4>
+                            <p class="mt-3">Subscribe Channel Youtube OKIF FT-UH untuk Video Lainnya <a href="https://www.youtube.com/channel/UCjIeStE5YrYleYvaeFidHPw"> https://www.youtube.com/channel/UCjIeStE5YrYleYvaeFidHPw</a></p>
 
                         </div>
 
                     </div>
                     <div class="col-lg-6 banner_bottom_grid help pl-lg-5">
-                        <img src="<?= base_url('assets/home/'); ?>images/ab2.jpg" alt=" " class="img-fluid mb-4">
+                        <iframe width="100%" max-width="480" height="300"
+                            src="https://www.youtube.com/embed/2DvdjdpHom8">
+                        </iframe>
                     </div>
                 </div>
             </div>
