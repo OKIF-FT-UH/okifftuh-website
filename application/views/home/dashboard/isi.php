@@ -300,7 +300,7 @@
                         <div class="login p-md-5 p-4 mx-auto bg-white mw-100"  style="background:none !important;">
                             <h4><a class="link-hny" href="contact.html">Video Struktur Kepngurusan OKIF FT-UH</a></h4>
                             <p class="mt-3">Subscribe Channel Youtube OKIF FT-UH untuk Video Lainnya <a href="https://www.youtube.com/channel/UCjIeStE5YrYleYvaeFidHPw">
-                            <button class="btn btn-danger" type="button" onclick="window.location.href='https://www.youtube.com/channel/UCjIeStE5YrYleYvaeFidHPw'">SUBSCRIBE</button>
+                            <button class="btn more black" type="button" onclick="window.location.href='https://www.youtube.com/channel/UCjIeStE5YrYleYvaeFidHPw'">SUBSCRIBE</button>
                         </a></p>
 
                         </div>
