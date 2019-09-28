@@ -156,7 +156,7 @@ class Home extends CI_Controller {
             'smtp_user' => 'gilbertmabar@gmail.com',
             'smtp_pass' => 'okifftuh',
             'smtp_port' => 465,
-            'mailType'  => 'html',
+            'mailType'  => 'text',
             'charset'   => 'utf-8',
             'newline'   => "\r\n" 
         ];
@@ -165,7 +165,7 @@ class Home extends CI_Controller {
         $this->email->initialize($config); 
         $message = $this->load->view('home/dashboard/email','',true);
         $this->email->from('gilbertmabar@gmail.com', 'OKIF FT-UH');
-        $this->email->to($this->input->post(email_saran));
+        $this->email->to($this->input->post('email_saran'));
         $this->email->subject('Confirmation Mail');
         $this->email->message($message);
         if($this->email->send()){
