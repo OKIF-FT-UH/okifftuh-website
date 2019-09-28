@@ -30,6 +30,7 @@ class Home extends CI_Controller {
     public function profil(){
         $data = array(
             'nav'       => 'Profil',
+            'title'     => 'Profil OKIF FT-UH',
             'isi'       => 'home/dashboard/isi2', 
         );
         $this->load->view('home/_layouts2/wrapper2', $data);
@@ -39,6 +40,7 @@ class Home extends CI_Controller {
     public function galeri(){
         $data = array(
             'nav'       => 'galeri',
+            'title'     => 'Galeri OKIF FT-UH',
             'galeri'    => $this->Crud->ga('galeri'),
             'isi'       => 'home/dashboard/galeri',
         );
@@ -100,7 +102,7 @@ class Home extends CI_Controller {
         $field  = 'id_pengurus';
         $ad   = 'asc';
         $data = array(
-            'title'    => 'Sejarah Pengurus', 
+            'title'    => 'Sejarah Pengurus OKIF FT-UH', 
             'nav'      => 'Sejarah Kepengurusan',
             'isi'      => 'home/dashboard/sejarahPengurus',
             'dataA'    => $this->ModelHome->infoKini($table, $limitA,$firstA,$field,$ad),
@@ -124,7 +126,7 @@ class Home extends CI_Controller {
 //Saran Begin
     public function addSaran(){
         $data = array(
-            'title'     => 'Kritik & Saran',
+            'title'     => 'Kritik & Saran OKIF FT-UH',
             'nav'       => 'Kritik & Saran',
             'isi'       => 'home/dashboard/saran',
         );
@@ -195,7 +197,7 @@ class Home extends CI_Controller {
         $this->pagination->initialize($config);
 
         $data   = array(
-            'title'         => 'Informasi',
+            'title'         => 'Informasi OKIF FT-UH',
             'nav'           => 'Informasi',
             'data'          => $this->ModelHome->getinfo($table,$config['per_page'],$start,$row,$ad),
             'populardata'   => $this->ModelHome->getinfo($table,$limit,$first,$rowpopular,$ad),
@@ -223,7 +225,7 @@ class Home extends CI_Controller {
         $this->pagination->initialize($config);
 
         $data   = array(
-            'title'         => 'Kegiatan Himpunan',
+            'title'         => 'Kegiatan Himpunan OKIF FT-UH',
             'nav'           => 'Informasi / Kegiatan Himpunan',
             'data'          => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
             'populardata'   => $this->ModelHome->getinfo($table,$limit,$first,$rowpopular,$ad),
@@ -253,7 +255,7 @@ class Home extends CI_Controller {
         $this->pagination->initialize($config);
 
         $data   = array(
-            'title'         => 'Informasi Kemahasiswaan',
+            'title'         => 'Informasi Kemahasiswaan OKIF FT-UH',
             'nav'           => 'Informasi / Kemahasiswaan',
             'data'          => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
             'populardata'   => $this->ModelHome->getinfo($table,$limit,$first,$rowpopular,$ad),
@@ -283,7 +285,7 @@ class Home extends CI_Controller {
         $this->pagination->initialize($config);
 
         $data   = array(
-            'title'         => 'info Beasiswa',
+            'title'         => 'Info Beasiswa OKIF FT-UH',
             'nav'           => 'Informasi / Beasiswa',
             'data'          => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
             'populardata'   => $this->ModelHome->getinfo($table,$limit,$first,$rowpopular,$ad),
@@ -314,7 +316,7 @@ class Home extends CI_Controller {
         $this->pagination->initialize($config);
 
         $data   = array(
-            'title'         => 'Info Prestasi',
+            'title'         => 'Info Prestasi OKIF FT-UH',
             'nav'           => 'Informasi / Prestasi',
             'data'          => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
             'populardata'   => $this->ModelHome->getinfo($table,$limit,$first,$rowpopular,$ad),
@@ -344,7 +346,7 @@ class Home extends CI_Controller {
         $this->pagination->initialize($config);
 
         $data   = array(
-            'title'         => 'Artikel',
+            'title'         => 'Artikel OKIF FT-UH',
             'nav'           => 'Informasi / Artikel',
             'data'          => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
             'populardata'   => $this->ModelHome->getinfo($table,$limit,$first,$rowpopular,$ad),
@@ -373,7 +375,7 @@ class Home extends CI_Controller {
         //Initializing
         $this->pagination->initialize($config);
         $data   = array(
-            'title'         => 'Info Lomba',
+            'title'         => 'Info Lomba ',
             'nav'           => 'Informasi / Lomba',
             'data'          => $this->ModelHome->getinfowhere($table,$where,$config['per_page'],$start,$row,$ad),
             'populardata'   => $this->ModelHome->getinfo($table,$limit,$first,$rowpopular,$ad),
@@ -421,7 +423,7 @@ class Home extends CI_Controller {
         //Initializing
         $this->pagination->initialize($config);
         $data = array(
-            'title' => 'Daftar Prestasi',
+            'title' => 'Daftar Prestasi OKIF FT-UH',
             'prestasi' => $this->ModelHome->prestasi('prestasi',$config['per_page'],$first,$field,$ad),
             'nav'   => 'Daftar Prestasi',
             'isi'   => 'home/dashboard/daftarPrestasi',
@@ -436,6 +438,7 @@ class Home extends CI_Controller {
     public function arsip(){
     $data = array(
             'nav'       => 'Arsip',
+            'title'     => 'Arsip OKIF FT-UH',
             'isi'       => 'home/dashboard/arsip', 
         );
         $this->load->view('home/_layouts2/wrapper2', $data);
