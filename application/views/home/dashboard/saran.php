@@ -32,8 +32,7 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="w3lSubject">Isi</label>
-                                        <textarea name="isi_saran" id="w3lMessage" required>
-                                        </textarea>
+                                        <textarea type="text" name="isi_saran" id="w3lMessage" required></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group mx-auto mt-3">
