@@ -155,8 +155,8 @@ class Home extends CI_Controller {
         $config = [
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.googlemail.com',
-            'smtp_user' => 'gilbertmabar@gmail.com',
-            'smtp_pass' => 'okifftuh',
+            'smtp_user' => 'okifftuh@gmail.com',
+            'smtp_pass' => 'informatikaunhas',
             'smtp_port' => 465,
             'mailType'  => 'text',
             'charset'   => 'utf-8',
@@ -166,7 +166,7 @@ class Home extends CI_Controller {
         $this->load->library('email', $config);
         $this->email->initialize($config); 
         $message = $this->load->view('home/dashboard/email','',true);
-        $this->email->from('gilbertmabar@gmail.com', 'OKIF FT-UH');
+        $this->email->from('okifftuh@gmail.com', 'OKIF FT-UH');
         $this->email->to($this->input->post('email_saran'));
         $this->email->subject('Confirmation Mail');
         $this->email->message($message);
