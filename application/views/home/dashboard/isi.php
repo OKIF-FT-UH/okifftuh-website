@@ -323,14 +323,14 @@
                 <div class="row my-4">
                     <div class="col-lg-4 testimonials_grid mt-3">
                         <div class="p-lg-5 p-4 testimonials-gd-vj">
-                            <p class="sub-test"><span class="fa fa-quote-left s4" aria-hidden="true"></span> Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod possimus, omnis voluptas.
+                            <p class="sub-test"><span class="fa fa-quote-left s4" aria-hidden="true"></span> 
                             </p>
                             <div class="row mt-4">
                                 <div class="col-3 testi-img-res">
-                                    <img src="<?= base_url('assets/home/'); ?>images/t1.jpg" alt=" " class="img-fluid">
+                                    <img src="<?= base_url('assets/home/'); ?>" alt=" " class="img-fluid">
                                 </div>
                                 <div class="col-9 testi_grid">
-                                    <h5 class="mb-2">Thomas Carl</h5>
+                                    <h5 class="mb-2">-</h5>
                                     <p>Add xxxx</p>
                                 </div>
                             </div>
@@ -338,14 +338,14 @@
                     </div>
                     <div class="col-lg-4 testimonials_grid mt-3">
                         <div class="p-lg-5 p-4 testimonials-gd-vj">
-                            <p class="sub-test"><span class="fa fa-quote-left s4" aria-hidden="true"></span>Quisque sagittis lacus eu lorem , cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod possimus.
+                            <p class="sub-test"><span class="fa fa-quote-left s4" aria-hidden="true"></span>
                             </p>
                             <div class="row mt-4">
                                 <div class="col-3 testi-img-res">
-                                    <img src="<?= base_url('assets/home/'); ?>images/t2.jpg" alt=" " class="img-fluid">
+                                    <img src="<?= base_url('assets/home/'); ?>" alt=" " class="img-fluid">
                                 </div>
                                 <div class="col-9 testi_grid">
-                                    <h5 class="mb-2">Adam Ster</h5>
+                                    <h5 class="mb-2">-</h5>
                                     <p>Add xxxx</p>
                                 </div>
                             </div>
@@ -353,14 +353,14 @@
                     </div>
                     <div class="col-lg-4 testimonials_grid mt-3">
                         <div class="p-lg-5 p-4 testimonials-gd-vj">
-                            <p class="sub-test"><span class="fa fa-quote-left s4" aria-hidden="true"></span> Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod possimus, omnis voluptas.
+                            <p class="sub-test"><span class="fa fa-quote-left s4" aria-hidden="true"></span>
                             </p>
                             <div class="row mt-4">
                                 <div class="col-3 testi-img-res">
-                                    <img src="<?= base_url('assets/home/'); ?>images/t1.jpg" alt=" " class="img-fluid">
+                                    <img src="<?= base_url('assets/home/'); ?>" alt=" " class="img-fluid">
                                 </div>
                                 <div class="col-9 testi_grid">
-                                    <h5 class="mb-2">Dane Walker</h5>
+                                    <h5 class="mb-2">-</h5>
                                     <p>Add xxxx</p>
                                 </div>
                             </div>
