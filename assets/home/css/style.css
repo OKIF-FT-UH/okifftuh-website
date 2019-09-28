@@ -712,6 +712,15 @@ li>a:only-child:after {
 
 }
 
+.btn.more.home{
+    padding: 0;
+    border: none;
+    background: none;
+    color: #ffffff;
+    white-space: normal;
+    text-align: left;
+}
+
 .btn.more.contact{
 
     border: 2px solid #fff;
@@ -1296,7 +1305,7 @@ p.news-para {
 /*--//placeholder-color--*/
 /* testimonials */
 .testmonials {
-    background: url(../images/banner3.jpg) no-repeat top;
+    background: url(../images/if3d.png) no-repeat top;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
