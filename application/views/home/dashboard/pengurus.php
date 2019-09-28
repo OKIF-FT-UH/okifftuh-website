@@ -1,6 +1,11 @@
 <section class="team py-5" id="appointment">
+<?php
+foreach($dataA as $getperiode){
+    $periode = $getperiode->periode_pengurus;
+}
+?>
         <div class="container py-md-5">
-            <h3 class="tittle-w3ls mb-5 text-center"><?= $title ?></h3>
+            <h3 class="tittle-w3ls mb-5 text-center"><?= $title ?> <?= $periode?></h3>
             <?php
             if($title=='HMIF FT-UH'){          
             ?>

@@ -162,7 +162,8 @@
         <div class="blog-w3pvt-info-content container-fluid">
             <h3 class="tittle-w3ls text-center mt-5 mb-5"><span class="pink">OKIF FT-UH</span> Terkini</h3>
             <div class="blog-grids-main row text-left">
-                <?php foreach ($terkiniA as $get): 
+                <?php foreach ($terkiniA as $get):
+                    $view  = $get->view_informasi; 
                     $kode  = $get->id_kategori_informasi;
                     $judul = $get->judul_informasi;
                     $isi   = $get->isi_informasi;
@@ -190,24 +191,30 @@
                         <img src="<?= base_url('assets/admin/img/'.$folder.'/'.$get->foto_informasi)?>" alt="Popup Image" class="img-fluid" />
                     </div>
                     <div class="col-lg-3 col-md-6 blog-grid-info px-0">
+                    <form method="POST" action="<?=base_url('home/count/'.$get->id_informasi)?>" enctype="multipart/form-data">
+                    <input type="hidden" name="view" value="<?=$view?>">
                         <div class="date-post">
                             <h6 class="date">May, 04th 2019</h6>
                             <h4>
-                                <a class="link-hny" href="<?=base_url('home/count/'.$get->id_informasi)?>">
-                                    <abbr title="<?= $judul ?>" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important;"><?= $batasJudul = character_limiter($judul, 15); ?> 
+                                <button type="submit" class="btn more home">
+                                <a class="link-hny">
+                                    <abbr title="<?= $judul ?>" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important; font-size:2em;"><?= $batasJudul = character_limiter($judul, 25); ?> 
                                     </abbr>
                                 </a>
+                                </button>
                             </h4>
                             <p>
                                 <!-- <?= $batasIsi = character_limiter($isi, 25); ?> -->        
                             </p>
                         </div>
+                    </form>
                 </div>
                 <?php endforeach ?>
             </div>
 
             <div class="blog-grids-main row text-left">
-                <?php foreach ($terkiniB as $get): 
+                <?php foreach ($terkiniB as $get):
+                    $view  = $get->view_informasi; 
                     $kode  = $get->id_kategori_informasi;
                     $judul = $get->judul_informasi;
                     $isi   = $get->isi_informasi;
@@ -230,18 +237,23 @@
                         }
                 ?>
                     <div class="col-lg-3 col-md-6 blog-grid-info px-0">
+                        <form method="POST" action="<?=base_url('home/count/'.$get->id_informasi)?>" enctype="multipart/form-data">
+                        <input type="hidden" name="view" value="<?=$view?>">
                         <div class="date-post">
                             <h6 class="date">May, 04th 2019</h6>
                             <h4>
-                                <a class="link-hny" href="single.html">
-                                    <abbr title="<?= $judul ?>" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important;"><?= $batasJudul = character_limiter($judul, 15); ?> 
+                                <button type="submit" class="btn more home">
+                                <a class="link-hny">
+                                    <abbr title="<?= $judul ?>" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important; font-size:2em;"><?= $batasJudul = character_limiter($judul, 25); ?> 
                                     </abbr>
                                 </a>
+                                </button>
                             </h4>
                             <p>
                                 <!-- <?= $batasIsi = character_limiter($isi, 25); ?> -->        
                             </p>
                         </div>
+                        </form>
                     </div>
                     <div class="col-lg-3 col-md-6 blog-grid-img px-0">
                         <img src="<?= base_url('assets/admin/img/'.$folder.'/'.$get->foto_informasi)?>" alt="Popup Image" class="img-fluid" />
