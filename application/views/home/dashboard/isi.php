@@ -210,7 +210,7 @@
 
 
                     <div class="col-lg-3 col-md-6 blog-grid-img px-0">
-                        <img src="<?= base_url('assets/admin/img/'.$folder.'/'.$get->foto_informasi)?>" alt="Popup Image" class="img-fluid" />
+                        <div class="card-img" style="background-image:url('<?= base_url('assets/admin/img/'.$folder.'/'.$get->foto_informasi)?>')"></div>
                     </div>
                     <div class="col-lg-3 col-md-6 blog-grid-info px-0">
                     <form method="POST" action="<?=base_url('home/count/'.$get->id_informasi)?>" enctype="multipart/form-data">
@@ -220,7 +220,7 @@
                             <h4>
                                 <button type="submit" class="btn more home">
                                 <a class="link-hny">
-                                    <abbr title="<?= $judul ?>" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important; font-size:2em;"><?= $batasJudul = character_limiter($judul, 25); ?> 
+                                    <abbr title="<?= $judul ?>" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important; font-size:1.7em;"><?= $batasJudul = character_limiter($judul, 40); ?> 
                                     </abbr>
                                 </a>
                                 </button>
@@ -266,7 +266,7 @@
                             <h4>
                                 <button type="submit" class="btn more home">
                                 <a class="link-hny">
-                                    <abbr title="<?= $judul ?>" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important; font-size:2em;"><?= $batasJudul = character_limiter($judul, 25); ?> 
+                                    <abbr title="<?= $judul ?>" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important; font-size:1.7em;"><?= $batasJudul = character_limiter($judul, 40); ?> 
                                     </abbr>
                                 </a>
                                 </button>
@@ -278,7 +278,7 @@
                         </form>
                     </div>
                     <div class="col-lg-3 col-md-6 blog-grid-img px-0">
-                        <img src="<?= base_url('assets/admin/img/'.$folder.'/'.$get->foto_informasi)?>" alt="Popup Image" class="img-fluid" />
+                        <div class="card-img" style="background-image:url('<?= base_url('assets/admin/img/'.$folder.'/'.$get->foto_informasi)?>')"></div>
                     </div>
                 <?php endforeach ?>
 
@@ -298,10 +298,10 @@
                     <div class="col-lg-6 banner_bottom_left">
 
                         <div class="login p-md-5 p-4 mx-auto bg-white mw-100"  style="background:none !important;">
-                            <h4><a class="link-hny" href="contact.html">Video Struktur Kepngurusan OKIF FT-UH</a></h4>
+                            <h4><a class="link-hny">Video Struktur Kepngurusan OKIF FT-UH</a></h4>
                             <p class="mt-3">Subscribe Channel Youtube OKIF FT-UH untuk Video Lainnya <a href="https://www.youtube.com/channel/UCjIeStE5YrYleYvaeFidHPw">
-                            <button class="btn more black" type="button" onclick="window.location.href='https://www.youtube.com/channel/UCjIeStE5YrYleYvaeFidHPw'">SUBSCRIBE</button>
                         </a></p>
+                            <button class="btn more black" type="button" onclick="window.location.href='https://www.youtube.com/channel/UCjIeStE5YrYleYvaeFidHPw'">SUBSCRIBE</button>
 
                         </div>
 
@@ -355,15 +355,15 @@
                     </div>
                     <div class="col-lg-4 testimonials_grid mt-3">
                         <div class="p-lg-5 p-4 testimonials-gd-vj">
-                            <p class="sub-test"><span class="fa fa-quote-left s4" aria-hidden="true"></span>
+                            <p class="sub-test"><span class="fa fa-quote-left s4" aria-hidden="true"></span>Connecting the Dots
                             </p>
                             <div class="row mt-4">
                                 <div class="col-3 testi-img-res">
-                                    <img src="<?= base_url('assets/home/'); ?>" alt=" " class="img-fluid">
+                                    <img src="<?= base_url('assets/home/images/ketude.jpeg'); ?>" alt=" " class="img-fluid">
                                 </div>
                                 <div class="col-9 testi_grid">
-                                    <h5 class="mb-2">-</h5>
-                                    <p>Add xxxx</p>
+                                    <h5 class="mb-2">Ketua DMMIF FT-UH Masa bakti 2019</h5>
+                                    <p>IRHAM SAHBANA</p>
                                 </div>
                             </div>
                         </div>

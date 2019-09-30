@@ -709,6 +709,8 @@ li>a:only-child:after {
     padding: 0;
     border: none;
     background: none;
+    white-space: normal;
+    text-align: left;
 
 }
 
@@ -752,6 +754,7 @@ li>a:only-child:after {
     border: none;
     background: none;
     color: #0470bc;
+
 }
 
 
@@ -1573,6 +1576,14 @@ h4.title-hny {
 }
 
 /* Border Box */
+
+.card-img {
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+   height: 280px;
+}
+
 * {
     box-sizing: border-box;
 }

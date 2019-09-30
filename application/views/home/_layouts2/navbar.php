@@ -65,7 +65,7 @@
                 <div class="inner-w3pvt-page-info">
                     <ol class="breadcrumb d-flex">
                         <li class="breadcrumb-item">
-                            <a href="index.html">Home</a>
+                            <a href="<?=base_url('')?>">Home</a>
                         </li>
                         <li class="breadcrumb-item active"><?= $nav ?></li>
                     </ol>
