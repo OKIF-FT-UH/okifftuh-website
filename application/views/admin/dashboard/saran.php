@@ -305,11 +305,11 @@ $id = $get->id_saran;
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="message-text" class="col-form-label">Tanggapan Saran:</label>
-                                                            <textarea class="form-control" id="message-text" name="tanggapan_saran" disabled><?= $get->tanggapan_saran  ?></textarea>
+                                                            <textarea class="form-control" id="message-text" name="tanggapan_saran" required><?= $get->tanggapan_saran  ?></textarea>
                                                         </div>
                                                         <div class="modal-footer">
                                                         <div class="modal-body">Saran Telah dilaksanakan!</div>
-                                                         </div>
+                                                        </div>
                                                     </form>
                                                 </div>
                                             </div>

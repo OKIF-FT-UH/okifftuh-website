@@ -146,37 +146,37 @@ class Home extends CI_Controller {
         );
 
         $this->db->insert('saran', $data);
-        $this->_sendEmail();
+        //$this->_sendEmail();
         $this->session->set_flashdata('info','Saran Telah Terkirim');
         redirect('home/addSaran');
     }
 
-    private function _sendEmail(){
-        $config = [
-            'protocol' => 'smtp',
-            'smtp_host' => 'ssl://smtp.googlemail.com',
-            'smtp_user' => 'okifftuh@gmail.com',
-            'smtp_pass' => 'informatikaunhas',
-            'smtp_port' => 465,
-            'mailType'  => 'text',
-            'charset'   => 'utf-8',
-            'newline'   => "\r\n" 
-        ];
+    // private function _sendEmail(){
+    //     $config = [
+    //         'protocol' => 'smtp',
+    //         'smtp_host' => 'ssl://smtp.googlemail.com',
+    //         'smtp_user' => 'okifftuh@gmail.com',
+    //         'smtp_pass' => 'informatikaunhas',
+    //         'smtp_port' => 465,
+    //         'mailType'  => 'text',
+    //         'charset'   => 'utf-8',
+    //         'newline'   => "\r\n" 
+    //     ];
 
-        $this->load->library('email', $config);
-        $this->email->initialize($config); 
-        $message = $this->load->view('home/dashboard/email','',true);
-        $this->email->from('okifftuh@gmail.com', 'OKIF FT-UH');
-        $this->email->to($this->input->post('email_saran'));
-        $this->email->subject('Confirmation Mail');
-        $this->email->message($message);
-        if($this->email->send()){
-            return true;
-        }else{
-            echo $this->email->print_debugger();
-            die; 
-        }
-    }
+    //     $this->load->library('email', $config);
+    //     $this->email->initialize($config); 
+    //     $message = $this->load->view('home/dashboard/email','',true);
+    //     $this->email->from('okifftuh@gmail.com', 'OKIF FT-UH');
+    //     $this->email->to($this->input->post('email_saran'));
+    //     $this->email->subject('Confirmation Mail');
+    //     $this->email->message($message);
+    //     if($this->email->send()){
+    //         return true;
+    //     }else{
+    //         echo $this->email->print_debugger();
+    //         die; 
+    //     }
+    // }
 //End Saran
 
     //== Begin Informasi==//
