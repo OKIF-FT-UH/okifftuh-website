@@ -9,7 +9,6 @@ if($modul == 'informasi'){
 
         <div class="container p-md-5">
         <h3 class="tittle-w3ls mb-3"><span class="pink"><?=$kata ?></span> Informasi</h3>
-        </br>
              <?php 
                 foreach($data as $get){
                     $view       = $get->view_informasi;

@@ -56,7 +56,7 @@
                     <li> Memiliki hak suara dan hak bicara; dan/atau</li>
                     <li> Berpartisipasi dalam setiap  kegiatan OKIF FT-UH.</li>
                 </ol>
-                    <p class="sub-tittle mt-3 mb-4 pr-lg-5" style="margin-left: 3rem;">Setiap anggota OKIF FT-UH berhak:</p>
+                    <p class="sub-tittle mt-3 mb-4 pr-lg-5" style="margin-left: 3rem;">Setiap anggota OKIF FT-UH berkewajiban:</p>
                     <ol type="1" class="sub-tittle ml-4" style="font-size: 1.1em;">
                     <li> Menaati aturan OKIF FT-UH; dan</li>
                     <li> Menjunjung tinggi dan memelihara nama baik OKIF FT-UH serta almamater.</li>
