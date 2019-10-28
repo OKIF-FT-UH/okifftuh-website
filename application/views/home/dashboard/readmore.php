@@ -10,7 +10,9 @@
                 $isi        = $get->isi_informasi;
                 $foto       = $get->foto_informasi;
                 $penulis    = $get->penulis_informasi;
-                $waktu = date('d-M-Y', strtotime($get->tanggal_informasi));
+                $this->load->helper('tanggal');
+                $waktu = date('Y-m-j', strtotime($get->tanggal_informasi));
+                //$convertDate = date("Y-m-j", strtotime($tgl));
 
                 if($kode == '1'){
                     $folder     = 'himpunan';
@@ -39,7 +41,7 @@
                     <a href="<?=base_url('home/'.$folder) ?>"><h4 style="font-size:1em;">From <i><?=$kategori?></i></a>&ensp;<i class="fa fa-eye" style="color:gray !important;" aria-hidden="true"> <?=$view ?></i></h4>
                     </div></br>
                     <img class="img-fluid mb-2" src="<?= base_url('assets/admin/img/'.$folder.'/'.$get->foto_informasi)?>" alt="">
-                    <h6 class="date">By <?=$penulis?> | <?=$waktu?></h6>
+                    <h6 class="date">By <?=$penulis?> | <?=longdate_indo($waktu)?></h6>
                     <p><?=$isi?></p>
                    
                 </div>

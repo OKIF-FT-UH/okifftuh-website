@@ -190,7 +190,9 @@
                     $judul = $get->judul_informasi;
                     $isi   = $get->isi_informasi;
                     $foto  = $get->foto_informasi;
+                    $this->load->helper('tanggal');
                     $tgl   = $get->tanggal_informasi;
+                    $convertDate = date("Y-m-j", strtotime($tgl));
 
 
                         if($kode == '1'){
@@ -216,7 +218,7 @@
                     <form method="POST" action="<?=base_url('home/count/'.$get->id_informasi)?>" enctype="multipart/form-data">
                     <input type="hidden" name="view" value="<?=$view?>">
                         <div class="date-post">
-                            <h6 class="date">May, 04th 2019</h6>
+                            <h6 class="date"><?= longdate_indo($convertDate) ?></h6>
                             <h4>
                                 <button type="submit" class="btn more home">
                                 <a class="link-hny">
@@ -241,7 +243,9 @@
                     $judul = $get->judul_informasi;
                     $isi   = $get->isi_informasi;
                     $foto  = $get->foto_informasi;
+                    $this->load->helper('tanggal');
                     $tgl   = $get->tanggal_informasi;
+                    $convertDate = date("Y-m-j", strtotime($tgl));
 
 
                         if($kode == '1'){
@@ -262,7 +266,7 @@
                         <form method="POST" action="<?=base_url('home/count/'.$get->id_informasi)?>" enctype="multipart/form-data">
                         <input type="hidden" name="view" value="<?=$view?>">
                         <div class="date-post">
-                            <h6 class="date">May, 04th 2019</h6>
+                            <h6 class="date"><?=longdate_indo($convertDate)?></h6>
                             <h4>
                                 <button type="submit" class="btn more home">
                                 <a class="link-hny">
