@@ -426,8 +426,6 @@ class Admin extends CI_Controller {
                 $this->session->set_flashdata('info', 'Gagal Menambahkan Informasi');
                 redirect($alamat);
             }else{
-
-               
                 if($kode == '1'){
                     $config['upload_path'] = './assets/admin/img/himpunan';
                 }else if($kode == '2'){

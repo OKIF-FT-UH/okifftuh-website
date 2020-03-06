@@ -16,7 +16,7 @@
 		<script type="text/javascript">
 			tinyMCE.init({
 			         // General options
-			         mode : "textareas",
+			        mode : "textareas",
 			        // theme : "advanced",
 			});
 		</script>
@@ -25,7 +25,7 @@
     <?php if($modul == 'galeri') : ?>
         <!-- Date picker plugins css -->
         <link href="<?= base_url('assets/admin/')?>plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
-         <link href="./plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+        <link href="./plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
     <?php endif; ?>
 
 </head>
