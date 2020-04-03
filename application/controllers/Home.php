@@ -6,7 +6,8 @@ class Home extends CI_Controller {
 	public function __construct() {
         parent::__construct();
         date_default_timezone_set('Asia/Makassar');
-    
+        $this->load->library('template');
+		include APPPATH.'views/tool/function.php';
     }
 
 	public function index(){
@@ -445,6 +446,44 @@ class Home extends CI_Controller {
         $this->load->view('home/_layouts2/wrapper2', $data);
     }
     //==END Arsip==//
+
+    //Data Persebaran Covid-19
+	public function covid(){
+        $data = array(
+            'nav'   => 'Covid-19 Indonesia',
+            'title' => 'Data Persebaran Covid-19 Indonesia',
+            'isi'   => 'home/dashboard/covid',
+        );
+        $indonesia= file_get_contents('https://api.kawalcorona.com/indonesia');
+        $data['total_indonesia']= json_decode($indonesia);
+
+        $provinsi= file_get_contents('https://api.kawalcorona.com/indonesia/provinsi');
+        $data['total_provinsi']= json_decode($provinsi);
+        
+		$this->load->view('home/_layouts2/wrapper2',$data);
+    }
+    
+    public function covidglobal(){
+        $data = array(
+            'nav'   => 'Covid-19 Dunia',
+            'title' => 'Data Persebaran Covid-19 Dunia',
+            'isi'   => 'home/dashboard/covidglobal',
+        );
+
+        $positifglobal= file_get_contents('https://api.kawalcorona.com/positif');
+        $data['positif_global']= json_decode($positifglobal);
+
+        $sembuhglobal= file_get_contents('https://api.kawalcorona.com/sembuh');
+        $data['sembuh_global']= json_decode($sembuhglobal);
+
+        $meninggalglobal= file_get_contents('https://api.kawalcorona.com/meninggal');
+        $data['meninggal_global']= json_decode($meninggalglobal);
+
+        $allglobal= file_get_contents('https://api.kawalcorona.com');
+        $data['data_global']= json_decode($allglobal);
+
+        $this->load->view('home/_layouts2/wrapper2',$data);
+    }
 
 }
 

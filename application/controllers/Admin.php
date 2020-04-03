@@ -1316,5 +1316,8 @@ public function deleteDaftarPrestasi($id){
     //End Sejarah Pengurus
     //===End Modul Pengurus==
 
+    public function arsip(){
+
+    }
 }
 ?>

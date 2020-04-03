@@ -66,6 +66,12 @@
                     </li>
 
                     <li>
+                        <a href="<?= site_url('admin/arsip')?>" aria-expanded="false" class="<?= $modul == 'arsip' ? 'active' : '' ?>">
+                        <i class="icon-folder menu-icon"></i><span class="nav-text">Arsip</span>
+                        </a>
+                    </li>
+
+                    <li>
                         <a href="<?= site_url('admin/galeri')?>" aria-expanded="false" class="<?= ($modul == 'galeri' ? 'active' : '' ) ?>">
                             <i class="icon-picture menu-icon"></i><span class="nav-text">Galeri</span>
                         </a>

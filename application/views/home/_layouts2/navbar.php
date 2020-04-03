@@ -55,6 +55,16 @@
                         <li class="<?= ($navi == 'galeri') ? 'active' : '' ?>"><a href="<?= base_url('Home/galeri') ?>">Galeri</a></li>
                         <li class="<?= ($navi == 'arsip') ? 'active' : '' ?>"><a href="<?=base_url('Home/arsip') ?>">Arsip</a></li>
                         <li class="<?= ($navi == 'addSaran') ? 'active' : '' ?>"><a href="<?= base_url('Home/addSaran') ?>">Kritik & Saran</a></li>
+                        <li>
+                            <!-- First Tier Drop Down -->
+                            <label for="drop-8" class="toggle toggle-2">Covid-19 <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
+                            <a href="#">Covid-19  <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                            <input type="checkbox" id="drop-8" />
+                            <ul style="margin-left:37rem;">
+                                <li class="<?= ($navi == 'covid') ? 'active' : '' ?>"><a href="<?= base_url('Home/covid') ?>">Indonesia</a></li>
+                                <li class="<?= ($navi == 'covidglobal') ? 'active' : '' ?>"><a href="<?= base_url('Home/covidglobal') ?>">Dunia</a></li>
+                            </ul>
+                        </li>
                     </ul>
                     </nav>
                     <!-- //nav -->
