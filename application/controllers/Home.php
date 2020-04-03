@@ -5,6 +5,7 @@ class Home extends CI_Controller {
 
 	public function __construct() {
         parent::__construct();
+        $this->load->helper(array('url','download'));
         date_default_timezone_set('Asia/Makassar');
         $this->load->library('template');
 		include APPPATH.'views/tool/function.php';
@@ -441,9 +442,15 @@ class Home extends CI_Controller {
     $data = array(
             'nav'       => 'Arsip',
             'title'     => 'Arsip OKIF FT-UH',
-            'isi'       => 'home/dashboard/arsip', 
+            'isi'       => 'home/dashboard/arsip',
+            'data'      => $this->Crud->ga('arsip'), 
         );
         $this->load->view('home/_layouts2/wrapper2', $data);
+    }
+
+    public function downloadArsip($arsip){
+        force_download('./assets/admin/img/arsip/'.$arsip , NULL);
+        redirect('home/arsip/');
     }
     //==END Arsip==//
 

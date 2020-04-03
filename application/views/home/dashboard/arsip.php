@@ -1,79 +1,29 @@
-
-    <!-- about -->
-    <section class="about py-5">
-        <div class="container p-md-5">
-            <h3 class="tittle-w3ls mb-3"><span class="pink">Arsip</span> OKIF FT-UH</h3>
-            </h3>
-            <div class="row mt-lg-5 mt-4">
-                <div class="col-md-4 team-gd text-center">
-                    <div class="team-img mb-4">
-                        <a href="https://drive.google.com/open?id=1mWpLw-iuy5S74ub8Gi20WPlWANbYcZOb"><img src="<?=base_url('assets/home/images/arsip.png') ?>" class="img-fluid" alt="user-image"></a>
-                    </div>
-                    <div class="team-info">
-                        <h3><a href="https://drive.google.com/open?id=1mWpLw-iuy5S74ub8Gi20WPlWANbYcZOb">Konstitusi OKIF FT-UH</a></h3>
-                    </div>
-                </div>
-                <!-- <div class="col-md-4 team-gd text-center">
-                    <div class="team-img mb-4">
-                        <a href="https://drive.google.com/open?id=1ZsTw61t2Y4klFWKOYxV5OlgtwDuWLJWR"><img src="<?=base_url('assets/home/images/arsip.png') ?>" class="img-fluid" alt="user-image"></a>
-                    </div>
-                    <div class="team-info">
-                        <h3><a href="https://drive.google.com/open?id=1ZsTw61t2Y4klFWKOYxV5OlgtwDuWLJWR">Daftar Mahasiswa Aktif</a></h3>
-                    </div>
-                </div> -->
-                <div class="col-md-4 team-gd text-center">
-                    <div class="team-img mb-4">
-                        <a href="https://drive.google.com/open?id=1KftuFYhyrM9z-n-REt1CzFV4Nw3qkF5B"><img src="<?=base_url('assets/home/images/arsip.png') ?>" class="img-fluid" alt="user-image"></a>
-                    </div>
-                    <div class="team-info">
-                        <h3><a href="https://drive.google.com/open?id=1KftuFYhyrM9z-n-REt1CzFV4Nw3qkF5B">DMMIF FT-UH</a></h3>
+<section class="py-5">
+        <div class="container">
+            <h3 class="tittle-w3ls mb-5">Arsip<span class="text-primary"></span></h3>
+            <div class="row">
+                <div class="col-lg-12 pl-4">
+                    <div class="table-responsive rounded-lg shadow" style="height: 33.1rem;">
+                        <table class="table m-0 table-bordered">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th style="text-align: center;vertical-align: middle;">No</th>
+                                    <th style="text-align: center;vertical-align: middle;">Daftar Arsip</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $i = 1;
+                                foreach($data as $q){
+                                    $arsip=$q->file_arsip?>
+                                <tr>
+                                <td style="text-align: center;vertical-align: middle;"><?=$i?></td>
+                                <td style="text-align: center;vertical-align: middle;"><a href="<?= base_url('home/downloadArsip/'.$arsip) ?>"><?= $q->nama_arsip ?></a></td>
+                                </tr>
+                                <?php $i++; } ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-
-                <!--<div class="col-md-4 team-gd text-center">
-                    <div class="team-img mb-4">
-                        <a href="single.html"><img src="" class="img-fluid" alt="user-image"></a>
-                    </div>
-                    <div class="team-info">
-                        <h3><a href="single.html">DMMIF FT-UH Periode 2018/2019</a></h3>
-                    </div>
-                </div>
-                <div class="col-md-4 team-gd text-center">
-                    <div class="team-img mb-4">
-                        <a href="single.html"><img src="" class="img-fluid" alt="user-image"></a>
-                    </div>
-                    <div class="team-info">
-                        <h3><a href="single.html"> DMMIF FT-UH Masa Bakti 2019</a></h3>
-                    </div>
-                </div> -->
-            <!-- </div>
-            <div class="row mt-lg-5 mt-4">
-                <div class="col-md-4 team-gd text-center">
-                    <div class="team-img mb-4">
-                        <a href="single.html"><img src="" class="img-fluid" alt="user-image"></a>
-                    </div>
-                    <div class="team-info">
-                        <h3><a href="single.html">HMIF FT-UH Periode 2017/2018</a></h3>
-                    </div>
-                </div>
-                <div class="col-md-4 team-gd text-center">
-                    <div class="team-img mb-4">
-                        <a href="single.html"><img src="" class="img-fluid" alt="user-image"></a>
-                    </div>
-                    <div class="team-info">
-                        <h3><a href="single.html">HMIF FT-UH Periode 2018/2019</a></h3>
-                    </div>
-                </div>
-                <div class="col-md-4 team-gd text-center">
-                    <div class="team-img mb-4">
-                        <a href="single.html"><img src="" class="img-fluid" alt="user-image"></a>
-                    </div>
-                    <div class="team-info">
-                        <h3><a href="single.html">HMIF FT-UH Masa Bakti 2019</a></h3>
-                    </div>
-                </div>
-            </div> -->
-
+            </div>
         </div>
     </section>
-    <!--//team-->

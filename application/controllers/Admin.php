@@ -6,6 +6,7 @@ class Admin extends CI_Controller {
 	public function __construct() {
         parent::__construct();
         date_default_timezone_set('Asia/Makassar');
+        $this->load->helper(array('url','download'));
         if($this->session->userdata('status') != "login"){
             redirect('login');
         }else if($this->uri->segment(2) == 'admin' and ($this->session->userdata('status_admin') != 'super_admin')){
@@ -599,13 +600,13 @@ public function deleteDaftarPrestasi($id){
 
                 //Begin Resizing
                 $configer =  array(
-                  'image_library'   => 'gd2',
-                  'source_image'    =>  './assets/admin/img/galeri/'.$filenya['file_name'],
-                  'new_image'       =>  './assets/admin/img/galeri/resized/',
-                  'quality'         =>  '100%',
-                  'maintain_ratio'  =>  FALSE,
-                  'width'           =>  600,
-                  'height'          =>  400,
+                    'image_library'   => 'gd2',
+                    'source_image'    =>  './assets/admin/img/galeri/'.$filenya['file_name'],
+                    'new_image'       =>  './assets/admin/img/galeri/resized/',
+                    'quality'         =>  '100%',
+                    'maintain_ratio'  =>  FALSE,
+                    'width'           =>  600,
+                    'height'          =>  400,
                 );
 
                 $this->load->library('image_lib', $configer);
@@ -1187,7 +1188,7 @@ public function deleteDaftarPrestasi($id){
 
     //Begin Sejarah Pengurus
     public function sejarahPengurus(){
-         $data = array(
+        $data = array(
             'title'     => 'Daftar Sejarah Pengurus',
             'isi'       => 'admin/dashboard/sejarahPengurus',
             'data'      => $this->Crud->ga('sejarah_pengurus'), 
@@ -1317,7 +1318,102 @@ public function deleteDaftarPrestasi($id){
     //===End Modul Pengurus==
 
     public function arsip(){
+        $data = array(
+            'title'     => 'Daftar Arsip',
+            'isi'       => 'admin/dashboard/arsip',
+            'data'      => $this->Crud->ga('arsip'), 
+        );
+        $this->load->view('admin/_layouts/wrapper', $data);
+    }
 
+    public function addArsip(){
+        $input = $this->input->post(NULL, TRUE);
+        $file = $_FILES['userfile']['name'];
+        if($file = ''){
+            $this->session->set_flashdata('info','File Tidak Terpilih');
+            redirect('admin/arsip');
+        }else{
+            $config['upload_path'] = './assets/admin/img/arsip';
+            $config['allowed_types'] = 'pdf|doc|docx|xls|xlsx';
+            $config['max_size'] = '100000';
+
+            $this->load->library('upload',$config);
+            if(!$this->upload->do_upload('userfile')){
+                $this->session->set_flashdata('info', 'Upload File Gagal, Periksa Ukuran dan Ekstensi');
+                redirect('admin/arsip/');
+            }else{
+                $file = $this->upload->data();
+            }
+
+            $data = array(
+                'file_arsip'    => $file['file_name'],
+                'nama_arsip'    => $input['nama_arsip']
+            );
+
+            $this->db->insert('arsip',$data);
+            $this->session->set_flashdata('info', 'Data Sukses Ditambahkan');
+            redirect('admin/arsip');
+
+        }
+    }
+
+    public function downloadArsip($arsip){
+        force_download('./assets/admin/img/arsip/'.$arsip , NULL);
+        redirect('admin/arsip/');
+    }
+
+    public function editArsip($id){
+        $where = array('id' => $id);
+        $input = $this->input->post(NULL,FALSE);
+
+        if(!empty($_FILES['userfile']['tmp_name'])){
+            $file = $_FILES['userfile']['name'];
+            if($file = ''){
+                $this->session->set_flashdata('info','File Tidak Terpilih');
+                redirect('admin/arsip');
+            }else{
+                $config['upload_path'] = './assets/admin/img/arsip';
+                $config['allowed_types'] = 'pdf|doc|docx|xls|xlsx';
+                $config['max_size'] = '100000';
+
+                $this->load->library('upload',$config);
+                
+                unlink('./assets/admin/img/arsip/'.$input['file_lama']);
+                if(!$this->upload->do_upload('userfile')){
+                    //die();
+                    $this->session->set_flashdata('info', 'Upload File Gagal, Periksa Ukuran dan Ekstensi');
+                    redirect('admin/galeri');
+                }else{
+                    $file =  $this->upload->data();
+                }
+                $data = array(
+                    'file_arsip'    => $file['file_name'],
+                    'nama_arsip'    => $input['nama_arsip']
+                );
+
+                $this->Crud->u('arsip',$data,$where);
+                $this->session->set_flashdata('info', 'Data Sukses Diupdate');
+                redirect('admin/arsip');
+
+            }
+        }else{
+            $data = array(
+                'nama_arsip'    => $input['nama_arsip']
+            );
+            $this->Crud->u('arsip',$data,$where);
+            $this->session->set_flashdata('info', 'Data Sukses Diupdate');
+            redirect('admin/arsip');
+        }
+    }
+
+    public function deleteArsip($id){
+        $input = $this->input->post(NULL, TRUE);
+        $where = array('id' => $id);
+        unlink('./assets/admin/img/arsip/'.$input['file_lama']);
+
+        $this->Crud->d('arsip',$where);
+        $this->session->set_flashdata('info', 'Data Sukses Dihapus');
+        redirect('admin/arsip');
     }
 }
 ?>
