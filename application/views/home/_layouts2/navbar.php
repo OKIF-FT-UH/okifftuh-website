@@ -48,6 +48,7 @@
                                 <li class="<?= ($navi == 'kemahasiswaan') ? 'active' : '' ?>"><a href="<?= base_url('Home/kemahasiswaan') ?>">Kemahasiswaan</a></li>
                                 <li class="<?= ($navi == 'artikel') ? 'active' : '' ?>"><a href="<?= base_url('Home/artikel') ?>" class="drop-text">Artikel</a></li>
                                 <li class="<?= ($navi == 'daftarPrestasi') ? 'active' : '' ?>"><a href="<?= base_url('Home/daftarPrestasi') ?>" class="drop-text">Daftar Prestasi</a></li>
+                                <li class="<?= ($navi == 'mahasiswa') ? 'active' : '' ?>"><a href="<?= base_url('Home/mahasiswa') ?>" class="drop-text">Daftar Mahasiswa</a></li>
                             </ul>
                         </li>
 

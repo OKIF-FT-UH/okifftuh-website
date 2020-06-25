@@ -492,6 +492,16 @@ class Home extends CI_Controller {
         $this->load->view('home/_layouts2/wrapper2',$data);
     }
 
+    public function mahasiswa(){
+        $data = array(
+            'nav'   => 'Informasi / Daftar Mahasiswa Aktif',
+            'title' => 'Daftar Mahasiswa Aktif',
+            'isi'   => 'home/dashboard/mahasiswa',
+            'data'  => $this->Crud->ga('mahasiswa'),
+        );
+        $this->load->view('home/_layouts2/wrapper2',$data);
+    }
+
 }
 
 ?>

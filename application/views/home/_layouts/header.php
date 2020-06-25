@@ -86,6 +86,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <li><a href="<?= base_url('Home/kemahasiswaan') ?>">Kemahasiswaan</a></li>
                                 <li><a href="<?= base_url('Home/artikel') ?>" class="drop-text">Artikel</a></li>
                                 <li><a href="<?= base_url('Home/daftarPrestasi') ?>" class="drop-text">Daftar Prestasi</a></li>
+                                <li><a href="<?= base_url('Home/mahasiswa') ?>" class="drop-text">Daftar Mahasiswa</a></li>
                             </ul>
                         </li>
 
